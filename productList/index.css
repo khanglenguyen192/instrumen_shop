@@ -23,11 +23,11 @@ body {
   color: var(--lightBlue);
 }
 .card {
-  font-size: 18px !important;
+  font-size: 17px !important;
 }
 .card h5 {
   color: red !important;
-  font-size: 18px !important;
+  font-size: 17px !important;
 }
 .img-container {
   position: relative;
@@ -46,7 +46,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  font-size: 18px !important;
+  font-size: 15px !important;
 }
 .filterBar {
   position: relative;
@@ -56,4 +56,12 @@ body {
 .star {
   color: #ff9933;
   cursor: pointer;
+}
+@media screen and (min-width: 900px) {
+  .col-grid {
+    width: 20% !important;
+  }
+}
+.link {
+  text-decoration: none;
 }
