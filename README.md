@@ -1,3 +1,10 @@
+##Bootstrap
+### `npm i bootstrap`
+##React Router
+### `npm install react-router-dom`
+##React Select
+### `npm i --save react-select`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
