@@ -12,7 +12,7 @@ export default class FilterBar extends React.Component {
             <div className="col filterBar">
                <div className="container">
                     <div className="row">
-                        <div className="col-9 col-md-5 col-lg-9"></div>
+                        <div className="col-9 col-md-5 col-lg"></div>
                         <div className="col-5 col-md-4 col-lg-2">
                             <Select  placeholder="Sắp xếp theo" options={ actions }/>
                         </div>
