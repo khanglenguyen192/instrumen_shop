@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import { StarRating } from './StarRating';
-
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"></link>
 
 
 
@@ -15,7 +15,7 @@ export default class Product extends Component {
                         <Link to="/">
                             <img src={img} alt="products" className="card-img-top" id={id}/>
                         </Link>
-                        <button className="cart-btn btn btn-primary btn-lg">Add to cart</button>
+                        <button className="cart-btn btn btn-primary btn-sm">Add to cart</button>
                     </div>
                     <div className="card-footer d-flex justify-content-center">
                         <ul className="list-group list-group-flush text-center">
