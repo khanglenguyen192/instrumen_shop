@@ -64,10 +64,9 @@ export const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-  //   &:hover {
-  //     color: #ff9c00;
-  //     transition: 200ms ease-in;
-  //   }
+  &:hover {
+    color: #fff;
+  }
 `;
 
 export const NavMenu = styled.div`
