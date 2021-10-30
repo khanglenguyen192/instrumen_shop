@@ -33,7 +33,6 @@ function App() {
             <Route path="/product_list" exact component={ProductList} />
           </Switch>
         </Router>
-
         <FooterContainer />
       </Provider>
     </div>
