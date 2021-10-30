@@ -1,11 +1,11 @@
-##Bootstrap
+## Bootstrap
 ### `npm i bootstrap`
-##React Router
+## React Router
 ### `npm install react-router-dom`
-##React Select
+## React Select
 ### `npm i --save react-select`
-##React-bootstrap
-###`npm install react-bootstrap bootstrap@5.1.3`
+## React-bootstrap
+### `npm install react-bootstrap bootstrap@5.1.3`
 
 # Getting Started with Create React App
 
