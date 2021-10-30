@@ -31,10 +31,17 @@ export const NavLink = styled(Link)`
   padding: 0 1.5rem;
   height: 100%;
   cursor: pointer;
+
+  &:hover {
+    transform: translateY(-3px);
+    color: #fff;
+  }
+
   &.active {
     font-size: 20px;
     color: #fff;
     background: #000;
+    transform: translateY(0px);
   }
 `;
 

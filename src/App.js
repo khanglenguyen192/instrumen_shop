@@ -30,7 +30,7 @@ function App() {
             <Route path="/promotion" exact component={Promotion} />
             <Route path="/contact" exact component={Contact} />
             <Route path="/installment" exact component={Installment} />
-            <Route path="/productlist" exact component={ProductList} />
+            <Route path="/product_list" exact component={ProductList} />
           </Switch>
         </Router>
 

@@ -39,6 +39,7 @@ export const LogoName = styled.p`
   color: #0589f3;
   font-size: 36px;
   font-weight: bold;
+  margin: auto;
   margin-left: -10px;
 `;
 
@@ -46,6 +47,7 @@ export const ShopName = styled.p`
   color: #0589f3;
   font-size: 14px;
   font-weight: bold;
+  margin: auto;
   margin-left: 5px;
   margin-right: -10px;
 
@@ -75,6 +77,7 @@ export const NavMenu = styled.div`
 `;
 
 export const NavLinkText = styled.h5`
+  margin: auto;
   color: #fff;
   @media screen and (max-width: 1100px) {
     display: none;
