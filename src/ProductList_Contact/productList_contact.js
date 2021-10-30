@@ -2,6 +2,7 @@ import ProductList from "./product_list";
 import Contact from "./contact";
 import React from "react";
 import {Switch, Route} from 'react-router-dom';
+import './ProductList_Contact.css'
 
 export default class App extends React.Component {
     render() {
