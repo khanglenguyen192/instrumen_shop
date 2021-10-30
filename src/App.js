@@ -17,25 +17,25 @@ function App() {
   return (
     <div>
       <Provider>
-      <Router>
-        <SearchBar />
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/home" exact component={Home} />
-          <Route path="/introduction" exact component={Introduction} />
-          <Route path="/product" exact component={Product} />
-          <Route path="/services" exact component={Services} />
-          <Route path="/posts" exact component={Posts} />
-          <Route path="/promotion" exact component={Promotion} />
-          <Route path="/contact" exact component={Contact} />
-          <Route path="/installment" exact component={Installment} />
-          <Route path="/productlist" exact component={ProductList} />
-        </Switch>
-      </Router>
+        <Router>
+          <SearchBar />
+          <Navbar />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/home" exact component={Home} />
+            <Route path="/introduction" exact component={Introduction} />
+            <Route path="/product" exact component={Product} />
+            <Route path="/services" exact component={Services} />
+            <Route path="/posts" exact component={Posts} />
+            <Route path="/promotion" exact component={Promotion} />
+            <Route path="/contact" exact component={Contact} />
+            <Route path="/installment" exact component={Installment} />
+            <Route path="/productlist" exact component={ProductList} />
+          </Switch>
+        </Router>
 
-      <FooterContainer />
-       </Provider>
+        <FooterContainer />
+      </Provider>
     </div>
   );
 }
