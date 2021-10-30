@@ -26,7 +26,7 @@ const Navbar = () => {
           <NavLink to="/introduction" activeStyle>
             Giới thiệu
           </NavLink>
-          <NavLink to="/product" activeStyle>
+          <NavLink to="/productlist" activeStyle>
             Sản phẩm
           </NavLink>
           <NavLink to="/services" activeStyle>
