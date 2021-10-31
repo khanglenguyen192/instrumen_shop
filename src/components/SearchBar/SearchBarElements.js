@@ -19,11 +19,11 @@ export const Logo = styled.div`
 export const NavLogo = styled(Link)`
   padding: 0;
   border-style: solid;
-  border-color: #0589f3;
+  border-color: #ffdd00;
   border-radius: 10px;
   width: 190px;
   margin: 0;
-  color: #0589f3;
+  color: #ffdd00;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -36,7 +36,7 @@ export const NavLogo = styled(Link)`
 `;
 
 export const LogoName = styled.p`
-  color: #0589f3;
+  color: #ffdd00;
   font-size: 28px;
   font-weight: bold;
   margin: auto;
@@ -44,7 +44,7 @@ export const LogoName = styled.p`
 `;
 
 export const ShopName = styled.p`
-  color: #0589f3;
+  color: #ffdd00;
   font-size: 12px;
   font-weight: bold;
   margin: auto;
@@ -126,7 +126,7 @@ export const SearchBtn = styled.button`
     position: absolute;
     width: 110px;
     height: 30px;
-    background: #0589F3;
+    background: #ffdd00;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     border: 0;
