@@ -6,7 +6,7 @@ export const ProductMenuDropdownContainer = styled.div`
   margin: 0;
   &:hover {
     display: block;
-    #menu-dropdown {
+    #product-menu-dropdown {
       display: block;
       width: 100%;
     }
