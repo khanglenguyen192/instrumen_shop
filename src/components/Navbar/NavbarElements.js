@@ -40,7 +40,7 @@ export const NavLink = styled(Link)`
 
   &:hover {
     transform: translateY(-3px);
-    color: #fff;
+    color: #000;
   }
 
   &.active {
