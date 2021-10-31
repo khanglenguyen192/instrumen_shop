@@ -49,6 +49,7 @@ export const ShopName = styled.p`
   font-weight: bold;
   margin: auto;
   margin-left: 5px;
+  margin-right: -10px;
 
   @media screen and (max-width: 1200px) {
     display: none;
@@ -70,11 +71,11 @@ export const NavLink = styled(Link)`
 
 export const NavMenu = styled.div`
   display: flex;
-  margin-left: -20px;
+  //margin-left: -20px;
   align-items: center;
 `;
 
-export const NavLinkText = styled.h6`
+export const NavLinkText = styled.h5`
   margin: auto;
   color: #fff;
   @media screen and (max-width: 1200px) {
@@ -95,13 +96,13 @@ export const NavCart = styled.i`
 export const SearchNav = styled.nav`
   height: 30px;
   display: flex;
+  margin-top: 10px;
   z-index: 10;
   width: 100%;
   float: left;
   position: relative;
   width: 688px;
   height: 40px;
-  margin-right: 20px;
 `;
 
 export const SearchInput = styled.input`
@@ -115,7 +116,6 @@ export const SearchInput = styled.input`
   border-radius: 10px;
   height: 30px;
   padding: 10px;
-  margin: auto;
 `;
 
 export const SearchBtn = styled.button`
@@ -130,7 +130,6 @@ export const SearchBtn = styled.button`
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     border: 0;
-    margin-top: 5px;
 
     @media screen and (max-width: 1200px) {
         width: 50px;
