@@ -3,11 +3,7 @@
   color: #ff9933;
   cursor: pointer;
 }
-@media screen and (min-width: 1200px) {
-  .col-grid {
-    width: 20% !important;
-  }
-}
+
 .pagebtn {
   background-color: white;
   border: 1px black solid;

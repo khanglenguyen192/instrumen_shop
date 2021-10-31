@@ -42,7 +42,7 @@ export const ProductWrapper = styled.div`
     }  
     .card-img-top {
         width: 100%;
-        height: 25vh;
+        height: 200px;
     }
     .img-container {
         position: relative;
@@ -52,7 +52,7 @@ export const ProductWrapper = styled.div`
         text-decoration: none;
     }
     .card {
-        height: 50vh;
+        height: 400px;
     }
     .card li {
         border: none;

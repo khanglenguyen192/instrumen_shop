@@ -7,11 +7,11 @@ const PaginationContext = createContext();
 
 const PaginationProvider = ({ children }) => {
     const [pagination, setPagination] = useState({
-    limit: 10,
+    limit: 8,
     total: productList.length,
     start: 0,
     page: 1,
-    perPage: 10,
+    perPage: 8,
     showPrevButton: false,
     showFirstPageButton: false,
     showNextButton: false,
