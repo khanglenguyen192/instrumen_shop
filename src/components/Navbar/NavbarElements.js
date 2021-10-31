@@ -2,19 +2,25 @@ import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 
-export const Nav = styled.nav`
+export const NavBarContainer = styled.nav`
+  display: flex;
+  justify-content: center;
   background: #ffdd00;
+`;
+
+export const Nav = styled.nav`
   height: 50px;
   display: flex;
-  padding: 0.5rem calc((70vw - 1000px) / 2);
+  max-width: 1600px;
   padding-top: 0;
   padding-bottom: 0;
   z-index: 10;
+  margin-left: -60px;
 `;
 
 export const ProductList = styled.nav`
   background: #c4c4c4;
-  width: 350px;
+  width: 270px;
   height: 100%;
   position: relative;
   display: flex;
@@ -22,7 +28,7 @@ export const ProductList = styled.nav`
 `;
 
 export const NavLink = styled(Link)`
-  font-size: 20px;
+  font-size: 18px;
   color: #000;
   font-weight: bold;
   display: flex;
@@ -66,7 +72,7 @@ export const NavIcon = styled.i`
 export const NavMenu = styled.div`
   display: flex;
   margin-left: 20px;
-  align-items: center;
+  align-items: left;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -91,8 +97,6 @@ export const NavBtnLink = styled(Link)`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  /* Second Nav */
-  margin-left: 24px;
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #fff;

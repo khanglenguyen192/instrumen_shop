@@ -2,18 +2,30 @@ import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 
-export const Nav = styled.nav`
+export const SearchBarContainer = styled.div`
   background: #333333;
+  display: flex;
+  justify-content: center;
+`;
+
+export const Nav = styled.nav`
+  max-width: 1400px;
   height: 60px;
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem calc((70vw - 1000px) / 2);
+  padding: 5px 0 5px 0;
   z-index: 10;
 `;
 
 export const Logo = styled.div`
   padding: 0;
-  width: 350px;
+  width: 300px;
+  @media screen and (max-width: 1200px) {
+    width: 150px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 100px;
+  }
 `;
 
 export const NavLogo = styled(Link)`
@@ -75,7 +87,8 @@ export const NavMenu = styled.div`
   align-items: center;
 `;
 
-export const NavLinkText = styled.h5`
+export const NavLinkText = styled.p`
+  font-size: 18px;
   margin: auto;
   color: #fff;
   @media screen and (max-width: 1200px) {
@@ -98,11 +111,18 @@ export const SearchNav = styled.nav`
   display: flex;
   margin-top: 10px;
   z-index: 10;
-  width: 100%;
   float: left;
   position: relative;
-  width: 688px;
+  width: 690px;
   height: 40px;
+
+  @media screen and (max-width: 1200px) {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 150px;
+  }
 `;
 
 export const SearchInput = styled.input`
