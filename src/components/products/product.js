@@ -19,9 +19,9 @@ export default class Product extends Component {
                         <ul className="list-group list-group-flush text-center">
                             <StarRating value={3} />
                             <Link to="/" className="link">
-                            <li className="list-group-item"><p className="align-self-center mb-0">{title}</p></li>
+                            <li className="list-group-item"><p className="align-self-center mb-0 prodTitle">{title}</p></li>
                             </Link>
-                            <li className="list-group-item"><h5 className="font-italic mb-0">{price}</h5></li>
+                            <li className="list-group-item"><h5 className="font-italic mb-0 prodPrice">{price}</h5></li>
                         </ul>
                     </div>
                 </div>
