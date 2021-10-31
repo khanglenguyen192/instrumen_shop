@@ -2,7 +2,7 @@ export const productList = [
     {
         id: 1,
         title: "Piano Kawai GX-2",
-        img: "https://vietthuonghanoi.com/wp-content/uploads/2018/05/dan-piano-gx-2.jpg",
+        img: "https://ae01.alicdn.com/kf/HTB1eZEia.T1gK0jSZFhq6yAtVXax/Thu-Nh-Piano-M-H-nh-en-Tr-ng-Ph-m-n-Piano-Mini-Trang-Tr.jpg",
         price: "15.000.000d"
     },
     {
@@ -44,7 +44,7 @@ export const productList = [
     {
         id: 8,
         title: "Piano Kawai KG3",
-        img: "https://lh3.googleusercontent.com/proxy/nMnxJp_QtvubOSj-GZSJ5d0iW5nxPyx46JnGKJlAeiPkgbyL_LuoUN9gQz_olI-NtFGsZJ_jCFbXq-FSb8UwQVm3Bx4AC2sx8FoJ6HoZ9B-cilABG_fpXfC14m-3jqWyAwsle5REP-1BoslCyNbLk3-pouk2PcdYEj_sxc0j4TL93p1hAQNd7A",
+        img: "https://vietthuongshop.vn/upload/content/images/Tuvan/2019/7-2019/mau1-dan-piano-dien-casio-cdp-s100.jpg",
         price: "19.000.000d"
     },
     {
@@ -52,5 +52,23 @@ export const productList = [
         title: "Piano Yamaha G3 Trắng",
         img: "https://bizweb.dktcdn.net/thumb/grande/100/147/954/products/5-dan-grand-piano-yamaha-trang-g3.jpg?v=1498301995370",
         price: "17.000.000d"
+    },
+    {
+        id: 10,
+        title: "Piano Upright",
+        img: "https://sovaco.vn/upload/sanpham/pianoyamahau3giare_1606363028_500x416.66666666667.jpg",
+        price: "15.000.000d"
+    },
+    {
+        id: 11,
+        title: "Piano GDP-500 Digital",
+        img: "https://d1aeri3ty3izns.cloudfront.net/media/67/671442/600/preview.jpg",
+        price: "17.000.000d"
+    },
+    {
+        id: 12,
+        title: "Piano Yamaha N3X",
+        img: "https://cdn.shopify.com/s/files/1/1174/3976/products/preview_16_2beb908b-d43b-453f-b5fe-490e6ee9acfe_1024x1024.jpg?v=1571438970",
+        price: "19.000.000d"
     },
 ]

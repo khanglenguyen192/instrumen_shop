@@ -1,5 +1,14 @@
 import React from "react";
 import Select from 'react-select';
+import styled from "styled-components";
+
+const Filterbar = styled.div`
+    .container {
+        position: relative;
+        background-color: #778899;
+        height: 5vh;
+    }
+`
 export default class FilterBar extends React.Component {
     render() {
         const actions = [
@@ -9,8 +18,8 @@ export default class FilterBar extends React.Component {
             { label: "Theo giá tăng dần", value: 4 }
         ];
         return (
-            <div className="col filterBar">
-               <div className="container">
+            <Filterbar>
+                <div className="container">
                     <div className="row">
                         <div className="col-9 col-md-5 col-lg"></div>
                         <div className="col-5 col-md-4 col-lg-2">
@@ -18,7 +27,7 @@ export default class FilterBar extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Filterbar>
         )
     }
 }

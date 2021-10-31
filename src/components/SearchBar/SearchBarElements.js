@@ -4,7 +4,7 @@ import { FaBars } from "react-icons/fa";
 
 export const Nav = styled.nav`
   background: #333333;
-  height: 80px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem calc((70vw - 1000px) / 2);
@@ -17,11 +17,11 @@ export const Logo = styled.div`
 `;
 
 export const NavLogo = styled(Link)`
-  padding: 0px 0px 0px 0px;
+  padding: 0;
   border-style: solid;
   border-color: #0589f3;
   border-radius: 10px;
-  width: 220px;
+  width: 190px;
   margin: 0;
   color: #0589f3;
   display: flex;
@@ -30,26 +30,28 @@ export const NavLogo = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-  @media screen and (max-width: 1100px) {
-    width: 110px;
+  @media screen and (max-width: 1200px) {
+    width: 90px;
   }
 `;
 
 export const LogoName = styled.p`
   color: #0589f3;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: bold;
+  margin: auto;
   margin-left: -10px;
 `;
 
 export const ShopName = styled.p`
   color: #0589f3;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
+  margin: auto;
   margin-left: 5px;
   margin-right: -10px;
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1200px) {
     display: none;
   }
 `;
@@ -62,27 +64,27 @@ export const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-  //   &:hover {
-  //     color: #ff9c00;
-  //     transition: 200ms ease-in;
-  //   }
+  &:hover {
+    color: #fff;
+  }
 `;
 
 export const NavMenu = styled.div`
   display: flex;
-  //margin-left: 20px;
+  //margin-left: -20px;
   align-items: center;
 `;
 
 export const NavLinkText = styled.h5`
+  margin: auto;
   color: #fff;
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1200px) {
     display: none;
   }
 `;
 
 export const NavIcon = styled.i`
-  font-size: 28px;
+  font-size: 24px;
   margin-right: 10px;
 `;
 
@@ -92,7 +94,7 @@ export const NavCart = styled.i`
 `;
 
 export const SearchNav = styled.nav`
-  height: 50px;
+  height: 30px;
   display: flex;
   margin-top: 10px;
   z-index: 10;
@@ -112,7 +114,7 @@ export const SearchInput = styled.input`
   background: #fff;
   font-size: 16px;
   border-radius: 10px;
-  height: 40px;
+  height: 30px;
   padding: 10px;
 `;
 
@@ -123,13 +125,13 @@ export const SearchBtn = styled.button`
     right: 0;
     position: absolute;
     width: 110px;
-    height: 40px;
+    height: 30px;
     background: #0589F3;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     border: 0;
 
-    @media screen and (max-width: 1100px) {
+    @media screen and (max-width: 1200px) {
         width: 50px;
     }
 `;

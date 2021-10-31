@@ -50,7 +50,7 @@ const SearchBar = () => {
             <NavIcon className="fas fa-phone-alt"></NavIcon>
             <NavLinkText>0123.456.789</NavLinkText>
           </NavLink>
-          <NavLink to="/">
+          <NavLink to="/cart">
             <NavIcon className="fas fa-shopping-cart"></NavIcon>
           </NavLink>
         </NavMenu>
