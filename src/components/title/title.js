@@ -5,7 +5,7 @@ export default function Title({ title }) {
         <div className="row">
             <div className="col-10 mx-auto my-2 text-title">
                 <h1 className="text-capitalize">
-                    <strong>{title}</strong>
+                    {title}
                 </h1>
             </div>
         </div>

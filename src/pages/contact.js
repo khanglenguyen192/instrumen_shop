@@ -8,8 +8,8 @@ export default class Contact extends React.Component {
   render() {
     return (
       <div>
+        <Title title="Liên hệ" />
         <div class="container contact">
-          <Title title="Liên hệ" />
           <div class="row">
             <div class="col-8 col-md-5 col-lg-4">
               <h4 className="py-3">Thông tin và giới thiệu về cửa hàng</h4>

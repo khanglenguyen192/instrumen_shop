@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ProductWrapper } from "../../container/ProductWrapper";
 import { StarRating } from '../starRating/StarRating';
 
+
 export default class Product extends Component {
     render() {
         const { id, title, img, price } = this.props.product;
