@@ -11,6 +11,7 @@ import Contact from "./pages/contact";
 import Installment from "./pages/installment";
 import { FooterContainer } from "./container/footer";
 import SearchBar from "./components/SearchBar";
+import ProductInfo from "./pages/one_product";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/promotion" exact component={Promotion} />
           <Route path="/contact" exact component={Contact} />
           <Route path="/installment" exact component={Installment} />
+          <Route path="/products/one-product" exact component={ProductInfo} />
         </Switch>
       </Router>
 

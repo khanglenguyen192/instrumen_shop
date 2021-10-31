@@ -1,6 +1,6 @@
 import React from "react";
 
-const Product = () => {
+const Promotion = () => {
   return (
     <div
       style={{
@@ -15,4 +15,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default Promotion;

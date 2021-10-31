@@ -1,0 +1,41 @@
+
+.container_review {
+    background-color: #EEEEEE;
+    height: 90vh;
+    width: 150vh;
+    margin: 10vh auto auto 30vh;
+
+}
+
+
+.container_review > * {
+    background-color: #EEEEEE;
+    padding: 30px;
+}
+
+.review {
+    background-color: #EEEEEE;
+    width: 90%;
+    margin: auto;
+    border-bottom: 2px rgba(0, 0, 0, 0.5) solid;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+.cus-avartar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.cus-info {
+    display: inline-block;
+}
+
+.comment {
+    display: inline-block;
+    margin: auto auto auto 30px;
+    margin-left:  30px;
+}

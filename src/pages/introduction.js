@@ -1,16 +1,10 @@
 import React from "react";
+import Info from '../Introduction/Info';
 
 const Introduction = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "90vh",
-      }}
-    >
-      <h1>Introduction</h1>
+    <div>
+      <Info />
     </div>
   );
 };
