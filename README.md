@@ -1,5 +1,5 @@
-npm install styled-components
-npm install react-icons
+## `npm install styled-components`
+## `npm install react-icons`
 
 ## Bootstrap
 
