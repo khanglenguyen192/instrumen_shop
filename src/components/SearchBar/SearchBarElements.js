@@ -75,7 +75,8 @@ export const NavMenu = styled.div`
   align-items: center;
 `;
 
-export const NavLinkText = styled.h5`
+export const NavLinkText = styled.p`
+  font-size: 18px;
   margin: auto;
   color: #fff;
   @media screen and (max-width: 1200px) {
