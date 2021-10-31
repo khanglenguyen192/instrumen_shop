@@ -22,6 +22,7 @@ export const ProductList = styled.nav`
   background: #c4c4c4;
   width: 270px;
   height: 100%;
+  padding: 0;
   position: relative;
   display: flex;
   justify-content: center;

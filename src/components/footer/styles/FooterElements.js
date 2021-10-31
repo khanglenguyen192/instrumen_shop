@@ -37,7 +37,7 @@ export const Link = styled.a`
   text-decoration: none;
 
   &:hover {
-    color: #ff9c00;
+    color: #ffdd00;
     transition: 200ms ease-in;
   }
 `;
