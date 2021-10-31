@@ -9,6 +9,7 @@ import Posts from "./pages/posts";
 import Promotion from "./pages/promotion";
 import Contact from "./pages/contact";
 import Installment from "./pages/installment";
+import Cart from "./pages/cart";
 import { FooterContainer } from "./container/footer";
 import SearchBar from "./components/SearchBar";
 import ProductList from "./pages/product_list";
@@ -31,6 +32,7 @@ function App() {
             <Route path="/contact" exact component={Contact} />
             <Route path="/installment" exact component={Installment} />
             <Route path="/product_list" exact component={ProductList} />
+            <Route path="/cart" exact component={Cart} />
           </Switch>
         </Router>
         <FooterContainer />
