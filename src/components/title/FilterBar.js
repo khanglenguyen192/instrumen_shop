@@ -5,8 +5,8 @@ import styled from "styled-components";
 const Filterbar = styled.div`
     .container {
         position: relative;
-        background-color: #778899;
-        height: 5vh;
+        background-color: #333333;
+        height: 40px;
     }
 `
 export default class FilterBar extends React.Component {
@@ -23,7 +23,7 @@ export default class FilterBar extends React.Component {
                     <div className="row">
                         <div className="col-9 col-md-5 col-lg"></div>
                         <div className="col-5 col-md-4 col-lg-2">
-                            <Select  placeholder="Sắp xếp theo" options={ actions }/>
+                            <Select className="select-box" placeholder="Sắp xếp theo" options={ actions }/>
                         </div>
                     </div>
                 </div>

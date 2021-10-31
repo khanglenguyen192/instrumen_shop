@@ -60,6 +60,7 @@ export default class Contact extends React.Component {
                   <Form.Label>Nội dung</Form.Label>
                   <Form.Control as="textarea" rows={6} />
                 </Form.Group>
+                <button type="submit" className="btn btn-warning my-2">Gửi</button>
               </Form>
             </div>
             <div class="col-8 col-md-5 col-lg-4 ctcol3">
