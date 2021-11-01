@@ -2,28 +2,40 @@ import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 
-export const Nav = styled.nav`
+export const SearchBarContainer = styled.div`
   background: #333333;
+  display: flex;
+  justify-content: center;
+`;
+
+export const Nav = styled.nav`
+  max-width: 1400px;
   height: 60px;
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem calc((70vw - 1000px) / 2);
+  padding: 5px 0 5px 0;
   z-index: 10;
 `;
 
 export const Logo = styled.div`
   padding: 0;
-  width: 350px;
+  width: 300px;
+  @media screen and (max-width: 1200px) {
+    width: 150px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 100px;
+  }
 `;
 
 export const NavLogo = styled(Link)`
   padding: 0;
   border-style: solid;
-  border-color: #0589f3;
+  border-color: #ffdd00;
   border-radius: 10px;
   width: 190px;
   margin: 0;
-  color: #0589f3;
+  color: #ffdd00;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -36,7 +48,7 @@ export const NavLogo = styled(Link)`
 `;
 
 export const LogoName = styled.p`
-  color: #0589f3;
+  color: #ffdd00;
   font-size: 28px;
   font-weight: bold;
   margin: auto;
@@ -44,7 +56,7 @@ export const LogoName = styled.p`
 `;
 
 export const ShopName = styled.p`
-  color: #0589f3;
+  color: #ffdd00;
   font-size: 12px;
   font-weight: bold;
   margin: auto;
@@ -75,7 +87,8 @@ export const NavMenu = styled.div`
   align-items: center;
 `;
 
-export const NavLinkText = styled.h5`
+export const NavLinkText = styled.p`
+  font-size: 18px;
   margin: auto;
   color: #fff;
   @media screen and (max-width: 1200px) {
@@ -98,11 +111,18 @@ export const SearchNav = styled.nav`
   display: flex;
   margin-top: 10px;
   z-index: 10;
-  width: 100%;
   float: left;
   position: relative;
-  width: 688px;
+  width: 690px;
   height: 40px;
+
+  @media screen and (max-width: 1200px) {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 150px;
+  }
 `;
 
 export const SearchInput = styled.input`
@@ -126,7 +146,7 @@ export const SearchBtn = styled.button`
     position: absolute;
     width: 110px;
     height: 30px;
-    background: #0589F3;
+    background: #ffdd00;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     border: 0;

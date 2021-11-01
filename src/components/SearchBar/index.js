@@ -12,6 +12,7 @@ import {
   SearchNav,
   SearchBtn,
   SearchInput,
+  SearchBarContainer,
 } from "./SearchBarElements";
 
 function click() {
@@ -20,7 +21,7 @@ function click() {
 
 const SearchBar = () => {
   return (
-    <>
+    <SearchBarContainer>
       <Nav>
         <Logo>
           <NavLogo to="/home">
@@ -55,7 +56,7 @@ const SearchBar = () => {
           </NavLink>
         </NavMenu>
       </Nav>
-    </>
+    </SearchBarContainer>
   );
 };
 

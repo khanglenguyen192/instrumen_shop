@@ -8,13 +8,14 @@ import {
   NavMenu,
   NavBtn,
   NavBtnLink,
+  NavBarContainer,
 } from "./NavbarElements";
 
 import ProductDropdown from "../dropdown/product-dropdown";
 
 const Navbar = () => {
   return (
-    <>
+    <NavBarContainer>
       <Nav>
         <ProductList>
           <ProductDropdown />
@@ -45,11 +46,8 @@ const Navbar = () => {
             Trả góp
           </NavLink>
         </NavMenu>
-        {/* <NavBtn>
-          <NavBtnLink to="/sign-in">Sign In</NavBtnLink>
-        </NavBtn> */}
       </Nav>
-    </>
+    </NavBarContainer>
   );
 };
 
