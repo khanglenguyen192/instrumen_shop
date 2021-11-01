@@ -1,10 +1,13 @@
 import './Review.css'
-
+import {Star} from './Star';
 function ReviewContainer(){
     return (
       <div className="container_review">
         <div className='title'>Đánh giá sản phẩm</div>
-        <div className='rating' style={{backgroundColor: '#C4C4C4'}}>Số sao</div>
+        <div className='rating' style={{backgroundColor: '#C4C4C4'}}>
+        <p>4.0</p>
+        <Star value={4} />
+        </div>
         <Review />
         <Review />
         <Review />

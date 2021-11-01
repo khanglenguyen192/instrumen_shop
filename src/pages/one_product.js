@@ -1,7 +1,7 @@
 import React from "react";
-import Description from "../OneProduct-StoreInfo/Description";
-import Display from '../OneProduct-StoreInfo/Display'
-import ReviewContainer from "../OneProduct-StoreInfo/Review";
+import Description2 from "../OneProduct/Description";
+import Display from '../OneProduct/Display'
+import ReviewContainer from "../OneProduct/Review";
 
 const ProductInfo = () => {
   return (
@@ -11,7 +11,7 @@ const ProductInfo = () => {
       name='Guitar Fender G3321'
       price='100000VND'
       />
-      <Description/>
+      <Description2/>
       <ReviewContainer />
       <p style={{height: '300px', padding: '50px'}}>Similar product</p>
 
