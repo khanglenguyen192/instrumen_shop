@@ -6,7 +6,7 @@ export const ProductWrapper = styled.div`
         background-color: white;
     }
     .card-footer p {
-        font-size: 15px;
+        font-size: 20px;
     }
     .card-footer h5 {
         color: red;
@@ -21,7 +21,7 @@ export const ProductWrapper = styled.div`
             background-color: rgba(247, 247, 247);
         }
         .card-footer p {
-            color: blue;
+            color: #ffdd00;
         }
     }
     .img-container {
@@ -32,10 +32,11 @@ export const ProductWrapper = styled.div`
         position: absolute;
         bottom: 0;
         right: 0;
-        background-color: #0589f3;
-        border: 1px black solid;
+        background-color: #ffdd00;
+        border: 1px white solid;
         color: white;
         transform: translate(100%, 100%);
+        font-size: 30px
     }
     .img-container:hover .cart-btn {
         transform: translate(0, 0);
@@ -53,16 +54,47 @@ export const ProductWrapper = styled.div`
     }
     .card {
         height: 400px;
+        width: 300px;
     }
-    .card li {
-        border: none;
+    .card-footer {
+      background-color: rgba(247, 247, 247);
     }
-`
-
-export const ExProductWrapper = styled(ProductWrapper)`
-  display: inline-block;
-  margin-right: 40px;
-  width: 300px;
-  height: 400px; 
-
-`
+    .card-footer p {
+      color: blue;
+    }
+  }
+  .img-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .cart-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #0589f3;
+    border: 1px black solid;
+    color: white;
+    transform: translate(100%, 100%);
+  }
+  .img-container:hover .cart-btn {
+    transform: translate(0, 0);
+  }
+  .card-img-top {
+    width: 100%;
+    height: 200px;
+  }
+  .img-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .link {
+    text-decoration: none;
+  }
+  .card {
+    height: 400px;
+    width: 300px;
+  }
+  .card li {
+    border: none;
+  }
+`;

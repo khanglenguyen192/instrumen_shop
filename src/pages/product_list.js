@@ -36,8 +36,8 @@ const Page = () => {
                 }}
         </Consumer>
         <div className="row">
-          <div className="col-6 col-md-8 col-lg-9"></div>
-          <div className="col-6 col-md-4 col-lg-3 my-4">
+          <div className="col-4 col-md-8 col-lg-9"></div>
+          <div className="col-8 col-md-4 col-lg-3 my-4">
         {pagination.page > 2 && <button className="btn pagebtn" onClick={() => navigateToPage(1)}>First</button>}
         {pagination.page > 1 && <button className="btn pagebtn" onClick={() => navigateToPage(pagination.page - 1)}>Prev</button>}
         {[...Array(100)].slice(0, numberOfPages).map((x, i) =>
