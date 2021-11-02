@@ -8,7 +8,13 @@ import "react-multi-carousel/lib/styles.css";
 import {
   ListWrapper,
   ListTitle,
+  AdContainer,
+  AdContainerRow,
 } from "../components/homeComponents/homePageElements";
+import ad1 from "../images/ad1.png";
+import ad2 from "../images/ad2.png";
+import ad3 from "../images/ad3.png";
+import ad4 from "../images/ad4.jpg";
 
 const responsive = {
   superLargeDesktop: {
@@ -39,7 +45,25 @@ export default class Home extends Component {
     return (
       <>
         <div className="container">
-          <ListWrapper class="product">
+          <AdContainer>
+            <AdContainerRow>
+              <div className="col">
+                <img src={ad1} style={{ width: "100%", height: "100%" }} />
+              </div>
+              <div className="col">
+                <img src={ad1} style={{ width: "100%", height: "100%" }} />
+              </div>
+            </AdContainerRow>
+            <AdContainerRow>
+              <div className="col">
+                <img src={ad1} style={{ width: "100%", height: "100%" }} />
+              </div>
+              <div className="col">
+                <img src={ad1} style={{ width: "100%", height: "100%" }} />
+              </div>
+            </AdContainerRow>
+          </AdContainer>
+          <ListWrapper>
             <ListTitle>Piano</ListTitle>
             <div className="row">
               <Carousel responsive={responsive}>
@@ -65,7 +89,7 @@ export default class Home extends Component {
             </div>
           </ListWrapper>
           <ListWrapper class="product">
-            <ListTitle>Piano</ListTitle>
+            <ListTitle>Guitar</ListTitle>
             <div className="row">
               <Carousel responsive={responsive}>
                 <div>
