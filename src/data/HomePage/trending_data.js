@@ -1,4 +1,4 @@
-export const homePianoList = [
+export const homeTrendingList = [
   {
     id: 1,
     title: "Piano Kawai GX-2",
@@ -7,9 +7,9 @@ export const homePianoList = [
   },
   {
     id: 2,
-    title: "Piano Yamaha U1",
-    img: "https://musictalent.vn/wp-content/uploads/2021/07/up_product_u1_po-ebo_515766315cc831ac24d247b9585d1296.jpg",
-    price: "131.000.000d",
+    title: "Cordoba 55FCE",
+    img: "https://vietthuongshop.vn/image/cache/catalog/cordoba-55FCE-Honey-Amber-3-400x400.jpg",
+    price: "45.660.000d",
   },
   {
     id: 3,
@@ -19,9 +19,9 @@ export const homePianoList = [
   },
   {
     id: 4,
-    title: "Piano Yamaha 143R",
-    img: "https://product.hstatic.net/1000342432/product/yamaha_ydp_143r_2_a48203e5fe4b4163b308d79fe55e213a_master.jpg",
-    price: "118.000.000d",
+    title: "Taylor Swift Baby",
+    img: "https://vietthuongshop.vn/image/cache/catalog/taylor-tstb-270x270.jpg",
+    price: "9.600.000d",
   },
   {
     id: 5,
