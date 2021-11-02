@@ -56,7 +56,45 @@ export const ProductWrapper = styled.div`
         height: 400px;
         width: 300px;
     }
-    .card li {
-        border: none;
+    .card-footer {
+      background-color: rgba(247, 247, 247);
     }
-`
+    .card-footer p {
+      color: blue;
+    }
+  }
+  .img-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .cart-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #0589f3;
+    border: 1px black solid;
+    color: white;
+    transform: translate(100%, 100%);
+  }
+  .img-container:hover .cart-btn {
+    transform: translate(0, 0);
+  }
+  .card-img-top {
+    width: 100%;
+    height: 200px;
+  }
+  .img-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .link {
+    text-decoration: none;
+  }
+  .card {
+    height: 400px;
+    width: 300px;
+  }
+  .card li {
+    border: none;
+  }
+`;
