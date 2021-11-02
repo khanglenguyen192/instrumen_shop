@@ -1,10 +1,10 @@
 import React from 'react';
-import './Info.css';
-
-function Info() {
+import {Container, Info, Map} from './IntroElement';
+import Person from '../OneProduct/Person';
+function Intro() {
     return (
-        <React.Fragment>
-        <div className='info' >
+        <Container>
+        <Info>
         <h1>Về BK MUSI</h1>
         <p>
         BK Music là nhà phân phối nhạc cụ và phụ kiện âm nhạc hàng đầu ở Việt Nam hiện nay. 
@@ -30,22 +30,13 @@ function Info() {
         <Person />
 
 
-        </div>
+        </Info>
 
-        <iframe className='map' 
+        <Map 
         src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4946681007837!2d106.65843061460582!3d10.773374292323615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ec3c161a3fb%3A0xef77cd47a1cc691e!2sHCMUT!5e0!3m2!1sen!2s!4v1635658320762!5m2!1sen!2s'
-        loading='lazy' allowFullScreen=''></iframe>
-        </React.Fragment>
+        loading='lazy' allowFullScreen=''></Map>
+        </Container>
     );
 }
 
-function Person (){
-    return (
-        <div className='person-info'>
-        <img className="person-avartar" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGkvHnw-e8xkeN27LPJn5JJvw4XbIgOM8OEw&usqp=CAU'/>
-        <p> Name</p>
-        </div>
-    );
-}
-
-export default Info;
+export default Intro;

@@ -1,10 +1,10 @@
 import React from "react";
-import Info from '../Introduction/Info';
+import Intro from '../components/Introduction/Intro';
 
 const Introduction = () => {
   return (
     <div>
-      <Info />
+      <Intro />
     </div>
   );
 };

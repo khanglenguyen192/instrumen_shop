@@ -1,7 +1,8 @@
 import React from "react";
-import Description2 from "../OneProduct/Description";
-import Display from '../OneProduct/Display'
-import ReviewContainer from "../OneProduct/Review";
+import Description from "../components/OneProduct/Description";
+import Display from '../components/OneProduct/Display'
+import ReviewContainer from "../components/OneProduct/Review";
+import SimilarProducts from "../components/OneProduct/SimilarProducts";
 
 const ProductInfo = () => {
   return (
@@ -11,9 +12,11 @@ const ProductInfo = () => {
       name='Guitar Fender G3321'
       price='100000VND'
       />
-      <Description2/>
+      <Description/>
+     
       <ReviewContainer />
-      <p style={{height: '300px', padding: '50px'}}>Similar product</p>
+      <SimilarProducts/>
+
 
     </div>
   );

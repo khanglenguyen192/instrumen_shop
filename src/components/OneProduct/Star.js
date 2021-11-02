@@ -9,13 +9,7 @@ const OneStar = ({ marked }) => {
     );
   };
 
-const HalfStar = ({marked}) =>{
-    return(
-        <span>
-        </span>
-        
-    );
-}
+
 
   function Star({value}){
       return(
@@ -24,7 +18,6 @@ const HalfStar = ({marked}) =>{
         <OneStar marked={value}
          />
         ))}
-        <HalfStar />
         </div>
 );
 }

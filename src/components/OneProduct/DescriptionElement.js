@@ -3,25 +3,25 @@ import styled from "styled-components";
 export const DesContainer = styled.div`
     display: grid;
     grid-template-columns: auto;
-    padding: 00px 0px 0px 0px;
-    width: 1000px;
-    margin: 5vh auto auto 30vh;
+    width: 900px;
+    height: 500px;
+    margin: 90px auto auto 230px;
     padding-bottom: 20px;
     background-color: #E5E5E5 ;
 
-    .title {
-        background-color: #C4C4C4;
-        text-align: center;
-        font-size:25px;
-        padding: 10px;
-        font-weight: bold;
-    }
 `
+export const Title = styled.div`
+    background-color: #C4C4C4;
+    text-align: center;
+    font-size:20px;
+    padding: 5px;
+    font-weight: bold;
+    height: 50px;
+`
+
 export const Des = styled.div`
-    .des{
         box-sizing: border-box;
-        padding: 15px 50px;
+        margin: 5px 40px;
         background-color:#E5E5E5;
         font-size: 18px;
-    }
 `

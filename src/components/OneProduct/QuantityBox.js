@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import './QuantityBox.css';
-
+import {Box, Button} from './QuantityBoxElement';
 
   var value = 1;
 
@@ -24,11 +23,11 @@ import './QuantityBox.css';
       }
 
         return (
-            <div className='quantity-box'>
-              <span className='dec' onClick={onDecrement}>–</span>
-              <span className='quanty'>{qty}</span>
-              <span className='inc' onClick={onIncrement}>+</span>
-            </div>
+            <Box>
+              <Button className='dec' onClick={onDecrement}>–</Button>
+              <Button className='quanty'>{qty}</Button>
+              <Button className='inc' onClick={onIncrement}>+</Button>
+            </Box>
           );
       }
 
