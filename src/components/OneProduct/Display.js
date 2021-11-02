@@ -13,7 +13,7 @@ function ProInfo(props) {
     <ProImg src = {props.src} alt='product img'/>
     <InfoSection>
     <h1 className='pro_name'>{props.name}</h1>
-    <p className='pro_price'>{props.price}</p>
+    <p className='pro_price'>{props.price} VND</p>
    
     <p className='color-section'>Màu sắc</p>
     <ColorBtn style={{backgroundColor: '#333333'}} />

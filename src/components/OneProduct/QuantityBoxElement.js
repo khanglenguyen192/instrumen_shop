@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Box = styled.div`
-    border: 1px solid #94c4ec;
+    border: 1px solid black;
     border-radius: 3px;
     margin: 10px 0px;
     box-sizing: border-box;
@@ -14,7 +14,7 @@ export const Box = styled.div`
 export const Button = styled.span`
 
     display: inline-block;
-    color: #62a8e2;
+    color: black;
     text-align: center;
     width: 40px;
     margin: auto; 

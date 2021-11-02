@@ -3,20 +3,23 @@ import Description from "../components/OneProduct/Description";
 import Display from '../components/OneProduct/Display'
 import ReviewContainer from "../components/OneProduct/Review";
 import SimilarProducts from "../components/OneProduct/SimilarProducts";
+import { homeGuitarList } from "../data/HomePage/guitar_data";
 
 const ProductInfo = () => {
   return (
     <div>
       <Display
-      src='https://goodpiano.vn/upload/sanpham/adonisagw4015acousticguitarnaturalhighqualitypaddedguitargitaloha160415gitaloha1231_1499860431.jpg'
-      name='Guitar Fender G3321'
-      price='100000VND'
+      src={homeGuitarList[0].img}
+      name={homeGuitarList[0].title}
+      price={homeGuitarList[0].price}
       />
       <Description/>
      
       <ReviewContainer />
-      <SimilarProducts/>
 
+      <SimilarProducts />
+
+     
 
     </div>
   );

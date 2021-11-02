@@ -9,8 +9,8 @@ export const Container = styled.div`
 `
 
 export const ProImg = styled.img`
-    width:45%;
-    height:600px;
+    width:50%;
+    height:650px;
     margin:10px;
 `
 export const NormalBtn = styled.button`

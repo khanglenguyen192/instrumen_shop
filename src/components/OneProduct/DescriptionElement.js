@@ -5,7 +5,8 @@ export const DesContainer = styled.div`
     grid-template-columns: auto;
     width: 900px;
     height: 500px;
-    margin: 90px auto auto 230px;
+    margin: auto;
+    margin-top: 100px;
     padding-bottom: 20px;
     background-color: #E5E5E5 ;
 

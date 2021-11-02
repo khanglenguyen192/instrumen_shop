@@ -98,3 +98,10 @@ export const ProductWrapper = styled.div`
     border: none;
   }
 `;
+
+export const ExProductWrapper = styled(ProductWrapper)`
+  display: inline-block;
+  margin-right: 40px;
+  width: 300px;
+  height: 400px; 
+`

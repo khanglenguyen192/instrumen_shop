@@ -4,7 +4,8 @@ export const ReviewContainer = styled.div`
     background-color: #EEEEEE;
     height: 700px;
     width: 1000px;
-    margin: 90px auto auto 230px;
+    margin: auto;
+    margin-top: 70px;
 
     .rating{
         background-color: #EEEEEE;
