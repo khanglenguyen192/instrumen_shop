@@ -39,7 +39,7 @@ const ProductDropdown = () => {
       </ProductMenuTitleWrapper>
       <DropdownList id="product-menu-dropdown">
         <DropdownMenuItem>
-          <ItemLink to="/">
+          <ItemLink to="/product_list">
             <DropdownMenuItemLogo src={imgPiano}></DropdownMenuItemLogo>
             Đàn Piano
           </ItemLink>
