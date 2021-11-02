@@ -9,40 +9,36 @@ export const AdContainerRow = styled.div`
   height: 280px;
 `;
 
+export const AdImage = styled.img`
+  height: 280px;
+`;
+
 export const ListWrapper = styled.div`
   margin: 40px 0 40px 0;
-  padding: 0 20px 10px 10px;
+  padding: 20px 20px 10px 10px;
   background-color: #ededed;
   border-radius: 10px;
+`;
+
+export const ListTitleRow = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 `;
 
 export const ListTitle = styled.p`
   font-weight: bold;
   font-size: 36px;
-  margin: auto 0 -20px 0;
   padding: 0;
+  flex-basis: 80%;
+  margin: auto 0 auto 0;
 `;
 
-export const ListLink = styled(Link)`
-  font-size: 18px;
+export const ListBtn = styled(Link)`
+  font-size: 20px;
   color: #000;
   font-weight: bold;
-  display: flex;
-  align-items: center;
   text-decoration: none;
-  padding: 0 1.5rem;
   height: 100%;
-  cursor: pointer;
-
-  &:hover {
-    transform: translateY(-3px);
-    color: #000;
-  }
-
-  &.active {
-    font-size: 20px;
-    color: #fff;
-    background: #000;
-    transform: translateY(0px);
-  }
+  margin: auto 0 auto 0;
 `;

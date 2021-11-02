@@ -10,7 +10,19 @@ import {
   ListTitle,
   AdContainer,
   AdContainerRow,
+  ListBtn,
+  ListTitleRow,
+  AdImage,
 } from "../components/homeComponents/homePageElements";
+
+const ad1 =
+  "https://carpentersmusic.com/wp-content/uploads/2021/06/Carpenters-Promo-June-2021.jpg";
+const ad2 =
+  "https://carpentersmusic.com/wp-content/uploads/2021/02/Carpenters-Peavey-Promo2-a.png";
+const ad3 =
+  "https://carpentersmusic.com/wp-content/uploads/2020/07/Showroom-with-Logo2.jpg";
+const ad4 =
+  "https://carpentersmusic.com/wp-content/uploads/2019/07/services.png?resize=1024%2C550&ssl=1";
 
 const responsive = {
   superLargeDesktop: {
@@ -44,67 +56,73 @@ export default class Home extends Component {
           <AdContainer>
             <AdContainerRow>
               <div className="col">
-                <img style={{ width: "100%", height: "100%" }} />
+                <AdImage src={ad1} style={{ width: "100%", height: "100%" }} />
               </div>
               <div className="col">
-                <img style={{ width: "100%", height: "100%" }} />
+                <AdImage src={ad2} style={{ width: "100%", height: "100%" }} />
               </div>
             </AdContainerRow>
             <AdContainerRow>
               <div className="col">
-                <img style={{ width: "100%", height: "100%" }} />
+                <img src={ad3} style={{ width: "100%", height: "100%" }} />
               </div>
               <div className="col">
-                <img style={{ width: "100%", height: "100%" }} />
+                <img src={ad4} style={{ width: "100%", height: "100%" }} />
               </div>
             </AdContainerRow>
           </AdContainer>
           <ListWrapper>
-            <ListTitle>Piano</ListTitle>
+            <ListTitleRow>
+              <ListTitle>Sản phẩm nổi bật</ListTitle>
+              <ListBtn to="/">Xem thêm</ListBtn>
+            </ListTitleRow>
             <div className="row">
               <Carousel responsive={responsive}>
                 <div>
-                  <Product product={this.state.guitar_products.at(0)} />
+                  <Product product={this.state.piano_products.at(0)} />
                 </div>
                 <div>
-                  <Product product={this.state.guitar_products.at(0)} />
+                  <Product product={this.state.piano_products.at(0)} />
                 </div>
                 <div>
-                  <Product product={this.state.guitar_products.at(0)} />
+                  <Product product={this.state.piano_products.at(0)} />
                 </div>
                 <div>
-                  <Product product={this.state.guitar_products.at(0)} />
+                  <Product product={this.state.piano_products.at(0)} />
                 </div>
                 <div>
-                  <Product product={this.state.guitar_products.at(0)} />
+                  <Product product={this.state.piano_products.at(0)} />
                 </div>
                 <div>
-                  <Product product={this.state.guitar_products.at(0)} />
+                  <Product product={this.state.piano_products.at(0)} />
                 </div>
               </Carousel>
             </div>
           </ListWrapper>
           <ListWrapper class="product">
-            <ListTitle>Guitar</ListTitle>
+            <ListTitleRow>
+              <ListTitle>Sản phẩm nổi bật</ListTitle>
+              <ListBtn to="/">Xem thêm</ListBtn>
+            </ListTitleRow>
             <div className="row">
               <Carousel responsive={responsive}>
                 <div>
-                  <Product product={this.state.guitar_products.at(0)} />
+                  <Product product={this.state.piano_products.at(0)} />
                 </div>
                 <div>
-                  <Product product={this.state.guitar_products.at(0)} />
+                  <Product product={this.state.piano_products.at(1)} />
                 </div>
                 <div>
-                  <Product product={this.state.guitar_products.at(0)} />
+                  <Product product={this.state.piano_products.at(2)} />
                 </div>
                 <div>
-                  <Product product={this.state.guitar_products.at(0)} />
+                  <Product product={this.state.piano_products.at(3)} />
                 </div>
                 <div>
-                  <Product product={this.state.guitar_products.at(0)} />
+                  <Product product={this.state.piano_products.at(0)} />
                 </div>
                 <div>
-                  <Product product={this.state.guitar_products.at(0)} />
+                  <Product product={this.state.piano_products.at(0)} />
                 </div>
               </Carousel>
             </div>
