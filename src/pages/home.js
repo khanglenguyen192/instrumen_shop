@@ -101,7 +101,7 @@ export default class Home extends Component {
           </ListWrapper>
           <ListWrapper class="product">
             <ListTitleRow>
-              <ListTitle>Sản phẩm nổi bật</ListTitle>
+              <ListTitle>Piano</ListTitle>
               <ListBtn to="/">Xem thêm</ListBtn>
             </ListTitleRow>
             <div className="row">
