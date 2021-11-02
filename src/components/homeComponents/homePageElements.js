@@ -6,7 +6,7 @@ export const AdContainer = styled.div`
 `;
 export const AdContainerRow = styled.div`
   display: flex;
-  height: 300px;
+  height: 280px;
 `;
 
 export const ListWrapper = styled.div`
