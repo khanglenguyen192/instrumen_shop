@@ -11,7 +11,7 @@ export default class Contact extends React.Component {
         <div class="container contact">
           <Title title="Liên hệ" />
           <div class="row">
-            <div class="col-8 col-md-5 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4">
               <h4 className="py-3">Thông tin và giới thiệu về cửa hàng</h4>
               <p className="py-1">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque
@@ -35,7 +35,7 @@ export default class Contact extends React.Component {
                 quae aspernatur officia commodi.
               </p>
             </div>
-            <div class="col-8 col-md-5 col-lg-4 ctcol2">
+            <div class="col-12 col-md-6 col-lg-4 ctcol2">
               <h5 className="py-3">
                 Nếu quý khách có thắc mắc gì xin vui lòng liên hệ với cửa hàng
               </h5>
@@ -63,7 +63,7 @@ export default class Contact extends React.Component {
                 <button type="submit" className="btn btn-warning my-2">Gửi</button>
               </Form>
             </div>
-            <div class="col-8 col-md-5 col-lg-4 ctcol3">
+            <div class="col-12 col-md-6 col-lg-4 ctcol3">
               <div class="row">
                 <h3>Bài viết nổi bật</h3>
                 <div class="col-8 col-md-5 col-lg-9 posts">

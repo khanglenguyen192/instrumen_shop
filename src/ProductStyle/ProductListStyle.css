@@ -5,8 +5,9 @@
 }
 
 .pagebtn {
-  background-color: white;
-  border: 1px black solid;
+  background-color: #ffdd00;
+  border: 1px white solid;
+  color: white;
 }
 
 .text-title {
