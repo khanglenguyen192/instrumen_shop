@@ -54,6 +54,7 @@ export const ProductWrapper = styled.div`
     }
     .card {
         height: 400px;
+        width: 300px;
     }
     .card li {
         border: none;
