@@ -15,11 +15,6 @@ const ad4 =
   "https://carpentersmusic.com/wp-content/uploads/2019/07/services.png?resize=1024%2C550&ssl=1";
 
 export default class Home extends Component {
-  state = {
-    piano_products: homePianoList,
-    guitar_products: homeGuitarList,
-  };
-
   render() {
     return (
       <>
