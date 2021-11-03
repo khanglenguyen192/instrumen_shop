@@ -10,9 +10,9 @@ import {
   NavBtnLink,
   NavBarContainer,
 } from "./NavbarElements";
-
+import { Consumer } from "../products/content";
 import ProductDropdown from "../dropdown/product-dropdown";
-
+import { featureProd } from "../../data/ProductData/feature_products";
 const Navbar = () => {
   return (
     <NavBarContainer>
@@ -27,9 +27,11 @@ const Navbar = () => {
           <NavLink to="/introduction" activeStyle>
             Giới thiệu
           </NavLink>
-          <NavLink to="/product_list" activeStyle>
+          <Consumer>
+          {value => (<NavLink to="/product" onClick={() => {value.setProducts(featureProd);value.setTitle("Sản phẩm")}} activeStyle>
             Sản phẩm
-          </NavLink>
+          </NavLink>)}
+          </Consumer>
           <NavLink to="/services" activeStyle>
             Dịch vụ
           </NavLink>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { productList } from "../../data/ProductData/pianoProdData";
 
 const Context = React.createContext();
 

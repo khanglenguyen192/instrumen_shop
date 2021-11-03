@@ -5,12 +5,19 @@
 }
 
 .pagebtn {
-  background-color: #ffdd00;
-  border: 1px white solid;
-  color: white;
+  background-color: white;
+  border: 1px black solid;
+  color: black;
 }
 
 .text-title {
   font-family: "Oswald", sans-serif !important;
   color: #000;
+}
+
+.search-text {
+  color: white;
+  position: absolute;
+  bottom: -10px;
+  font-size: 20px;
 }

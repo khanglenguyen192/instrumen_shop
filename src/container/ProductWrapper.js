@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const ProductWrapper = styled.div`
     .card-footer {
         border-top: transparent;
-        background-color: white;
+        background-color: white !important;
     }
     .card-footer p {
-        font-size: 20px;
+        font-size: 18px;
     }
     .card-footer h5 {
         color: red;
@@ -18,10 +18,10 @@ export const ProductWrapper = styled.div`
             box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
         }
         .card-footer {
-            background-color: rgba(247, 247, 247);
+            background-color: rgba(247, 247, 247) !important;
         }
         .card-footer p {
-            color: #ffdd00;
+            color: #f4c519;
         }
     }
     .img-container {
