@@ -9,6 +9,7 @@ import Posts from "./pages/posts";
 import Promotion from "./pages/promotion";
 import Contact from "./pages/contact";
 import Installment from "./pages/installment";
+import Payment from "./pages/payment";
 import Cart from "./pages/cart";
 import { FooterContainer } from "./container/footer";
 import SearchBar from "./components/SearchBar";
@@ -34,7 +35,8 @@ function App() {
             <Route path="/installment" exact component={Installment} />
             <Route path="/product_list" exact component={ProductList} />
             <Route path="/cart" exact component={Cart} />
-            <Route path="/products/one-product" exact component={ProductInfo}/>
+            <Route path="/products/one-product" exact component={ProductInfo} />
+            <Route path="/payment" exact component={Payment} />
           </Switch>
         </Router>
         <FooterContainer />
