@@ -6,13 +6,20 @@ export const Container = styled.div`
     height:auto;
     margin-top: 80px;
     display:flex;
+    justify-content: center;
 `
 
 export const ProImg = styled.img`
-    width:50%;
     height:650px;
-    margin:10px;
+    width: 700px;
+    margin-left: -250px;
+
 `
+
+export const BtnContainer = styled.div`
+    margin-top: 30px;
+`
+
 export const NormalBtn = styled.button`
     width: 150px;
     height: 60px;
@@ -46,7 +53,6 @@ export const InfoSection = styled.div`
     display: inline-block;
     padding-top: 10px;
 
-    width:50%;
     height:600px;
     margin:10px;
 

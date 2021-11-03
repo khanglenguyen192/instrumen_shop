@@ -8,6 +8,8 @@ export const Box = styled.div`
     width: 140px;
     padding: 7px;
     cursor: default;
+    display: flex-box;
+    justify-content: center;
  
 `
 
@@ -16,7 +18,7 @@ export const Button = styled.span`
     display: inline-block;
     color: black;
     text-align: center;
-    width: 40px;
+    width: 33%;
     margin: auto; 
     font-size: 1.2rem;
 }

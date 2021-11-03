@@ -1,21 +1,23 @@
-import {DesContainer, Des, Title} from "./DescriptionElement";
+import {Container, DesContainer, Des, Title} from "./DescriptionElement";
 
   function Description(props) {
+    const {origin, brand, style, type, material, size,
+            weight, accessories, insurance} = props.description;
     return (
+      <Container>
+      <Title>Thông số và mô tả sản phẩm</Title>
       <DesContainer>
-        <Title>Thông số và mô tả sản phẩm</Title>
-        <Des> Xuât sứ: {props.origin} </Des>
-        <Des>  Thương hiệu: {props.brand} </Des>
-        <Des>  Kiểu dáng: {props.style}</Des>
-        <Des>  Loại: {props.type} </Des>
-        <Des>  Chất liệu:{props.material} </Des>
-        <Des>  Kích thước: {props.size}</Des>
-        <Des>  Cân nặng: {props.weight}</Des>
-        <Des>  Phụ kiện: {props.accessories}</Des>
-        <Des>  Bảo hành: {props.insurance}</Des>
-       
+        <Des> Xuât xứ: {origin} </Des> 
+        <Des> Phụ kiện:  {accessories}</Des>
+        <Des> Thương hiệu: {brand} </Des>
+        <Des> Chất liệu: {material} </Des>
+        <Des> Loại: {type} </Des>
+        <Des> Cân nặng: {weight}</Des>
+        <Des> Kiểu dáng: {style}</Des>   
+        <Des> Bảo hành: {insurance}</Des> 
+        <Des> Kích thước: {size}</Des> 
        </DesContainer>
-       
+       </Container>
     );
   }
 

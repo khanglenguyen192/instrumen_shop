@@ -8,19 +8,11 @@ import { homeGuitarList } from "../data/HomePage/guitar_data";
 const ProductInfo = () => {
   return (
     <div>
-      <Display
-      src={homeGuitarList[0].img}
-      name={homeGuitarList[0].title}
-      price={homeGuitarList[0].price}
+      <Display display= {homeGuitarList[1]}
       />
-      <Description/>
-     
+      <Description description= {homeGuitarList[1]} />   
       <ReviewContainer />
-
       <SimilarProducts />
-
-     
-
     </div>
   );
 };

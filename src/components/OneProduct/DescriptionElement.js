@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const DesContainer = styled.div`
+export const Container = styled.div`
     display: grid;
     grid-template-columns: auto;
     width: 900px;
-    height: 500px;
+    height: 380px;
     margin: auto;
     margin-top: 100px;
     padding-bottom: 20px;
@@ -20,9 +20,18 @@ export const Title = styled.div`
     height: 50px;
 `
 
+export const DesContainer = styled.div`
+    display: grid;
+    grid-template-columns: auto auto;
+`
+
 export const Des = styled.div`
-        box-sizing: border-box;
-        margin: 5px 40px;
-        background-color:#E5E5E5;
-        font-size: 18px;
+    box-sizing: border-box;
+    margin: 15px 100px;
+    background-color:#E5E5E5;
+    font-size: 18px;
+`
+export const DesName = styled.span`
+    fontWeight: bold;
+    font-size: 20px;
 `

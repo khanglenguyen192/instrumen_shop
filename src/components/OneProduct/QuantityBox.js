@@ -9,7 +9,7 @@ import {Box, Button} from './QuantityBoxElement';
 
        const onDecrement = () => {
          console.log(value);
-        if (qty <= 0) return;
+        if (qty <= 1) return;
         value = value - 1;
         setQuantiy(value);
         console.log("Hi decrease", value);

@@ -1,19 +1,18 @@
 import React from 'react';
 import QuantityBox from './QuantityBox';
 
-import {Container, ProImg, InfoSection, NormalBtn, ColorBtn} from './DisplayElement';
-
+import {Container, ProImg, InfoSection, NormalBtn, ColorBtn, BtnContainer} from './DisplayElement';
 
 function ProInfo(props) {
-  //url to product
-  
+  //url to product  
+  const {img, title, price} = props.display;
   return (
     <React.Fragment> 
     <Container>
-    <ProImg src = {props.src} alt='product img'/>
+    <ProImg src = {img} alt='product img'/>
     <InfoSection>
-    <h1 className='pro_name'>{props.name}</h1>
-    <p className='pro_price'>{props.price} VND</p>
+    <h1 className='pro_name'>{title}</h1>
+    <p className='pro_price'>{price} VND</p>
    
     <p className='color-section'>Màu sắc</p>
     <ColorBtn style={{backgroundColor: '#333333'}} />
@@ -22,8 +21,12 @@ function ProInfo(props) {
 
     <p className='quantity-section'>Số lượng</p>
     <QuantityBox />
+
+    <BtnContainer>
     <NormalBtn>Mua ngay</NormalBtn>
     <NormalBtn>Thêm vào giỏ hàng</NormalBtn>
+    </BtnContainer>
+
     </InfoSection>
     </Container>
     </React.Fragment>
@@ -32,9 +35,5 @@ function ProInfo(props) {
 }
 
 const Button = (props) => (<button className={props.className}>{props.name}</button>);
-
-
-
-
 
 export default ProInfo;
