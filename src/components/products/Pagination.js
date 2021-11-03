@@ -1,12 +1,12 @@
 import React from "react";
-import { productList } from "./data";
+import { productList } from "../../data/ProductData/pianoProdData";
 
-const { useState, createContext} = React;
+const { useState, createContext } = React;
 
 const PaginationContext = createContext();
 
 const PaginationProvider = ({ children }) => {
-    const [pagination, setPagination] = useState({
+  const [pagination, setPagination] = useState({
     limit: 16,
     total: productList.length,
     start: 0,
@@ -15,13 +15,13 @@ const PaginationProvider = ({ children }) => {
     showPrevButton: false,
     showFirstPageButton: false,
     showNextButton: false,
-    showLastPageButton: false
-    });
-    return (
+    showLastPageButton: false,
+  });
+  return (
     <PaginationContext.Provider value={[pagination, setPagination]}>
-        {children}   
+      {children}
     </PaginationContext.Provider>
-    )
-}
+  );
+};
 
 export { PaginationProvider, PaginationContext };

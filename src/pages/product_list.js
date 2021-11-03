@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Title from "../components/title/title";
-import { productList } from "../components/products/data";
+import { productList } from "../data/ProductData/pianoProdData";
 import { Consumer } from "../components/products/content";
 import Product from "../components/products/product";
 import FilterBar from "../components/title/FilterBar";
@@ -9,10 +9,11 @@ import '../ProductStyle/ProductListStyle.css'
 
 const { useContext, useEffect } = React;
 
-const Page = () => { 
+const Page = ({ data }) => {
   const [pagination, setPagination] = useContext(PaginationContext)
-  const numberOfPages = Math.ceil(productList.length / pagination.limit);
-  
+
+  const numberOfPages = Math.ceil(data.length / pagination.limit);
+
   const navigateToPage = (pageNumber) => {
     setPagination({
       ...pagination,
@@ -58,13 +59,17 @@ export default class ProductList extends Component {
     return (
       <React.Fragment>
         <div className="container">
-          <Title title="piano" />
+          <Consumer>
+            {value => (<Title title={value.category} />)}
+          </Consumer>
             <div className="row">
               <FilterBar />
             </div>
             <div className="row">
-              <PaginationProvider>
-                <Page />
+            <PaginationProvider>
+              <Consumer>
+                {value => (<Page data={value.products}/>)}
+              </Consumer>
               </PaginationProvider>
           </div>
               </div>

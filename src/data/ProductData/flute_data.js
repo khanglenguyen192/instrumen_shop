@@ -1,0 +1,80 @@
+export const fluteData = [
+    {
+        id: 1,
+        title: "Sáo recorder Yamaha YRS-23g",
+        img: "https://saigonmusical.com.vn/wp-content/uploads/2018/12/sao-1.jpg",
+        price: "110.000",
+    },
+    {
+        id: 2,
+        title: "Sáo recorder Yamaha YRS-23g",
+        img: "https://saigonmusical.com.vn/wp-content/uploads/2018/12/sao-1.jpg",
+        price: "110.000",
+    },
+    {
+        id: 3,
+        title: "Sáo recorder Yamaha YRS-23g",
+        img: "https://saigonmusical.com.vn/wp-content/uploads/2018/12/sao-1.jpg",
+        price: "110.000",
+    },
+    {
+        id: 4,
+        title: "Sáo recorder Yamaha YRS-23g",
+        img: "https://saigonmusical.com.vn/wp-content/uploads/2018/12/sao-1.jpg",
+        price: "110.000",
+    },
+    {
+        id: 5,
+        title: "Sáo recorder Yamaha YRS-23g",
+        img: "https://saigonmusical.com.vn/wp-content/uploads/2018/12/sao-1.jpg",
+        price: "110.000",
+    },
+    {
+        id: 6,
+        title: "Sáo recorder Yamaha YRS-23g",
+        img: "https://saigonmusical.com.vn/wp-content/uploads/2018/12/sao-1.jpg",
+        price: "110.000",
+    },
+    {
+        id: 7,
+        title: "Sáo recorder Yamaha YRS-23g",
+        img: "https://saigonmusical.com.vn/wp-content/uploads/2018/12/sao-1.jpg",
+        price: "110.000",
+    },
+    {
+        id: 8,
+        title: "Sáo recorder Yamaha YRS-23g",
+        img: "https://saigonmusical.com.vn/wp-content/uploads/2018/12/sao-1.jpg",
+        price: "110.000",
+    },
+    {
+        id: 9,
+        title: "Sáo recorder Yamaha YRS-23g",
+        img: "https://saigonmusical.com.vn/wp-content/uploads/2018/12/sao-1.jpg",
+        price: "110.000",
+    },
+    {
+        id: 10,
+        title: "Sáo recorder Yamaha YRS-23g",
+        img: "https://saigonmusical.com.vn/wp-content/uploads/2018/12/sao-1.jpg",
+        price: "110.000",
+    },
+    {
+        id: 11,
+        title: "Sáo recorder Yamaha YRS-23g",
+        img: "https://saigonmusical.com.vn/wp-content/uploads/2018/12/sao-1.jpg",
+        price: "110.000",
+    },
+    {
+        id: 12,
+        title: "Sáo recorder Yamaha YRS-23g",
+        img: "https://saigonmusical.com.vn/wp-content/uploads/2018/12/sao-1.jpg",
+        price: "110.000",
+    },
+    {
+        id: 13,
+        title: "Sáo recorder Yamaha YRS-23g",
+        img: "https://saigonmusical.com.vn/wp-content/uploads/2018/12/sao-1.jpg",
+        price: "110.000",
+    },
+]

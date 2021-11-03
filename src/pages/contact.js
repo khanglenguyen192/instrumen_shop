@@ -14,25 +14,8 @@ export default class Contact extends React.Component {
             <div class="col-12 col-md-6 col-lg-4">
               <h4 className="py-3">Thông tin và giới thiệu về cửa hàng</h4>
               <p className="py-1">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                fugit, odit id corrupti rerum officia quaerat aliquam ea enim!
-                Commodi, molestiae fugiat non maiores quas voluptates minus
-                recusandae dolores debitis. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Doloremque cum, odio iste
-                consectetur adipisci, dignissimos obcaecati, beatae voluptatum
-                deleniti possimus praesentium vel voluptate blanditiis quibusdam
-                mollitia corporis maiores est id? Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Error eveniet voluptatem eum,
-                atque, quisquam enim laudantium nostrum quo aspernatur assumenda
-                aliquid reiciendis impedit odit veniam iste earum, quos itaque!
-                Officiis! Lorem ipsum dolor sit amet consectetur, adipisicing
-                elit. Nostrum similique, beatae et iure labore laborum
-                blanditiis deleniti, tempore molestias at dolorem sint est
-                ratione expedita enim tempora hic corrupti cum! Lorem ipsum
-                dolor sit amet consectetur adipisicing elit. Laboriosam impedit
-                aut ea unde ratione. Unde temporibus eligendi ullam saepe
-                praesentium voluptatem autem alias perferendis esse, mollitia
-                quae aspernatur officia commodi.
+                BK Music là nhà phân phối nhạc cụ và phụ kiện âm nhạc hàng đầu ở Việt Nam hiện nay. Danh mục sản phẩm của BK Music vô cùng đa dạng từ Guitar, Piano, Kèn, Sáo, Trống, Violin ... tới các Thiết Bị Âm Thanh phục vụ biểu diễn âm nhạc cùng hệ thống Showroom nhạc cụ rộng khắp tại Hà Nội, Hồ Chí Minh và Online Store tiện ích bậc nhất. BK Music vô cùng tự tin cung cấp tới khách hàng các sản phẩm vvà dịch vụ hoàn mỹ làm hài lòng không chỉ các khách hàng nghiệp dư mà cả giới nhạc công, nghệ sỹ chuyên nghiệp.
+                Năm 2016 đánh dấu sự nghiệp gần 15 năm đam mê và gắn bó trong cộng đồng âm nhạc của BK Music. Ở thời khắc quan trọng này, BK Music và các cộng sự càng cảm thấy phải quyết tâm, cống hiến hết mình hơn nữa cho sự phát triển của cộng đồng âm nhạc nước nhà. Bởi vì chúng tôi tin rằng âm nhạc gắn liền với đời sống văn hóa xã hội, khi một thứ tốt lên thì mọi thứ khác cũng sẽ trở nên tốt đẹp hơn.
               </p>
             </div>
             <div class="col-12 col-md-6 col-lg-4 ctcol2">
