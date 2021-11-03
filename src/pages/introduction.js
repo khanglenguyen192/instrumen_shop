@@ -1,16 +1,10 @@
 import React from "react";
+import Intro from "../components/Introduction/Intro";
 
 const Introduction = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "90vh",
-      }}
-    >
-      <h1>Introduction</h1>
+    <div>
+      <Intro />
     </div>
   );
 };

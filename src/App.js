@@ -14,6 +14,7 @@ import { FooterContainer } from "./container/footer";
 import SearchBar from "./components/SearchBar";
 import ProductList from "./pages/product_list";
 import { Provider } from "./components/products/content";
+import ProductInfo from "./pages/one_product";
 function App() {
   return (
     <div>
@@ -33,6 +34,7 @@ function App() {
             <Route path="/installment" exact component={Installment} />
             <Route path="/product_list" exact component={ProductList} />
             <Route path="/cart" exact component={Cart} />
+            <Route path="/products/one-product" exact component={ProductInfo}/>
           </Switch>
         </Router>
         <FooterContainer />
