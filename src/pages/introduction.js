@@ -1,5 +1,5 @@
 import React from "react";
-import Intro from '../components/Introduction/Intro';
+import Intro from "../components/Introduction/Intro";
 
 const Introduction = () => {
   return (
