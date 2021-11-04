@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 
-export const PerInfo = styled.div`
+export const Container = styled.div`
     display: inline-block;
-    margin: 20px;
+`
 
+export const PerInfo = styled.div`
+    display: grid;
+    margin: 20px;
+    justify-items: center;
+    align-items: center;
+ 
     .avartar{
         height: 50px;
         width: 50px;

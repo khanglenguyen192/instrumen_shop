@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Info, Map} from './IntroElement';
+import {PerContainer, Container, Info, Map} from './IntroElement';
 import Person from '../OneProduct/Person';
 function Intro() {
     return (
@@ -23,11 +23,15 @@ function Intro() {
 
         <h1>Đội ngũ phát triển</h1>
 
-        <Person />
-        <Person />
-        <Person />
-        <Person />
-        <Person />
+        <PerContainer>
+
+        <Person name="Nguyên Khang" />
+        <Person name="Ngọc Hiển" />
+        <Person name="Minh Trí" />
+        <Person name="Văn Hoàng" />
+        <Person name="Thanh Trúc" />
+
+        </PerContainer>
 
 
         </Info>

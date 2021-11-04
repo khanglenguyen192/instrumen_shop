@@ -6,6 +6,13 @@ export const Container = styled.div`
   margin: auto;
   height: 100%;
 `;
+
+export const PerContainer = styled.div`
+  display: flex;
+  justify-items: center;
+  align-items: center;
+`
+
 export const Info = styled.div`
   display: inline-block;
   width: 40%;

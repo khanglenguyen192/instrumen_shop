@@ -17,14 +17,15 @@ export const ProImg = styled.img`
 `
 
 export const BtnContainer = styled.div`
-    margin-top: 30px;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 80px;
 `
 
 export const NormalBtn = styled.button`
     width: 150px;
     height: 60px;
     margin-right: 40px;
-    margin-top: 40px;
     border-radius: 10px;
     color: #333333;
     background-color: #ffdd00;
