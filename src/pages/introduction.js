@@ -3,7 +3,7 @@ import Intro from "../components/Introduction/Intro";
 
 const Introduction = () => {
   return (
-    <div>
+    <div style={{ "min-height": "70vh" }}>
       <Intro />
     </div>
   );
