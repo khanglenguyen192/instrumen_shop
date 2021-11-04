@@ -6,7 +6,7 @@ function GoodProduct() {
     return (
         <div>
             <FeatureWrapper>
-        <Link to="/product_list" style={{ color: 'black', textDecoration: 'none' }}>
+        <Link to="/products/one-product" style={{ color: 'black', textDecoration: 'none' }}>
         <div className="card mb-3 postcard" style={{width: '420px'}}>
             <div className="row no-gutters">
                 <div className="col-md-4 col-lg-4">
@@ -22,7 +22,7 @@ function GoodProduct() {
     </Link>
             </FeatureWrapper>
             <FeatureWrapper>
-                <Link to="/product_list" style={{ color: 'black', textDecoration: 'none' }}>
+                <Link to="/products/one-product" style={{ color: 'black', textDecoration: 'none' }}>
             <div className="card mb-3 postcard" style={{width: '420px'}}>
             <div className="row no-gutters">
                 <div className="col-md-4 col-lg-4">
