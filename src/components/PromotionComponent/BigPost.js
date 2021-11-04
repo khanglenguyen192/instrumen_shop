@@ -2,6 +2,8 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FeatureWrapper } from "../../container/FeatureWrapper";
 import { Link } from "react-router-dom";
+import { BigPostContent } from "./BigPostContent";
+import { BigPostTitle } from "./BigPostContent";
 function BigPost() {
   return (
     <div>
@@ -11,21 +13,15 @@ function BigPost() {
             <div className="row no-gutters">
               <div className="col-md-4 col-lg-4">
                 <img
-                  src="https://iotcdn.oss-ap-southeast-1.aliyuncs.com/2018-01/83105515-dizain-advertising.jpg"
+                  src="https://linhdam.co/wp-content/uploads/2020/10/2-3-833x540.png"
                   alt="advertise"
                   className="card-img-left"
                 />
               </div>
               <div className="col-md-8 col-lg-8">
-                <div className="card-body d-flex flex-row-reverse justify-content-center">
-                  <h5 className="card-title">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                  </h5>
-                </div>
+                <BigPostTitle>Truyền thông tiếp thị tích hợp và hòa nhạc: Có gì chung?</BigPostTitle>
+                <BigPostContent>Tưởng tượng bạn đang tham dự một buổi hòa nhạc. Giai điệu du dương
+                 không đến từ một nhạc cụ riêng lẻ mà đến từ SỰ CỘNG HƯỞNG của tất cả các loại nhạc cụ...</BigPostContent>
               </div>
             </div>
           </div>
@@ -37,21 +33,14 @@ function BigPost() {
             <div className="row no-gutters">
               <div className="col-md-4 col-lg-4">
                 <img
-                  src="https://userscontent2.emaze.com/images/1013f41f-4583-489e-b108-3ba1d9e28b0a/45f6f19807348a30d3b0fbfa6ce8605f.jpg"
+                  src="https://kingmarketing.vn/wp-content/uploads/2021/08/img_610e863d4665e-512x375.jpg"
                   alt="advertise"
                   className="card-img-left"
                 />
               </div>
               <div className="col-md-8 col-lg-8">
-                <div className="card-body d-flex flex-row-reverse justify-content-center">
-                  <h5 className="card-title">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  </h5>
-                </div>
+                <BigPostTitle>Kinh doanh nhạc cụ âm nhạc hiệu quả thu hút nhất</BigPostTitle>
+                <BigPostContent>Kinh doanh nhạc cụ thường không quá phổ biến nhưng đó là một hướng đi mở cho nhiều bạn trẻ, đặc biệt là các bạn có niềm đam mê âm nhạc và có ít nhiều có những năng khiếu về loại hình này...</BigPostContent>
               </div>
             </div>
           </div>
@@ -63,21 +52,15 @@ function BigPost() {
             <div className="row no-gutters">
               <div className="col-md-4 col-lg-4">
                 <img
-                  src="https://hocmarketing.org/photos/detail-image-4/quang-cao-la-gi.jpg"
+                  src="https://sikido.vn/uploads/source/thietkewebsite/header-musical-instruments-1200x480-11b4194ce5ebc4e5111cc71945955eeb.jpg"
                   alt="advertise"
                   className="card-img-left"
                 />
               </div>
               <div className="col-md-8 col-lg-8">
-                <div className="card-body d-flex flex-row-reverse justify-content-center">
-                  <h5 className="card-title">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                  </h5>
-                </div>
+                <BigPostTitle>Thu hút khách hàng nhờ website bán nhạc cụ chuyên nghiệp, chất lượng</BigPostTitle>
+                <BigPostContent>Nhạc cụ có công dụng tạo nên âm nhạc, tạo sức lan tỏa rộng rãi và truyền cảm hứng trong công chúng. Sự đa dạng về 
+                nhạc cụ cũng sẽ tạo ra một sự đa dạng về người chơi và người thưởng thức âm nhạc...</BigPostContent>
               </div>
             </div>
           </div>

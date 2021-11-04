@@ -2,13 +2,14 @@ import React from "react";
 import '../components/CartItem/CartPage.css';
 import { useState } from 'react';
 import CartItem from '../components/CartItem/CartItem';
+import Title from "../components/title/title";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   return (
-    <div class="CartPage">
-    <div class="CartHeader">
-        Giỏ hàng
-    </div>
+    <div>
+    <div class="container cartpage">
+    <Title title="Giỏ hàng" />
     <div class="CartItem">
         <div class="row1">
             <div class="col1">
@@ -48,8 +49,11 @@ const Cart = () => {
           <div class="col1"> Tổng đơn:</div>
           <div class="col2">5080000đ</div>
         </div>
+        <Link to="/payment">
         <input type="button" value="Đặt hàng ngay"/>
+        </Link>
       </div>
+    </div>
     </div>
     </div>
   );
