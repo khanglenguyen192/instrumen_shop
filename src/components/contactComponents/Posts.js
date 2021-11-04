@@ -19,8 +19,9 @@ function Post() {
               <div className="col-md-8 col-lg-8">
                 <div className="card-body d-flex flex-row-reverse justify-content-center">
                   <h5 className="card-title">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Truyền thông tiếp thị tích hợp và hòa nhạc: Có gì chung?
                   </h5>
+                  <p></p>
                 </div>
               </div>
             </div>
@@ -41,7 +42,7 @@ function Post() {
               <div className="col-md-8 col-lg-8">
                 <div className="card-body d-flex flex-row-reverse justify-content-center">
                   <h5 className="card-title">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Kinh doanh nhạc cụ âm nhạc hiệu quả thu hút nhất
                   </h5>
                 </div>
               </div>

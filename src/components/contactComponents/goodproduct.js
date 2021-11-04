@@ -14,7 +14,7 @@ function GoodProduct() {
                 </div>
                     <div className="col-md-8 col-lg-8">
                     <div className="card-body d-flex flex-row-reverse justify-content-center">
-                    <h5 className="card-title" >Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h5>
+                    <h5 className="card-title" >Piano Kawai GX-2</h5>
                     </div>
             </div>
         </div>
@@ -31,7 +31,7 @@ function GoodProduct() {
                     <div className="col-md-8 col-lg-8">
                             <div className="card-body d-flex flex-row-reverse justify-content-center">
                                 
-                    <h5 className="card-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h5>
+                    <h5 className="card-title">Piano Yamaha U1</h5>
                             </div>
                             </div>
                     </div>

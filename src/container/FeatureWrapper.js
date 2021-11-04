@@ -6,10 +6,11 @@ export const FeatureWrapper = styled.div`
         display: flex;
         flex-flow: column;
         width: 100%;
+        height: 115px;
     }
     .postcard img {
         width: 100%;
-        height: 100%;
+        height: 113px;
     }
     .card-title {
         align-self: flex-start;
