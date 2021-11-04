@@ -39,7 +39,7 @@ export default class FilterBar extends React.Component {
                                 <div className="col-5 col-md-3 col-lg-2">
                                     <Select className="select-box" placeholder="Giá" options={ actions2 }/>
                                 </div>
-                                <div className="col-5 col-md-3 col-lg-2">
+                                <div className="col-5 col-md-3 col-lg-3">
                                     <Select className="select-box" placeholder="Thương hiệu" options={ actions3 }/>
                                 </div>
                             </div>
