@@ -37,7 +37,7 @@ const Cart = () => {
                 <input id="button-2" type="button" value="Cập nhật giỏ hàng"/>
             </div>
             <div class="group-2">
-                <input />
+                <input placeholder="Nhập mã khuyến mãi"/>
                 <input id="apply" type="button" value="Áp dụng"/>
             </div>
         </div>

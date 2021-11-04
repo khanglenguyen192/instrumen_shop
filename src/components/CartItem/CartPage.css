@@ -208,7 +208,7 @@
   height: 50px;
   font-size: 24px;
   border-radius: 20px;
-  background-color: #0589F3;
+  background-color: #ffdd00;
   border-style: hidden;
   transition: background 0.5s;
   cursor: pointer;
@@ -216,7 +216,7 @@
 }
 
 .CartFooter input:hover{
-  background: #0159F3;
+  background: #f0c000;
 }
 
 .CartFooter input:active{
