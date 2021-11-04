@@ -6,11 +6,11 @@ import BigPost from "../components/PromotionComponent/BigPost";
 
 const Promotion = () => {
   return (
-    <div class="container promotion">
-      <Title title="BKIS khuyến mãi"/>
+    <div class="container promotion" style={{ "min-height": "70vh" }}>
+      <Title title="BKIS khuyến mãi" />
       <div class="row">
         <div class="col-12 col-md-8 col-lg-8">
-          <BigPost/>
+          <BigPost />
         </div>
         <div class="col-12 col-md-4 col-lg-4">
           <div class="row">
