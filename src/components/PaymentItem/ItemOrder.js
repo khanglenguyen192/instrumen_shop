@@ -34,7 +34,7 @@ function ItemOrder() {
                 </tbody>
             </table>
 
-            <div class="container mt-3">
+            <div style={{"padding": "1.5px"}}>
                 <h2>Chọn phương thức thanh toán</h2>
                 <form>
                 <select class="form-select form-select-lg">
