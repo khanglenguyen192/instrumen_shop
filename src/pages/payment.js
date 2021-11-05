@@ -1,16 +1,24 @@
 import React from "react";
+import ItemOrder from "../components/PaymentItem/ItemOrder.js";
+import ItemCustomer from "../components/PaymentItem/ItemCustomer.js";
 
 const Payment = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "90vh",
-      }}
-    >
-      <h1>Payment</h1>
+    <div style={{ "min-height": "90vh" }}>
+      <div className="container mt-3">
+        <div class="row">
+          <div class="col-sm-4">
+            <div style={{"padding": "50px"}}>
+                <ItemCustomer/>
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <div style={{"padding": "100px"}}>
+                <ItemOrder/>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
