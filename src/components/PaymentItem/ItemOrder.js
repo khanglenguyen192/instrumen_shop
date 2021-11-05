@@ -35,7 +35,7 @@ function ItemOrder() {
             </table>
 
             <div style={{"padding": "1.5px"}}>
-                <h2>Chọn phương thức thanh toán</h2>
+                <h3>Chọn phương thức thanh toán</h3>
                 <form>
                 <select class="form-select form-select-lg">
                     <option >Thanh toán trực tiếp</option>
