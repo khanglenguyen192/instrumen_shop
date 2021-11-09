@@ -35,7 +35,7 @@ function App() {
             <Route path="/installment" exact component={Installment} />
             <Route path="/product_list" exact component={ProductList} />
             <Route path="/cart" exact component={Cart} />
-            <Route path="/products/one-product" exact component={ProductInfo} />
+            <Route path="/products/one-product/id_product/:id" exact component={ProductInfo} />
             <Route path="/payment" exact component={Payment} />
           </Switch>
         </Router>

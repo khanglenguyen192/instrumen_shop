@@ -13,17 +13,19 @@ export const ProImg = styled.img`
     height:650px;
     width: 700px;
     margin-left: -250px;
+    margin-right: 40px;
 
 `
 
 export const BtnContainer = styled.div`
+    width: 400px;
     display: grid;
     grid-template-columns: auto auto;
     margin-top: 80px;
 `
 
 export const NormalBtn = styled.button`
-    width: 150px;
+    width: 180px;
     height: 60px;
     margin-right: 40px;
     border-radius: 10px;
