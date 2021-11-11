@@ -16,30 +16,30 @@ import SearchBar from "./components/SearchBar";
 import ProductList from "./pages/product_list";
 import { Provider } from "./components/products/content";
 import ProductInfo from "./pages/one_product";
+import SortModal from "./components/title/sortModal";
 function App() {
   return (
     <div>
       <Provider>
-        <Router>
-          <SearchBar />
-          <Navbar />
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/home" exact component={Home} />
-            <Route path="/introduction" exact component={Introduction} />
-            <Route path="/product" exact component={Product} />
-            <Route path="/services" exact component={Services} />
-            <Route path="/posts" exact component={Posts} />
-            <Route path="/promotion" exact component={Promotion} />
-            <Route path="/contact" exact component={Contact} />
-            <Route path="/installment" exact component={Installment} />
-            <Route path="/product_list" exact component={ProductList} />
-            <Route path="/cart" exact component={Cart} />
-            <Route path="/products/one-product/id_product/:id" exact component={ProductInfo} />
-            <Route path="/payment" exact component={Payment} />
-          </Switch>
-        </Router>
+        <SearchBar />
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/home" exact component={Home} />
+          <Route path="/introduction" exact component={Introduction} />
+          <Route path="/product" exact component={Product} />
+          <Route path="/services" exact component={Services} />
+          <Route path="/posts" exact component={Posts} />
+          <Route path="/promotion" exact component={Promotion} />
+          <Route path="/contact" exact component={Contact} />
+          <Route path="/installment" exact component={Installment} />
+          <Route path="/product_list" exact component={ProductList} />
+          <Route path="/cart" exact component={Cart} />
+          <Route path="/products/one-product/id_product/:id" exact component={ProductInfo} />
+          <Route path="/payment" exact component={Payment} />
+        </Switch>
         <FooterContainer />
+        <SortModal />
       </Provider>
     </div>
   );

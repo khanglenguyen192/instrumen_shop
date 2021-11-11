@@ -21,3 +21,22 @@
   bottom: -10px;
   font-size: 20px;
 }
+
+.sort-modal {
+  position: absolute;
+  top: 29vh;
+  right: 11vw;
+  width: 170px;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 10px;
+}
+
+.sort-modal .btn {
+  border: none;
+  color: #000;
+}
