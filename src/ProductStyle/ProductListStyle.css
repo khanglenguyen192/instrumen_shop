@@ -40,3 +40,41 @@
   border: none;
   color: #000;
 }
+
+.filter-brand-modal {
+  position: absolute;
+  top: 29vh;
+  left: 26vw;
+  width: 130px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 10px;
+}
+
+.filter-brand-modal .btn {
+  border: none;
+  color: #000;
+}
+
+.filter-price-modal {
+  position: absolute;
+  top: 29vh;
+  left: 15vw;
+  width: 180px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 10px;
+}
+
+.filter-price-modal .btn {
+  border: none;
+  color: #000;
+}
