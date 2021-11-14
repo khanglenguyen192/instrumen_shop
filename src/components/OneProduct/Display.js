@@ -1,10 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import QuantityBox from './QuantityBox';
 import { Link } from "react-router-dom";
 import {Container, ProImg, InfoSection, NormalBtn, ColorBtn, BtnContainer} from './DisplayElement';
-
+import PopUp from './PopUp';
 function ProInfo(props) {
   //url to product  
+
+  const handleAddToCart = () => {
+    setAddToCart(true);
+  }
+
+  const closePopUp = () => {
+    setAddToCart(false);
+  }
+
+  const [addToCart, setAddToCart] = useState(false); 
   const {img, title, price} = props.display;
   return (
     <React.Fragment> 
@@ -26,8 +36,9 @@ function ProInfo(props) {
     <NormalBtn > 
     <Link to='/payment' style={{ textDecoration: 'none', color: 'black' }}> Mua ngay </Link>
     </NormalBtn>
-    <NormalBtn>Thêm vào giỏ hàng</NormalBtn>
+    <NormalBtn onClick={handleAddToCart}>Thêm vào giỏ hàng</NormalBtn>
     </BtnContainer>
+    <PopUp trigger={addToCart} setTrigger={closePopUp}></PopUp>
 
     </InfoSection>
     </Container>
