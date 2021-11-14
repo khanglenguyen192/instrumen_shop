@@ -17,9 +17,6 @@ export const ProductWrapper = styled.div`
             border: 0.04rem solid rgba(0, 0, 0, 0.2);
             box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
         }
-        .card-footer {
-            background-color: rgba(247, 247, 247) !important;
-        }
         .card-footer p {
             color: #f4c519;
         }
@@ -55,6 +52,7 @@ export const ProductWrapper = styled.div`
     .card {
         height: 400px;
         width: 300px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     }
     .card-footer {
       background-color: rgba(247, 247, 247);

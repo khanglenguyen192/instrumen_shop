@@ -10,7 +10,7 @@ export default class Product extends Component {
       <ProductWrapper className="col-12 col-md-6 col-lg-3 my-3 col-grid">
         <div className="card prodCard">
           <div className="img-container p-5">
-            <Link to="/products/one-product">
+            <Link to={"/products/one-product/id_product/" + id}>
               <img src={img} alt="products" className="card-img-top" id={id} />
             </Link>
             <button className="cart-btn btn btn-sm">
@@ -20,13 +20,13 @@ export default class Product extends Component {
           <div className="card-footer d-flex justify-content-center">
             <ul className="list-group list-group-flush text-center">
               <StarRating value={3} />
-              <Link to="/products/one-product" className="link">
+              <Link to={"/products/one-product/id_product/" + id} className="link">
                 <li className="list-group-item">
                   <p className="align-self-center mb-0">{title}</p>
                 </li>
               </Link>
               <li className="list-group-item">
-                <h5 className="font-italic mb-0">{price}</h5>
+                <h5 className="font-italic mb-0">{price} VND</h5>
               </li>
             </ul>
           </div>

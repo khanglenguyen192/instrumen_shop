@@ -4,17 +4,22 @@ import Display from '../components/OneProduct/Display'
 import ReviewContainer from "../components/OneProduct/Review";
 import SimilarProducts from "../components/OneProduct/SimilarProducts";
 import { homeGuitarList } from "../data/HomePage/guitar_data";
+import {withRouter} from 'react-router-dom';
+import { featureProd } from "../data/ProductData/feature_products";
 
-const ProductInfo = () => {
+const ProductInfo = (props) => {
+  const id = props.match.params.id;
+  console.log(id);
+
   return (
     <div>
-      <Display display= {homeGuitarList[1]}
+      <Display display= {featureProd[id-1]}
       />
-      <Description description= {homeGuitarList[1]} />   
+      <Description description= {featureProd[id-1]} />   
       <ReviewContainer />
       <SimilarProducts />
     </div>
   );
 };
 
-export default ProductInfo;
+export default withRouter(ProductInfo);;
