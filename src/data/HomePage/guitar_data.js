@@ -43,7 +43,6 @@ export const homeGuitarList = [
     weight: "2.1kg",
     accessories: "móng vẩy, capo",
     insurance: "16 tháng",
-    
   },
   {
     id: 4,
