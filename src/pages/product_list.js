@@ -22,33 +22,34 @@ const Page = ({ data }) => {
       perPage: (pageNumber * pagination.limit),
     });
   };
-  
+
   useEffect(() => {
     navigateToPage(1)
   }, [])
-  
-    return (
-      <>
-        <Consumer>
-          {value => {
-                  return value.products.slice(pagination.start, pagination.perPage).map(product => {
-                    return <Product key={product.id} product={product} />
-                  })
-                }}
-        </Consumer>
-        <div className="row">
-          <div className="col-4 col-md-8 col-lg-9"></div>
-          <div className="col-8 col-md-4 col-lg-3 my-4">
-        {pagination.page > 2 && <button className="btn pagebtn" onClick={() => navigateToPage(1)}>First</button>}
-        {pagination.page > 1 && <button className="btn pagebtn" onClick={() => navigateToPage(pagination.page - 1)}>Prev</button>}
-        {[...Array(100)].slice(0, numberOfPages).map((x, i) =>
-          <button className="btn pagebtn" onClick={() => navigateToPage(i + 1)}>{i + 1}</button>
-        )}
-        {pagination.page !== numberOfPages && <button className="btn pagebtn" onClick={() => navigateToPage(pagination.page + 1)}>Next</button>}
-            {pagination.page < Math.ceil(numberOfPages / 2 + 1) && <button className="btn pagebtn" onClick={() => navigateToPage(numberOfPages)}>Last</button>}
-          </div>
-          </div>
-      </>
+
+
+  return (
+    <>
+      <Consumer>
+        {value => {
+          return value.products.slice(pagination.start, pagination.perPage).map(product => {
+            return <Product key={product.id} product={product} />
+          })
+        }}
+      </Consumer>
+      <div className="row">
+        <div className="col-4 col-md-8 col-lg-9"></div>
+        <div className="col-8 col-md-4 col-lg-3 my-4">
+          {pagination.page > 2 && <button className="btn pagebtn" onClick={() => { navigateToPage(1); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>First</button>}
+          {pagination.page > 1 && <button className="btn pagebtn" onClick={() => { navigateToPage(pagination.page - 1); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Prev</button>}
+          {[...Array(100)].slice(0, numberOfPages).map((x, i) =>
+            <button className="btn pagebtn" onClick={() => { navigateToPage(i + 1); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>{i + 1}</button>
+          )}
+          {pagination.page !== numberOfPages && <button className="btn pagebtn" onClick={() => { navigateToPage(pagination.page + 1); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Next</button>}
+          {pagination.page < Math.ceil(numberOfPages / 2 + 1) && <button className="btn pagebtn" onClick={() => { navigateToPage(numberOfPages); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Last</button>}
+        </div>
+      </div>
+    </>
   )
 }
 export default class ProductList extends Component {
@@ -62,17 +63,17 @@ export default class ProductList extends Component {
           <Consumer>
             {value => (<Title title={value.category} />)}
           </Consumer>
-            <div className="row">
-              <FilterBar />
-            </div>
-            <div className="row">
+          <div className="row">
+            <FilterBar />
+          </div>
+          <div className="row">
             <PaginationProvider>
               <Consumer>
-                {value => (<Page data={value.products}/>)}
+                {value => (<Page data={value.products} />)}
               </Consumer>
-              </PaginationProvider>
+            </PaginationProvider>
           </div>
-              </div>
+        </div>
       </React.Fragment>
     )
   }
