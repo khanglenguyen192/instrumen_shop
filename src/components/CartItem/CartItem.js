@@ -6,25 +6,28 @@ import React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { FaBars } from "react-icons/fa";
+import { responsivePropType } from 'react-bootstrap/esm/createUtilityClasses';
 
 
-
-function CartItem(props){
+function CartItem({item}){
     const [amount,SetAmount] = useState(1);
     function Number_Stepper(){
       function add(){
-        SetAmount(amount + 1);
+        SetAmount(amount+1);
+        item.add();
       }
       function minus(){
-        if(amount == 1) return;
-        else
-        SetAmount(amount - 1);
+        if(amount <= 1){}
+        else {
+        SetAmount(amount-1);
+        item.minus();
+        }
       }
       return (
         <div class="Num_Stepper">
           <div class="col-1">
             <div class="item">
-            {amount}
+            {item.props.amount}
             </div>
           </div>
           <div class="col-2">
@@ -43,13 +46,13 @@ function CartItem(props){
                 Đàn Piano Upright Yamaha
             </div>
             <div class="col1">
-                {props.price}đ
+                {item.props.price}đ
             </div>
             <div class="col1">
                 <Number_Stepper/>
             </div>
             <div class="col1">
-                {props.price*amount}đ
+                {item.props.price*item.props.amount}đ
             </div>
             <div class="col2">
                 <input id="delete_button" type="button" value="Xóa"/>
