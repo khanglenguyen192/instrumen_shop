@@ -17,6 +17,8 @@ import ProductList from "./pages/product_list";
 import { Provider } from "./components/products/content";
 import ProductInfo from "./pages/one_product";
 import SortModal from "./components/title/sortModal";
+import FilterByBrandModal from "./components/title/filterByBrandModal";
+import FilterByPriceModal from "./components/title/filterByPriceModal";
 function App() {
   return (
     <div>
@@ -40,6 +42,8 @@ function App() {
         </Switch>
         <FooterContainer />
         <SortModal />
+        <FilterByBrandModal />
+        <FilterByPriceModal />
       </Provider>
     </div>
   );

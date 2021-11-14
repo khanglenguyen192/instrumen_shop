@@ -26,7 +26,7 @@ export default class Product extends Component {
                 </li>
               </Link>
               <li className="list-group-item">
-                <h5 className="font-italic mb-0">{price}</h5>
+                <h5 className="font-italic mb-0">{price} VND</h5>
               </li>
             </ul>
           </div>
