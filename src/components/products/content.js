@@ -8,6 +8,7 @@ class Provider extends Component {
   state = {
     products: [],
     category: "",
+    titleImg: "",
     modalOpen: false,
     filterBrandModal: false,
     filterPriceModal: false,
@@ -89,9 +90,9 @@ class Provider extends Component {
 
   filterByBrand = async (brand, data) => {
     await this.setProducts(data);
-
+    console.log(brand);
     const tempProducts = this.state.products.filter((item) => {
-      return item.brand === brand;
+      return !item.brand.localeCompare(brand);
     });
 
     this.setState({
@@ -112,9 +113,10 @@ class Provider extends Component {
     })
   }
 
-  setTitle = (title) => {
+  setTitle = (title, img) => {
     this.setState({
-      category: title
+      category: title,
+      titleImg: img
     })
   }
 

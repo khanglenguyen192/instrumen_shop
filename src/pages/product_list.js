@@ -61,7 +61,7 @@ export default class ProductList extends Component {
       <React.Fragment>
         <div className="container">
           <Consumer>
-            {value => (<Title title={value.category} />)}
+            {value => (<Title title={value.category} img={value.titleImg} />)}
           </Consumer>
           <div className="row">
             <FilterBar />

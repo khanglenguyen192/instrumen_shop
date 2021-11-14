@@ -25,7 +25,7 @@ const ProductDropdown = () => {
             return productType.map(item => {
               return (
                 <DropdownMenuItem>
-                  <ItemLink to="/product_list" onClick={() => { value.setProducts(item.data); value.setTitle(item.category); value.setProductType(item) }}>
+                  <ItemLink to="/product_list" onClick={() => { value.setProducts(item.data); value.setTitle(item.title, item.titleImg); value.setProductType(item) }}>
                     <DropdownMenuItemLogo src={item.img}></DropdownMenuItemLogo>
                     {item.title}
                   </ItemLink>
