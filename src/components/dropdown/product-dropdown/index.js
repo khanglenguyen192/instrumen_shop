@@ -23,12 +23,14 @@ const ProductDropdown = () => {
         <Consumer>
           {value => {
             return productType.map(item => {
-              return (<DropdownMenuItem>
-                <ItemLink to="/product_list" onClick={() => { value.setProducts(item.data); value.setTitle(item.category); value.setProductType(item) }}>
-                  <DropdownMenuItemLogo src={item.img}></DropdownMenuItemLogo>
-                  {item.title}
-                </ItemLink>
-              </DropdownMenuItem>)
+              return (
+                <DropdownMenuItem>
+                  <ItemLink to="/product_list" onClick={() => { value.setProducts(item.data); value.setTitle(item.title, item.titleImg); value.setProductType(item) }}>
+                    <DropdownMenuItemLogo src={item.img}></DropdownMenuItemLogo>
+                    {item.title}
+                  </ItemLink>
+                </DropdownMenuItem>
+              )
             })
           }}
         </Consumer>

@@ -22,5 +22,8 @@ export const pianoBrand = [
     },
     {
         name: "Upright"
+    },
+    {
+        name: "Kurtzman"
     }
 ]

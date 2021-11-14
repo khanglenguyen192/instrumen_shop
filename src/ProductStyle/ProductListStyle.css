@@ -13,6 +13,15 @@
 .text-title {
   font-family: "Oswald", sans-serif !important;
   color: #000;
+  padding-top: 10px;
+}
+
+.title-img img {
+  width: 100%;
+  height: 250px;
+  object-fit: fill;
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 .search-text {
@@ -24,8 +33,8 @@
 
 .sort-modal {
   position: absolute;
-  top: 29vh;
-  right: 11vw;
+  top: 62vh;
+  right: 10vw;
   width: 170px;
   height: 150px;
   align-items: center;
@@ -43,7 +52,7 @@
 
 .filter-brand-modal {
   position: absolute;
-  top: 29vh;
+  top: 62vh;
   left: 26vw;
   width: 130px;
   height: auto;
@@ -62,7 +71,7 @@
 
 .filter-price-modal {
   position: absolute;
-  top: 29vh;
+  top: 62vh;
   left: 15vw;
   width: 180px;
   height: auto;
