@@ -1,6 +1,6 @@
 import React from 'react';
 import QuantityBox from './QuantityBox';
-
+import { Link } from "react-router-dom";
 import {Container, ProImg, InfoSection, NormalBtn, ColorBtn, BtnContainer} from './DisplayElement';
 
 function ProInfo(props) {
@@ -23,7 +23,9 @@ function ProInfo(props) {
     <QuantityBox />
 
     <BtnContainer>
-    <NormalBtn>Mua ngay</NormalBtn>
+    <NormalBtn > 
+    <Link to='/payment' style={{ textDecoration: 'none', color: 'black' }}> Mua ngay </Link>
+    </NormalBtn>
     <NormalBtn>Thêm vào giỏ hàng</NormalBtn>
     </BtnContainer>
 
