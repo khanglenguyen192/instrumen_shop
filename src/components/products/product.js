@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { ProductWrapper } from "../../container/ProductWrapper";
 import { StarRating } from "../starRating/StarRating";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { AddToCart } from "../../pages/cart";
+import parseNumber from "./parseNumber.js"
 export default class Product extends Component {
   render() {
     const { id, title, img, price } = this.props.product;
@@ -13,7 +15,7 @@ export default class Product extends Component {
             <Link to={"/products/one-product/id_product/" + id}>
               <img src={img} alt="products" className="card-img-top" id={id} />
             </Link>
-            <button className="cart-btn btn btn-sm">
+            <button className="cart-btn btn btn-sm" onClick={() => AddToCart({id: id, img: img, name: title, price: parseNumber(price)})}>
               <i class="fa fa-cart-plus"></i>
             </button>
           </div>

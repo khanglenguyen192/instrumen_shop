@@ -4,23 +4,22 @@ import downIcon from './downArrow.svg';
 import './CartPage.css';
 import React from 'react';
 import { useState } from 'react';
-import styled from 'styled-components';
-import { FaBars } from "react-icons/fa";
-import { responsivePropType } from 'react-bootstrap/esm/createUtilityClasses';
+import parseNumber from '../products/parseNumber';
 
-
-function CartItem({item}){
-    const [amount,SetAmount] = useState(1);
+function CartItem({item, update, Xoa}){
+    const [amount,SetAmount] = useState(1); //Chỉ dùng để re-render lại trang, không sử dụng giá trị đó
     function Number_Stepper(){
       function add(){
         SetAmount(amount+1);
-        item.add();
+        item.props.amount++;
+        update();
       }
       function minus(){
-        if(amount <= 1){}
+        if(item.props.amount <= 1){}
         else {
         SetAmount(amount-1);
-        item.minus();
+        item.props.amount--;
+        update();
         }
       }
       return (
@@ -40,10 +39,10 @@ function CartItem({item}){
     return(
         <div class="row2">
             <div class="col1">
-                <img src={piano}/>
+                <img src={item.props.img} style={{height: "180px", width: "200px"}}/>
             </div>
             <div class="col1">
-                Đàn Piano Upright Yamaha
+                {item.props.name}
             </div>
             <div class="col1">
                 {item.props.price}đ
@@ -55,7 +54,7 @@ function CartItem({item}){
                 {item.props.price*item.props.amount}đ
             </div>
             <div class="col2">
-                <input id="delete_button" type="button" value="Xóa"/>
+                <input id="delete_button" type="button" value="Xóa" onClick={() => Xoa(item.props.id)}/>
             </div>
         </div>
     )
