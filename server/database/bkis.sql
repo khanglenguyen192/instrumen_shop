@@ -90,3 +90,12 @@ CREATE TABLE IF NOT EXISTS `product` (
 
 INSERT INTO `product` (`id`, `name`, `img`, `origin`, `brand`, `price`, `style`, `category`, `material`, `size`, `weight`, `accessories`, `insurance`) VALUES
 ('guitar1', 'Taylor GTE-ASH', 'https://vietthuongshop.vn/image/cache/catalog/taylor-Gte-Ash-400x400.jpg', 'USA', 'Taylor', '45470000', 'Dáng D', '3', 'gỗ', 'D', '2', 'capo', '12 tháng');
+
+-- Add foreign key
+ALTER TABLE `product` ADD CONSTRAINT `category` FOREIGN KEY (`category`) REFERENCES `category`(`categoryID`);
+
+ALTER TABLE `feedback` ADD CONSTRAINT `in` FOREIGN KEY (`productID`) REFERENCES `product`(`id`);
+
+ALTER TABLE `cart` ADD CONSTRAINT `has` FOREIGN KEY (`productID`) REFERENCES `product`(`id`);
+
+ALTER TABLE `order` ADD CONSTRAINT `include` FOREIGN KEY (`orderID`) REFERENCES `cart`(`orderID`);
