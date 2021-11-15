@@ -28,7 +28,6 @@ router.use((req, res, next) => {
 });
 
 router.get("/", async (req, res) => {
-  console.log("HERE");
   try {
     db.query(`SELECT * FROM ${db_name}.category;`, (err, results, fields) => {
       // results contains rows returned by server
