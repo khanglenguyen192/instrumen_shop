@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS DB_BKIS;
+-- CREATE DATABASE IF NOT EXISTS DB_BKIS;
 
 SET SQL_MODE= "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -6,19 +6,19 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `admin` (
-    `username` varchar(255) not null primary key,
-    `password` varchar(255) not null,
-    `full_name` varchar(255) not null
+    `username` varchar(128) not null primary key,
+    `password` varchar(128) not null,
+    `full_name` text not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `admin` (`username`, `password`, `full_name`) VALUES
 ('admin', 'admin', 'Mai Thanh Phong');
 
 CREATE TABLE IF NOT EXISTS `feedback`(
-    `productID` varchar(255) not null,
+    `productID` varchar(128) not null,
 	`feedbackID` varchar(11) not null,
-    `customer_name` varchar(255) not null,
-    `customer_email` varchar(255) not null,
+    `customer_name` text not null,
+    `customer_email` text not null,
     `detail` text not null,
     `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
     constraint primary key (`feedbackID`, `productID`)
@@ -30,7 +30,7 @@ INSERT INTO `feedback` (`productID`, `feedbackID`, `customer_name`, `customer_em
 
 CREATE TABLE IF NOT EXISTS `category` (
 	`categoryID` int(11) not null primary key,
-    `categoryName` varchar(255) not null,
+    `categoryName` text not null,
     `categoryImg` text not null,
     `titleImg` text not null
     
@@ -48,22 +48,22 @@ INSERT INTO `category` (`categoryID`, `categoryName`, `categoryImg`, `titleImg`)
 ('9', 'Nhạc cụ hơi', 'https://nhaccutienmanh.vn/wp-content/themes/nhaccutienmanh/images/icon-cat/016-flute.svg', 'https://cdn.shopify.com/s/files/1/1474/4396/collections/flute_banner.jpg?v=1477012561');
 
 CREATE TABLE IF NOT EXISTS `order`(
-    `orderID` varchar(255) not null primary key,
+    `orderID` varchar(128) not null primary key,
     `customerName` varchar(255) not null,
-    `customerPhone` varchar(11) not null,
-    `customerEmail` varchar(255) default null,
+    `customerPhone` text not null,
+    `customerEmail` text default null,
     `customerAddress` text not null,
     `detail` text default null,
-    `paymentMethod` varchar(255) not null,
-    `status` varchar(255) not null
+    `paymentMethod` text not null,
+    `status` text not null
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `order` (`orderID`, `customerName`, `customerPhone`, `customerEmail`, `customerAddress`, `detail`, `paymentMethod`, `status`) VALUES
 ('1', 'Nguyễn Văn A', '0987654321', 'nva@gmail.com', '268 Lý Thường Kiệt, phường 14, quận 10, Thành phố Hồ Chí Minh', '', 'Tiền mặt', 'đã nhận');
 
 CREATE TABLE IF NOT EXISTS `cart`(
-	`orderID` varchar(255) not null,
-    `productID` varchar(255) not null,
+	`orderID` varchar(128) not null,
+    `productID` varchar(128) not null,
     `quantity` int(11) not null,
     constraint primary key (`orderID`, `productID`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -73,7 +73,7 @@ INSERT INTO `cart` (`orderID`, `productID`, `quantity`) VALUES
 
 
 CREATE TABLE IF NOT EXISTS `product` (
-	`id` varchar (255) not null primary key,
+	`id` varchar (128) not null primary key,
     `name` text not null,
     `img` text not null,
     `origin` text,
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `product` (
     `style` text,
     `category` int(11) not null,
     `material` text,
-    `size` varchar(255),
+    `size` text,
     `weight` float,
     `accessories` text,
     `insurance` text not null
@@ -91,7 +91,6 @@ CREATE TABLE IF NOT EXISTS `product` (
 INSERT INTO `product` (`id`, `name`, `img`, `origin`, `brand`, `price`, `style`, `category`, `material`, `size`, `weight`, `accessories`, `insurance`) VALUES
 ('guitar1', 'Taylor GTE-ASH', 'https://vietthuongshop.vn/image/cache/catalog/taylor-Gte-Ash-400x400.jpg', 'USA', 'Taylor', '45470000', 'Dáng D', '3', 'gỗ', 'D', '2', 'capo', '12 tháng');
 
--- Add foreign key
 ALTER TABLE `product` ADD CONSTRAINT `category` FOREIGN KEY (`category`) REFERENCES `category`(`categoryID`);
 
 ALTER TABLE `feedback` ADD CONSTRAINT `in` FOREIGN KEY (`productID`) REFERENCES `product`(`id`);

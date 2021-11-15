@@ -5,7 +5,7 @@ const app = express();
 
 const categoryRoute = require("./routes/category");
 
-const DEFAULT_PORT = 5000;
+const DEFAULT_PORT = process.env.port || 5000;
 
 app.use(
   session({
