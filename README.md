@@ -1,7 +1,12 @@
 npm install styled-components,
 npm install react-icons,
 npm install react-multi-carousel,
-npm install @atlaskit/textfield
+npm install @atlaskit/textfield,
+npm install express,
+npm install --save-dev nodemon,
+npm install express-session,
+npm install mysql2,
+npm install cookie-parser,
 
 ## Bootstrap
 

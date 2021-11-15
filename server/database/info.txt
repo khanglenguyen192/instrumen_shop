@@ -1,0 +1,5 @@
+host: "us-cdbr-east-04.cleardb.com",
+user: "b8df0bb549a639",
+password: "1a1822f0",
+database: "heroku_6e1565a3fdbcd13",
+mysql://b8df0bb549a639:1a1822f0@us-cdbr-east-04.cleardb.com/heroku_6e1565a3fdbcd13?reconnect=true
