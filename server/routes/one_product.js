@@ -21,17 +21,22 @@ router.use((req, res, next) => {
   next();
 });
 
-router.get("/", async (req, res) => {
+router.get("/", (req, res) => {
+  res.send(200);
+});
+
+router.get("/api/one-product/details", async (req, res) => {
+  const id = req.query.id;
+  console.log(id);
+  const query = `SELECT * FROM ${db_name}.product WHERE id = ?`;
+
   try {
-    db.query(`SELECT * FROM ${db_name}.category;`, (err, results, fields) => {
-      // results contains rows returned by server
-      // fields contains extra meta data about results, if available
-      const categories = results;
-      res.status(200).send(categories);
+    db.query(query, [id], (err, results) => {
+      res.status(200).send(results);
+      console.log("send respponse");
     });
   } catch (err) {
-    console.log("ERROR: " + err);
-    res.send("FAILED");
+    console.log("ERROR: " + e);
   }
 });
 
