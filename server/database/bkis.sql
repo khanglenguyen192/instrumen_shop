@@ -16,10 +16,10 @@ INSERT INTO `admin` (`username`, `password`, `full_name`) VALUES
 
 CREATE TABLE IF NOT EXISTS `feedback`(
     `productID` varchar(255) not null,
-	`feedbackID` int(11) not null,
+	`feedbackID` varchar(11) not null,
     `customer_name` varchar(255) not null,
     `customer_email` varchar(255) not null,
-    `detail` varchar(1000) not null,
+    `detail` text not null,
     `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
     constraint primary key (`feedbackID`, `productID`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -46,3 +46,47 @@ INSERT INTO `category` (`categoryID`, `categoryName`, `categoryImg`, `titleImg`)
 ('7', 'Amplifier', 'https://nhaccutienmanh.vn/wp-content/themes/nhaccutienmanh/images/icon-cat/008-amplifier.svg', 'https://sonodyneimage.s3.ap-south-1.amazonaws.com/banner/146_99_SLA-Series-banner.jpg'),
 ('8', 'Âm thanh', 'https://nhaccutienmanh.vn/wp-content/themes/nhaccutienmanh/images/icon-cat/019-speaker.svg', 'https://topstore.vn/uploads/banner_alpha_&_akg_1586755598.webp'),
 ('9', 'Nhạc cụ hơi', 'https://nhaccutienmanh.vn/wp-content/themes/nhaccutienmanh/images/icon-cat/016-flute.svg', 'https://cdn.shopify.com/s/files/1/1474/4396/collections/flute_banner.jpg?v=1477012561');
+
+CREATE TABLE IF NOT EXISTS `order`(
+    `orderID` varchar(255) not null primary key,
+    `customerName` varchar(255) not null,
+    `customerPhone` varchar(11) not null,
+    `customerEmail` varchar(255) default null,
+    `customerAddress` text not null,
+    `detail` text default null,
+    `paymentMethod` varchar(255) not null,
+    `status` varchar(255) not null
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `order` (`orderID`, `customerName`, `customerPhone`, `customerEmail`, `customerAddress`, `detail`, `paymentMethod`, `status`) VALUES
+('1', 'Nguyễn Văn A', '0987654321', 'nva@gmail.com', '268 Lý Thường Kiệt, phường 14, quận 10, Thành phố Hồ Chí Minh', '', 'Tiền mặt', 'đã nhận');
+
+CREATE TABLE IF NOT EXISTS `cart`(
+	`orderID` varchar(255) not null,
+    `productID` varchar(255) not null,
+    `quantity` int(11) not null,
+    constraint primary key (`orderID`, `productID`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `cart` (`orderID`, `productID`, `quantity`) VALUES
+('1', 'guitar1', '1');
+
+
+CREATE TABLE IF NOT EXISTS `product` (
+	`id` varchar (255) not null primary key,
+    `name` text not null,
+    `img` text not null,
+    `origin` text,
+    `brand` text not null,
+    `price` bigint not null,
+    `style` text,
+    `category` int(11) not null,
+    `material` text,
+    `size` varchar(255),
+    `weight` float,
+    `accessories` text,
+    `insurance` text not null
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `product` (`id`, `name`, `img`, `origin`, `brand`, `price`, `style`, `category`, `material`, `size`, `weight`, `accessories`, `insurance`) VALUES
+('guitar1', 'Taylor GTE-ASH', 'https://vietthuongshop.vn/image/cache/catalog/taylor-Gte-Ash-400x400.jpg', 'USA', 'Taylor', '45470000', 'Dáng D', '3', 'gỗ', 'D', '2', 'capo', '12 tháng');
