@@ -4,27 +4,29 @@ import downIcon from './downArrow.svg';
 import './CartPage.css';
 import React from 'react';
 import { useState } from 'react';
-import styled from 'styled-components';
-import { FaBars } from "react-icons/fa";
+import parseNumber from '../products/parseNumber';
 
-
-
-function CartItem(props){
-    const [amount,SetAmount] = useState(1);
+function CartItem({item, update, Xoa}){
+    const [amount,SetAmount] = useState(1); //Chỉ dùng để re-render lại trang, không sử dụng giá trị đó
     function Number_Stepper(){
       function add(){
-        SetAmount(amount + 1);
+        SetAmount(amount+1);
+        item.props.amount++;
+        update();
       }
       function minus(){
-        if(amount == 1) return;
-        else
-        SetAmount(amount - 1);
+        if(item.props.amount <= 1){}
+        else {
+        SetAmount(amount-1);
+        item.props.amount--;
+        update();
+        }
       }
       return (
         <div class="Num_Stepper">
           <div class="col-1">
             <div class="item">
-            {amount}
+            {item.props.amount}
             </div>
           </div>
           <div class="col-2">
@@ -37,22 +39,22 @@ function CartItem(props){
     return(
         <div class="row2">
             <div class="col1">
-                <img src={piano}/>
+                <img src={item.props.img} style={{height: "180px", width: "200px"}}/>
             </div>
             <div class="col1">
-                Đàn Piano Upright Yamaha
+                {item.props.name}
             </div>
             <div class="col1">
-                {props.price}đ
+                {item.props.price}đ
             </div>
             <div class="col1">
                 <Number_Stepper/>
             </div>
             <div class="col1">
-                {props.price*amount}đ
+                {item.props.price*item.props.amount}đ
             </div>
             <div class="col2">
-                <input id="delete_button" type="button" value="Xóa"/>
+                <input id="delete_button" type="button" value="Xóa" onClick={() => Xoa(item.props.id)}/>
             </div>
         </div>
     )
