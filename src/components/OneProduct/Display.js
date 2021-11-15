@@ -15,13 +15,13 @@ function ProInfo(props) {
   }
 
   const [addToCart, setAddToCart] = useState(false); 
-  const {img, title, price} = props.display;
+  const {img, name, price} = props.display;
   return (
     <React.Fragment> 
     <Container>
     <ProImg src = {img} alt='product img'/>
     <InfoSection>
-    <h1 className='pro_name'>{title}</h1>
+    <h1 className='pro_name'>{name}</h1>
     <p className='pro_price'>{price} VND</p>
    
     <p className='color-section'>Màu sắc</p>
