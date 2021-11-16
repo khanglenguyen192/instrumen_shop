@@ -3,8 +3,9 @@ const session = require("express-session");
 const store = new session.MemoryStore();
 const app = express();
 
-const categoryRoute = require("./routes/category");
-const oneProductRoute = require("./routes/one_product");
+const categoryRoute = require("./routes/category/categoryController");
+const paymentRoute = require("./routes/payment/paymentController");
+const productsRoute = require("./routes/products/productsController");
 
 const DEFAULT_PORT = process.env.port || 5000;
 
@@ -29,7 +30,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/category", categoryRoute);
-app.use("/oneProduct", oneProductRoute);
+app.use("/payment", paymentRoute);
+app.use("/products", productsRoute);
 
 app.listen(DEFAULT_PORT, () => {
   console.log("Server is running on port: " + DEFAULT_PORT);
