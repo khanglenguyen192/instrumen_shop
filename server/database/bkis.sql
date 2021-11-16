@@ -1,6 +1,7 @@
 -- CREATE DATABASE IF NOT EXISTS DB_BKIS;
 
-SET @@auto_increment_increment=1;
+SET @@auto_increment_increment = 1;
+
 SET SQL_MODE= "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 -- SET SQL_SAFE_UPDATES = 0;
@@ -94,6 +95,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 
 INSERT INTO `product` (`id`, `name`, `img`, `origin`, `brand`, `price`, `style`, `category`, `material`, `size`, `weight`, `accessories`, `insurance`) VALUES
 (1, 'Taylor GTE-ASH', 'https://vietthuongshop.vn/image/cache/catalog/taylor-Gte-Ash-400x400.jpg', 'USA', 'Taylor', '45470000', 'Dáng D', '3', 'gỗ', 'D', '2', 'capo', '12 tháng');
+
 ALTER TABLE `product` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 2;
 
 ALTER TABLE `product` ADD CONSTRAINT `category` FOREIGN KEY (`category`) REFERENCES `category`(`categoryID`);
