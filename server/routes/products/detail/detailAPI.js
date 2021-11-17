@@ -1,8 +1,8 @@
 const { Router } = require("express");
 const router = Router();
 
-const similarProductsRoute = require("./similarProducts/similarProductsController");
-const trendingProductsRoute = require("./trendingProducts/trendingProductsController");
+const similarProductsRoute = require("./similarProducts/similarProductsAPI");
+const trendingProductsRoute = require("./trendingProducts/trendingProductsAPI");
 
 router.use("/similar", similarProductsRoute);
 router.use("/trending", trendingProductsRoute);
