@@ -11,37 +11,16 @@ import Axios from 'axios';
 const ProductInfo = (props) => {
 
   const id = props.match.params.id;
-  
-  const [product, setProduct] = useState({});
-  const [loading, setLoading] = useState(false);
-  console.log(id);
-  console.log(loading);
-  useEffect(() => {
-    fetchData();
-    console.log('fetched data');
-  }, [])
 
-  function fetchData(){
-    Axios.get('http://localhost:5000/api/one-product/details', {
-      params: {
-        id: id}
-      }).then((response) => {
-        console.log(response.data);
-        setProduct(response.data);
-        setLoading(true);
-        console.log('data sent');
-        console.log(product);
-  })
-}
 
   return (
-    loading? <div>
-      <Display display= {product[0]}
+    <div>
+      <Display display= {featureProd[id]}
       />
-      <Description description= {product[0]} />   
+      <Description description= {featureProd[id]} />   
       <ReviewContainer />
       <SimilarProducts />
-    </div> : ''
+    </div>
   );
 };
 

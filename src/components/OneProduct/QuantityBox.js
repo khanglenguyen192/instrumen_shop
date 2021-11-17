@@ -1,32 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Box, Button} from './QuantityBoxElement';
 
-  var value = 1;
-
-  function QuantityBox() {
-
-      const [qty, setQuantiy] = useState('1');
-
-       const onDecrement = () => {
-         console.log(value);
-        if (qty <= 1) return;
-        value = value - 1;
-        setQuantiy(value);
-        console.log("Hi decrease", value);
-      }
-
-      const onIncrement = () => {
-        console.log(value);
-        value = value + 1;
-        setQuantiy(value);
-        console.log("Hi Increase", value);
-      }
+  function QuantityBox(props) {
 
         return (
             <Box>
-              <Button className='dec' onClick={onDecrement}>–</Button>
-              <Button className='quanty'>{qty}</Button>
-              <Button className='inc' onClick={onIncrement}>+</Button>
+              <Button className='dec' onClick={props.onDecrement}>–</Button>
+              <Button className='quanty'>{props.qty}</Button>
+              <Button className='inc' onClick={props.onIncrement}>+</Button>
             </Box>
           );
       }

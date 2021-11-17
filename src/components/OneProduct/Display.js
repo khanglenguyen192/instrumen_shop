@@ -17,14 +17,25 @@ function ProInfo(props) {
     setAddToCart(false);
   }
 
+  const onDecrement = () => {
+   if (quantity <= 1) return;
+   setQuantiy(quantity - 1);
+ }
+
+ const onIncrement = () => {
+  setQuantiy(quantity + 1);
+}
+
   const [addToCart, setAddToCart] = useState(false); 
+  const [quantity, setQuantiy] = useState(1);
   const {id, img, title, price} = props.display;
+
   return (
     <React.Fragment> 
     <Container>
     <ProImg src = {img} alt='product img'/>
     <InfoSection>
-    <h1 className='pro_name'>{name}</h1>
+    <h1 className='pro_name'>{title}</h1>
     <p className='pro_price'>{price} VND</p>
    
     <p className='color-section'>Màu sắc</p>
@@ -33,7 +44,7 @@ function ProInfo(props) {
     <ColorBtn style={{backgroundColor: '#ffc107'}} />
 
     <p className='quantity-section'>Số lượng</p>
-    <QuantityBox />
+    <QuantityBox qty={quantity} onDecrement={onDecrement} onIncrement={onIncrement}/>
 
     <BtnContainer>
     <NormalBtn > 
@@ -49,7 +60,5 @@ function ProInfo(props) {
  
   );
 }
-
-const Button = (props) => (<button className={props.className}>{props.name}</button>);
 
 export default ProInfo;
