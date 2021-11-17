@@ -1,5 +1,6 @@
 const express = require("express");
 const session = require("express-session");
+const cors = require('cors');
 const store = new session.MemoryStore();
 const app = express();
 
@@ -8,7 +9,7 @@ const paymentRoute = require("./routes/payment/paymentAPI");
 const productsRoute = require("./routes/products/productsAPI");
 
 const DEFAULT_PORT = process.env.port || 5000;
-
+app.use(cors());
 app.use(
   session({
     secret: "secret",
