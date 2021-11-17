@@ -3,10 +3,13 @@ import QuantityBox from './QuantityBox';
 import { Link } from "react-router-dom";
 import {Container, ProImg, InfoSection, NormalBtn, ColorBtn, BtnContainer} from './DisplayElement';
 import PopUp from './PopUp';
+import { AddToCart } from '../../pages/cart';
+import parseNumber from '../products/parseNumber';
 function ProInfo(props) {
   //url to product  
 
   const handleAddToCart = () => {
+    AddToCart({id: id, img: img, name: title, price: parseNumber(price)})
     setAddToCart(true);
   }
 
@@ -15,7 +18,7 @@ function ProInfo(props) {
   }
 
   const [addToCart, setAddToCart] = useState(false); 
-  const {img, name, price} = props.display;
+  const {id, img, title, price} = props.display;
   return (
     <React.Fragment> 
     <Container>
