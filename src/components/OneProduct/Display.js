@@ -9,7 +9,10 @@ function ProInfo(props) {
   //url to product  
 
   const handleAddToCart = () => {
-    AddToCart({id: id, img: img, name: title, price: parseNumber(price)})
+    for(let i = 0; i < quantity; i++)
+    {
+      AddToCart({id: id, img: img, name: title, price: parseNumber(price)})
+    }
     setAddToCart(true);
   }
 
