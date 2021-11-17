@@ -1,7 +1,10 @@
 -- CREATE DATABASE IF NOT EXISTS DB_BKIS;
 
+SET @@auto_increment_increment = 1;
+
 SET SQL_MODE= "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
+-- SET SQL_SAFE_UPDATES = 0;
 
 SET time_zone = "+00:00";
 
@@ -15,8 +18,8 @@ INSERT INTO `admin` (`username`, `password`, `full_name`) VALUES
 ('admin', 'admin', 'Mai Thanh Phong');
 
 CREATE TABLE IF NOT EXISTS `feedback`(
-    `productID` varchar(128) not null,
-	`feedbackID` varchar(11) not null,
+    `productID` int(11) not null,
+	`feedbackID` int(11) not null,
     `customer_name` text not null,
     `customer_email` text not null,
     `detail` text not null,
@@ -25,8 +28,9 @@ CREATE TABLE IF NOT EXISTS `feedback`(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `feedback` (`productID`, `feedbackID`, `customer_name`, `customer_email`, `detail`, `time`) VALUES
-('guitar1', '1', 'Nguyen Van A', 'nva@gmail.com', 'Đàn có âm thanh tốt', '2021-11-15 7:44:14'),
-('guitar1', '2', 'Le Van B', 'lvb@gmail.com', 'Đàn đẹp', '2021-10-15 7:44:14');
+(1, 1, 'Nguyen Van A', 'nva@gmail.com', 'Đàn có âm thanh tốt', '2021-11-15 7:44:14'),
+(1, 2, 'Le Van B', 'lvb@gmail.com', 'Đàn đẹp', '2021-10-15 7:44:14');
+ALTER TABLE `feedback` MODIFY `feedbackID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 3;
 
 CREATE TABLE IF NOT EXISTS `category` (
 	`categoryID` int(11) not null primary key,
@@ -48,7 +52,7 @@ INSERT INTO `category` (`categoryID`, `categoryName`, `categoryImg`, `titleImg`)
 ('9', 'Nhạc cụ hơi', 'https://nhaccutienmanh.vn/wp-content/themes/nhaccutienmanh/images/icon-cat/016-flute.svg', 'https://cdn.shopify.com/s/files/1/1474/4396/collections/flute_banner.jpg?v=1477012561');
 
 CREATE TABLE IF NOT EXISTS `order`(
-    `orderID` varchar(128) not null primary key,
+    `orderID` int not null primary key,
     `customerName` varchar(255) not null,
     `customerPhone` text not null,
     `customerEmail` text default null,
@@ -59,21 +63,22 @@ CREATE TABLE IF NOT EXISTS `order`(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `order` (`orderID`, `customerName`, `customerPhone`, `customerEmail`, `customerAddress`, `detail`, `paymentMethod`, `status`) VALUES
-('1', 'Nguyễn Văn A', '0987654321', 'nva@gmail.com', '268 Lý Thường Kiệt, phường 14, quận 10, Thành phố Hồ Chí Minh', '', 'Tiền mặt', 'đã nhận');
+(1, 'Nguyễn Văn A', '0987654321', 'nva@gmail.com', '268 Lý Thường Kiệt, phường 14, quận 10, Thành phố Hồ Chí Minh', '', 'Tiền mặt', 'đã nhận');
+ALTER TABLE `order` MODIFY `orderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 2;
 
-CREATE TABLE IF NOT EXISTS `cart`(
-	`orderID` varchar(128) not null,
-    `productID` varchar(128) not null,
+CREATE TABLE IF NOT EXISTS `order_item`(
+	`orderID` int(11) not null,
+    `productID` int(11) not null,
     `quantity` int(11) not null,
     constraint primary key (`orderID`, `productID`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `cart` (`orderID`, `productID`, `quantity`) VALUES
-('1', 'guitar1', '1');
+INSERT INTO `order_item` (`orderID`, `productID`, `quantity`) VALUES
+(1, 1, '1');
 
 
 CREATE TABLE IF NOT EXISTS `product` (
-	`id` varchar (128) not null primary key,
+	`id`int(11) not null primary key auto_increment,
     `name` text not null,
     `img` text not null,
     `origin` text,
@@ -89,12 +94,14 @@ CREATE TABLE IF NOT EXISTS `product` (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `product` (`id`, `name`, `img`, `origin`, `brand`, `price`, `style`, `category`, `material`, `size`, `weight`, `accessories`, `insurance`) VALUES
-('guitar1', 'Taylor GTE-ASH', 'https://vietthuongshop.vn/image/cache/catalog/taylor-Gte-Ash-400x400.jpg', 'USA', 'Taylor', '45470000', 'Dáng D', '3', 'gỗ', 'D', '2', 'capo', '12 tháng');
+(1, 'Taylor GTE-ASH', 'https://vietthuongshop.vn/image/cache/catalog/taylor-Gte-Ash-400x400.jpg', 'USA', 'Taylor', '45470000', 'Dáng D', '3', 'gỗ', 'D', '2', 'capo', '12 tháng');
+
+ALTER TABLE `product` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 2;
 
 ALTER TABLE `product` ADD CONSTRAINT `category` FOREIGN KEY (`category`) REFERENCES `category`(`categoryID`);
 
 ALTER TABLE `feedback` ADD CONSTRAINT `in` FOREIGN KEY (`productID`) REFERENCES `product`(`id`);
 
-ALTER TABLE `cart` ADD CONSTRAINT `has` FOREIGN KEY (`productID`) REFERENCES `product`(`id`);
+ALTER TABLE `order_item` ADD CONSTRAINT `has` FOREIGN KEY (`productID`) REFERENCES `product`(`id`);
 
-ALTER TABLE `order` ADD CONSTRAINT `include` FOREIGN KEY (`orderID`) REFERENCES `cart`(`orderID`);
+ALTER TABLE `order_item` ADD CONSTRAINT `orderID` FOREIGN KEY (`orderID`) REFERENCES `order`(`orderID`);
