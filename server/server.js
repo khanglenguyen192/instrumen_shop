@@ -4,9 +4,9 @@ const cors = require('cors');
 const store = new session.MemoryStore();
 const app = express();
 
-const categoryRoute = require("./routes/category/categoryController");
-const paymentRoute = require("./routes/payment/paymentController");
-const productsRoute = require("./routes/products/productsController");
+const categoryRoute = require("./routes/category/categoryAPI");
+const paymentRoute = require("./routes/payment/paymentAPI");
+const productsRoute = require("./routes/products/productsAPI");
 
 const DEFAULT_PORT = process.env.port || 5000;
 app.use(cors());

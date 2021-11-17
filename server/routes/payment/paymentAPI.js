@@ -1,15 +1,16 @@
 const { Router } = require("express");
+
+const orderRoute = require("./order/orderAPI");
+const orderItemRoute = require("./orderItem/orderItemAPI");
+
 const router = Router();
-
-const feedbackRoute = require("./feedback/feedbackController");
-const detailRoute = require("./detail/detailController");
-
-router.use("/feedback", feedbackRoute);
-router.use("/detail", detailRoute);
 
 router.use((req, res, next) => {
   next();
 });
+
+router.use("/order", orderRoute);
+router.use("/order_item", orderItemRoute);
 
 router.get("/", async (req, res) => {
   res.send(200);
