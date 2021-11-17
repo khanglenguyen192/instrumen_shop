@@ -15,9 +15,9 @@ const ProductInfo = (props) => {
 
   return (
     <div>
-      <Display display= {featureProd[id]}
+      <Display display= {featureProd[id - 1]}
       />
-      <Description description= {featureProd[id]} />   
+      <Description description= {featureProd[id -1]} />   
       <ReviewContainer />
       <SimilarProducts />
     </div>

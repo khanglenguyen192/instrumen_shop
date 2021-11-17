@@ -9,7 +9,10 @@ function ProInfo(props) {
   //url to product  
 
   const handleAddToCart = () => {
-    AddToCart({id: id, img: img, name: title, price: parseNumber(price)})
+    for(let i = 0; i < quantity; i++)
+    {
+      AddToCart({id: id, img: img, name: title, price: parseNumber(price)})
+    }
     setAddToCart(true);
   }
 
@@ -38,10 +41,10 @@ function ProInfo(props) {
     <h1 className='pro_name'>{title}</h1>
     <p className='pro_price'>{price} VND</p>
    
-    <p className='color-section'>Màu sắc</p>
+    {/* <p className='color-section'>Màu sắc</p>
     <ColorBtn style={{backgroundColor: '#333333'}} />
     <ColorBtn style={{backgroundColor: 'yellow'}} />
-    <ColorBtn style={{backgroundColor: '#ffc107'}} />
+    <ColorBtn style={{backgroundColor: '#ffc107'}} /> */}
 
     <p className='quantity-section'>Số lượng</p>
     <QuantityBox qty={quantity} onDecrement={onDecrement} onIncrement={onIncrement}/>
