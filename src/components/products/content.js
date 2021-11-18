@@ -2,27 +2,50 @@ import React, { Component } from "react";
 import parseNumber from "./parseNumber";
 import { priceTag } from "./../../data/ProductData/priceTags"
 import { productType } from "../../data/ProductData/productTypes";
+import axios from 'axios';
 const Context = React.createContext();
 
-class Provider extends Component {
-  state = {
-    products: [],
-    category: "",
-    titleImg: "",
-    modalOpen: false,
-    filterBrandModal: false,
-    filterPriceModal: false,
-    productType: productType[0]
-  };
+let productsAPI = `http://localhost:5000/products`;
+let categoryAPI = `http://localhost:5000/category`;
 
-  setProducts = (data) => {
-    let tempProducts = [];
-    data.forEach(item => {
-      const it = { ...item };
-      tempProducts = [...tempProducts, it];
-    });
+
+class Provider extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      products: [],
+      productsByCategory: [],
+      productsFilterByPrice: [],
+      modalOpen: false,
+      filterBrandModal: false,
+      filterPriceModal: false,
+      filterPrice: false,
+      isProduct: false,
+      productType: productType[0]
+    };
+  }
+
+
+  componentDidMount() {
+    axios.get(`http://localhost:5000/products`)
+      .then((response) => {
+        const productsList = response.data;
+        this.setState(() => ({
+          products: productsList
+        }))
+        console.log(this.state.products);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  }
+
+
+  setProducts = (category) => {
+    let tempProducts = this.state.products;
+    let productsByCategory = tempProducts.filter(product => product.category === category);
     this.setState({
-      products: tempProducts
+      productsByCategory: productsByCategory
     })
   }
 
@@ -66,25 +89,69 @@ class Provider extends Component {
     }
   }
 
+  setFilterByPrice = () => {
+    this.setState({
+      filterPrice: true
+    })
+  }
+
+  unSetFilterByPrice = () => {
+    this.setState({
+      filterPrice: false
+    })
+  }
+
+  setIsProduct = () => {
+    this.setState({
+      isProduct: true
+    })
+  }
+
+  unSetIsProduct = () => {
+    this.setState({
+      isProduct: false
+    })
+  }
+
   sortProducts = (type) => {
     let tempProducts = [];
+    let tempProductsByCategory = [];
+    let tempProductsFilterByPrice = [];
 
+    this.state.productsByCategory.forEach(item => {
+      const it = { ...item };
+      tempProductsByCategory = [...tempProductsByCategory, it];
+    });
     this.state.products.forEach(item => {
       const it = { ...item };
       tempProducts = [...tempProducts, it];
     });
+    this.state.productsFilterByPrice.forEach(item => {
+      const it = { ...item };
+      tempProductsFilterByPrice = [...tempProductsFilterByPrice, it];
+    });
     if (type === "a-z") {
-      tempProducts.sort((a, b) => a.title.localeCompare(b.title));
+      tempProductsByCategory.sort((a, b) => a.name.localeCompare(b.name));
+      tempProducts.sort((a, b) => a.name.localeCompare(b.name));
+      tempProductsFilterByPrice.sort((a, b) => a.name.localeCompare(b.name));
     } else if (type === "z-a") {
-      tempProducts.sort((a, b) => b.title.localeCompare(a.title));
+      tempProductsByCategory.sort((a, b) => b.name.localeCompare(a.name));
+      tempProducts.sort((a, b) => b.name.localeCompare(a.name));
+      tempProductsFilterByPrice.sort((a, b) => b.name.localeCompare(a.name));
     } else if (type === "ascen") {
-      tempProducts.sort((a, b) => (parseNumber(a.price) - parseNumber(b.price)));
+      tempProductsByCategory.sort((a, b) => (a.price - b.price));
+      tempProducts.sort((a, b) => (a.price - b.price));
+      tempProductsFilterByPrice.sort((a, b) => (a.price - b.price));
     } else if (type === "descen") {
-      tempProducts.sort((a, b) => (parseNumber(b.price) - parseNumber(a.price)));
+      tempProductsByCategory.sort((a, b) => (b.price - a.price));
+      tempProducts.sort((a, b) => (b.price - a.price));
+      tempProductsFilterByPrice.sort((a, b) => (b.price - a.price));
     }
 
     this.setState({
-      products: tempProducts
+      productsByCategory: tempProductsByCategory,
+      products: tempProducts,
+      productsFilterByPrice: tempProductsFilterByPrice
     })
   }
 
@@ -100,16 +167,20 @@ class Provider extends Component {
     })
   }
 
-  filterByPrice = async (priceIndex, data) => {
-    await this.setProducts(data);
-
-    const tempProducts = this.state.products.filter((item) => {
-      console.log(item.price >= priceTag[priceIndex].value[0]);
-      return (parseNumber(item.price) >= parseNumber(priceTag[priceIndex].value[0]) && parseNumber(item.price) < parseNumber(priceTag[priceIndex].value[1]));
-    });
-
+  filterByPrice = async (priceIndex) => {
+    let tempProducts = [];
+    if (this.state.isProduct) {
+      tempProducts = this.state.products.filter((item) => {
+        return (item.price >= priceTag[priceIndex].value[0] && item.price < priceTag[priceIndex].value[1]);
+      });
+    }
+    else {
+      tempProducts = this.state.productsByCategory.filter((item) => {
+        return (item.price >= priceTag[priceIndex].value[0] && item.price < priceTag[priceIndex].value[1]);
+      });
+    }
     this.setState({
-      products: tempProducts
+      productsFilterByPrice: tempProducts
     })
   }
 
@@ -133,6 +204,11 @@ class Provider extends Component {
           filterByBrand: this.filterByBrand,
           setProductType: this.setProductType,
           filterByPrice: this.filterByPrice,
+          fetchProducts: this.fetchProducts,
+          setFilterByPrice: this.setFilterByPrice,
+          unSetFilterByPrice: this.unSetFilterByPrice,
+          setIsProduct: this.setIsProduct,
+          unSetIsProduct: this.unSetIsProduct
         }}
       >
         {this.props.children}

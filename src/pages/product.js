@@ -9,10 +9,10 @@ import '../ProductStyle/ProductListStyle.css'
 
 const { useContext, useEffect } = React;
 
-const Page = () => {
+const Page = ({ data }) => {
   const [pagination, setPagination] = useContext(PaginationContext)
 
-  const numberOfPages = Math.ceil(featureProd.length / pagination.limit);
+  const numberOfPages = Math.ceil(data.length / pagination.limit);
 
   const navigateToPage = (pageNumber) => {
     setPagination({
@@ -31,14 +31,21 @@ const Page = () => {
     <>
       <Consumer>
         {value => {
-          return value.products.slice(pagination.start, pagination.perPage).map(product => {
-            return <Product key={product.id} product={product} />
-          })
+          if (value.filterPrice) {
+            return value.productsFilterByPrice.slice(pagination.start, pagination.perPage).map(product => {
+              return <Product key={product.id} product={product} />
+            })
+          }
+          else {
+            return value.products.slice(pagination.start, pagination.perPage).map(product => {
+              return <Product key={product.id} product={product} />
+            })
+          }
         }}
       </Consumer>
       <div className="row">
-        <div className="col-4 col-md-8 col-lg-9"></div>
-        <div className="col-8 col-md-4 col-lg-3 my-4">
+        <div className="col-4 col-md-8 col-lg-8"></div>
+        <div className="col-8 col-md-4 col-lg-4 my-4">
           {pagination.page > 2 && <button className="btn pagebtn" onClick={() => { navigateToPage(1); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>First</button>}
           {pagination.page > 1 && <button className="btn pagebtn" onClick={() => { navigateToPage(pagination.page - 1); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>Prev</button>}
           {[...Array(100)].slice(0, numberOfPages).map((x, i) =>
@@ -65,7 +72,16 @@ export default class ProductList extends Component {
           </div>
           <div className="row">
             <PaginationProvider>
-              <Page />
+              <Consumer>
+                {value => {
+                  if (!value.filterPrice) {
+                    return <Page data={value.products} />;
+                  }
+                  else {
+                    return <Page data={value.productsFilterByPrice} />;
+                  }
+                }}
+              </Consumer>
             </PaginationProvider>
           </div>
         </div>
