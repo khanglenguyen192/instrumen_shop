@@ -28,7 +28,7 @@ const Navbar = () => {
             Giới thiệu
           </NavLink>
           <Consumer>
-            {value => (<NavLink to="/product" onClick={() => { value.setTitle("Sản phẩm"); value.setIsProduct() }} activeStyle>
+            {value => (<NavLink to="/product" onClick={() => { value.setTitle("Sản phẩm"); value.setIsProduct(); value.unSetFilterByPrice() }} activeStyle>
               Sản phẩm
             </NavLink>)}
           </Consumer>
