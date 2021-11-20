@@ -6,6 +6,7 @@ export const ReviewContainer = styled.div`
     width: 1000px;
     margin: auto;
     margin-top: 70px;
+    position: relative;
 
     .rating{
         background-color: #EEEEEE;
@@ -41,6 +42,7 @@ export const RatingContainer = styled.div`
     grid-template-columns: auto;
     padding: 50px 0;
     background-color: #EEEEEE;
+    gap: 15px;
 
 `
 export const RatingItem = styled.div`
