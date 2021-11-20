@@ -36,7 +36,7 @@ router.get("/api/one-product/details", async (req, res) => {
       console.log("send respponse");
     });
   } catch (err) {
-    console.log("ERROR: " + e);
+    console.log("ERROR: " + err);
   }
 });
 

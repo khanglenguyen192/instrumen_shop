@@ -26,6 +26,9 @@ export default function Title({ title, img }) {
                         <strong>{title}</strong>
                     </h1>
                 </div>
+                <div className="row title-img">
+                    <div className="col-12"><img src="https://b.kisscc0.com/20180705/stq/kisscc0-musical-note-music-download-free-music-staff-musical-staff-5b3dc8bc1b1689.621763281530775740111.png" alt="banner" /></div>
+                </div>
             </div>
         )
     }
