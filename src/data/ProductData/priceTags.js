@@ -20,8 +20,18 @@ export const priceTag = [
         index: 3
     },
     {
-        name: "Trên 40 triệu",
-        value: [40000000, 1000000000],
+        name: "40 triệu - 100 triệu",
+        value: [40000000, 100000000],
         index: 4
+    },
+    {
+        name: "100 triệu - 500 triệu",
+        value: [100000000, 500000000],
+        index: 5
+    },
+    {
+        name: "Trên 500 triệu",
+        value: [500000000, 10000000000],
+        index: 6
     },
 ]
