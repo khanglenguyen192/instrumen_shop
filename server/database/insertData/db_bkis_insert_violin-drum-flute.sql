@@ -29,5 +29,13 @@ INSERT INTO `product` (`name`, `img`, `origin`, `brand`, `price`, `style`, `cate
 -- flute
 INSERT INTO `product` (`name`, `img`, `origin`, `brand`, `price`, `style`, `category`, `material`, `size`, `weight`, `accessories`, `insurance`) VALUES
 ('Selmer TS650', 'https://vietthuong.vn//upload/images/SELMER/TS650.jpg', 'USA', 'Selmer ', '34200000', 'tenor saxophone', '9', 'nhôm', 'trung bình', '1.3', 'none', '3 tháng'),
-('Conn selmer AS651', 'https://vietthuong.vn/image/cache/catalog/selmer/conn-selmer-as651-400x400.jpg', 'USA', 'Selmer ', '24,900,000', 'tenor saxophone', '9', 'nhôm', 'trung bình', '1', 'none', '5 tháng');
+('Conn selmer AS651', 'https://vietthuong.vn/image/cache/catalog/selmer/conn-selmer-as651-400x400.jpg', 'USA', 'Selmer ', '24900000', 'tenor saxophone', '9', 'nhôm', 'trung bình', '1', 'none', '5 tháng'),
+('Conn selmer TR650S', 'https://vietthuong.vn/image/cache/catalog/selmer/conn-selmer-tr650s-400x400.jpg', 'USA', 'Selmer ', '15440000', 'Trumpet', '9', 'nhôm', 'trung bình', '1', 'none', '15 tháng'),
+('SUZUKI HARMONICA MR-250F', 'https://vietthuong.vn/image/cache/catalog/1-lua/SUZUKI_HARMONICA_MR-250F-400x400.jpg', 'Nhật Bản', 'SUZUKI ', '680000', 'Diatonic', '9', 'nhựa AB', 'trung bình', '0.2', 'none', '10 tháng'),
+('Suzuki MX-27S', 'https://vietthuong.vn//upload/images/suzuki/Suzuki%20MX-27S.jpg', 'Nhật Bản', 'SUZUKI ', '1390000', 'Chromatic Melodian', '9', 'nhựa AB', 'trung bình', '0.4', 'none', '12 tháng'),
+('Melodion Suzuki B-24', 'https://vietthuong.vn/images/product/01_2015/b_24.jpg', 'Nhật Bản', 'SUZUKI ', '3890000', 'Diatonic Melodian', '9', 'nhựa AB', 'trung bình', '0.3', 'none', '10 tháng'),
+('Suzuki SRG-420', 'https://vietthuong.vn/image/cache/catalog/kensao/Suzuki_sopran_recorder_SRG_420-400x400.jpg', 'Nhật Bản', 'SUZUKI ', '260000', 'Normal recorder', '9', 'nhựa', 'nhỏ', '0.2', 'none', '10 tháng'),
+('SE200FBL', 'https://vietthuong.vn//upload/images/NUVO%60/200f%201.jpg', 'Nhật Bản', 'SUZUKI ', '3620000', 'Student flute', '9', 'nhôm', 'nhỏ', '0.3', 'none', '12 tháng'),
+('N310RDBL', 'https://vietthuong.vn/image/cache/catalog/Guitar/nuvo/NUVN310RDBL-400x400.jpg', 'Đức', 'ABR ', '150000', 'Normal flute', '9', 'nhựa', 'nhỏ', '0.1', 'none', '16 tháng'),
+('Lazer LB-338 A', 'https://vietthuong.vn//upload/images/lazer/lazer%20338.jpg', 'Trung Quốc', 'Alibaba ', '120000', 'Toy flute', '9', 'nhựa', 'nhỏ', '0.1', 'none', '3 tháng');
 
