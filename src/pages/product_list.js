@@ -60,9 +60,7 @@ const Page = ({ data }) => {
   )
 }
 export default class ProductList extends Component {
-  state = {
-    products: productList
-  };
+
   render() {
     return (
       <React.Fragment>

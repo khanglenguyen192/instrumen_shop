@@ -51,7 +51,7 @@ class ProductDropdown extends React.Component {
               return this.state.category.map(item => {
                 return (
                   <DropdownMenuItem>
-                    <ItemLink to="/product_list" onClick={() => { value.setProducts(item.categoryID); value.setTitle(item.categoryName, item.titleImg); value.unSetFilterByPrice(); value.unSetIsProduct() }}>
+                    <ItemLink to="/product_list" onClick={() => { value.setProducts(item.categoryID); value.setTitle(item.categoryName); value.setTitleImg(item.titleImg); value.unSetFilterByPrice(); value.unSetIsProduct() }}>
                       <DropdownMenuItemLogo src={item.categoryImg}></DropdownMenuItemLogo>
                       {item.categoryName}
                     </ItemLink>
