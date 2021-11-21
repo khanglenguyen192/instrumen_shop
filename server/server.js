@@ -7,6 +7,7 @@ const app = express();
 const categoryRoute = require("./routes/category/categoryAPI");
 const paymentRoute = require("./routes/payment/paymentAPI");
 const productsRoute = require("./routes/products/productsAPI");
+const feedbackRoute =  require("./routes/products/feedback/feedbackAPI");
 
 const DEFAULT_PORT = process.env.port || 5000;
 app.use(cors());
@@ -33,6 +34,7 @@ app.get("/", (req, res) => {
 app.use("/category", categoryRoute);
 app.use("/payment", paymentRoute);
 app.use("/products", productsRoute);
+app.use("/products/details/feedback", feedbackRoute);
 
 app.listen(DEFAULT_PORT, () => {
   console.log("Server is running on port: " + DEFAULT_PORT);
