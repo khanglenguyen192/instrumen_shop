@@ -9,17 +9,17 @@ router.use((req, res, next) => {
 
 router.get("/", async (req, res) => {
   const id = req.query.id;
-  // const query = `SELECT * FROM ${connection.db_name}.feedback`;
   const query =  `SELECT * FROM ${connection.db_name}.feedback WHERE productID = ?;`
-  try {
-    connection.db.query(query, [id], (err, results) => {
+
+  connection.db.query(query, [id], (err, results) => {
+      if (err) {
+        console.log(err);
+        res.send("FAILED");
+      } else {
         res.status(200).send(results);
       }
+    }
     );
-  } catch (err) {
-    console.log("ERROR: " + err);
-    res.send("FAILED");
-  }
 });
 
 
@@ -28,13 +28,10 @@ router.post("/", async (req, res) => {
   const customer_name = req.query.customer_name;
   const customer_email = req.query.customer_email;
   const detail = req.query.detail;
-  // const feedbackID = req.query.feedbackID;
   const time = req.query.time;
+  const query = `INSERT INTO feedback (productID, customer_name, customer_email, detail, time) VALUES (?,?,?,?,?);`;
 
-  connection.db.query(
-    "INSERT INTO feedback (productID, customer_name, customer_email, detail, time) VALUES (?,?,?,?,?)",
-    [productID, customer_name, customer_email, detail, time],
-    (err, result) => {
+  connection.db.query(query, [productID, customer_name, customer_email, detail, time], (err, result) => {
       if (err) {
         console.log(err);
       } else {
