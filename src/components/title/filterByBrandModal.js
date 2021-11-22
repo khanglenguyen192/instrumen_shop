@@ -14,8 +14,8 @@ export default function FilterByBrandModal() {
                         <div className="container filter-brand-modal">
                             <div className="row">
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12">
-                                    {value.productType.brandNames.map((item) => {
-                                        return (<button className="btn btn-outline-secondary" onClick={() => value.filterByBrand(item.name, value.productType.data)}>{item.name}</button>)
+                                    {value.brands.map((item) => {
+                                        return (<button className="btn btn-outline-secondary" onClick={() => { value.filterByBrand(item); value.setFilterByBrand(); value.unSetFilterByPrice() }}>{item}</button>)
                                     })}
                                 </div>
                             </div>

@@ -48,7 +48,8 @@ export default function FilterBar() {
                                                 if (value.filterBrandModal || (currentRoutes.pathname !== '/product' && currentRoutes.pathname !== '/product_list')) {
                                                     value.closeModal("brand");
                                                 } else {
-                                                    value.openModal("brand")
+                                                    value.setBrand();
+                                                    value.openModal("brand");
                                                 }
                                             }}>
                                             Thương hiệu <i className="fas fa-angle-down" />

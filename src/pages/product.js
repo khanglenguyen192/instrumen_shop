@@ -36,6 +36,11 @@ const Page = ({ data }) => {
               return <Product key={product.id} product={product} />
             })
           }
+          else if (value.filterBrand) {
+            return value.productsFilterByBrand.slice(pagination.start, pagination.perPage).map(product => {
+              return <Product key={product.id} product={product} />
+            })
+          }
           else {
             return value.products.slice(pagination.start, pagination.perPage).map(product => {
               return <Product key={product.id} product={product} />
@@ -58,7 +63,7 @@ const Page = ({ data }) => {
     </>
   )
 }
-export default class ProductList extends Component {
+export default class Products extends Component {
   state = {
     products: featureProd
   };

@@ -5,6 +5,7 @@ import CartItem from "../components/CartItem/CartItem";
 import Title from "../components/title/title";
 import { Link } from "react-router-dom";
 import CartItemList from "../components/CartItem/CartItemList";
+import axios from "axios";
 
 export class ItemInCart extends React.Component{ //Lưu dữ liệu từng item
   constructor(props){
@@ -35,6 +36,7 @@ export function AddToCart(props){ // Dùng ngoài component
 const Cart = () => {
   const [ItemList,setItemList] = useState([]);
   const [Sum,SetSum] = useState(TinhTong());
+  var Check = (ItemList.length == 0) ? true : false;
   useEffect(() => {
     const StoredItemList = localStorage.getItem('cart');
     if(StoredItemList) {
@@ -72,6 +74,9 @@ const Cart = () => {
     setItemList(temp);
     localStorage.setItem('cart',JSON.stringify(ItemList));
   }
+  function empty(){
+    alert('Chưa có hàng trong giỏ');
+  }
   return (
     <div style={{ "min-height": "70vh" }}>
       <div class="container cartpage">
@@ -95,7 +100,7 @@ const Cart = () => {
             </div>
             <div class="group-2">
               <input placeholder="Nhập mã khuyến mãi" />
-              <input id="apply" type="button" value="Áp dụng" />
+              <input id="apply" type="button" value="Áp dụng"/>
             </div>
           </div>
         </div>
@@ -106,9 +111,12 @@ const Cart = () => {
               <div class="col1"> Tổng đơn:</div>
               <div class="col2">{Sum}đ</div>
             </div>
+            {!Check ?
             <Link to="/payment">
-              <input type="button" value="Đặt hàng ngay" />
+              <input type="button" value="Đặt hàng ngay"/>
             </Link>
+            :<input type="button" value="Đặt hàng ngay" onClick={empty}/>
+            }
           </div>
         </div>
       </div>
