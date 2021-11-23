@@ -9,21 +9,33 @@ import axios from 'axios';
 const ProductInfo = (props) => {
 
   const id = props.match.params.id;
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [feedback, setFeedBack] = useState([]);
 
   useEffect( () => {
+     fetchFeedBack();
      fetchData();
   }, [])
  
+  
+  const fetchFeedBack = () => {
+    axios.get('http://localhost:5000/products/details/feedback', {
+      params: {
+        id: id}
+      }).then((response) => {
+      setFeedBack(response.data);
+    }).catch(e => {
+      console.log(e);
+    });
+  }
+
   const fetchData = () => {
     axios.get('http://localhost:5000/products/details', {
       params: {
         id: id}
       }).then((response) => {
       setProduct(response.data[0]);
-      console.log('Received data');
-      console.log(response.data);
     }).then(() => setLoading(false)).catch(e => {
       console.log(e);
     });
@@ -35,7 +47,7 @@ const ProductInfo = (props) => {
       <Display display= {product}
       />
       <Description description= {product} />   
-      <ReviewContainer />
+      <ReviewContainer feedback={feedback}/>
       <SimilarProducts />
     </div>)
   );

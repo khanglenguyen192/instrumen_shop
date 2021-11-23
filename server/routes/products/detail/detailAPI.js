@@ -14,7 +14,6 @@ router.use((req, res, next) => {
 
 router.get("/", async (req, res) => {
   const id = req.query.id;
-  console.log(id);
   const query = `SELECT * FROM ${connection.db_name}.product WHERE id = ?`;
   try {
     connection.db.query(query, [id], (err, results) => {

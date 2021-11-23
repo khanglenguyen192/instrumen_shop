@@ -14,7 +14,7 @@ export const Container = styled.div`
 export const Title = styled.div`
     background-color: #C4C4C4;
     text-align: center;
-    font-size:20px;
+    font-size:25px;
     padding: 5px;
     font-weight: bold;
     height: 50px;
@@ -27,9 +27,9 @@ export const DesContainer = styled.div`
 
 export const Des = styled.div`
     box-sizing: border-box;
-    margin: 15px 100px;
+    margin: 20px 100px;
     background-color:#E5E5E5;
-    font-size: 18px;
+    font-size: 20px;
 `
 export const DesName = styled.span`
     fontWeight: bold;

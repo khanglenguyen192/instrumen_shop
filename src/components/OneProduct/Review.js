@@ -4,7 +4,6 @@ import { FaStar } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import {NormalBtn} from './DisplayElement';
 import ReactPaginate from 'react-paginate';
-import { feedback } from '../../data/ProductData/feedback';
 import './review.css'
 
 
@@ -20,7 +19,7 @@ function Items({ currentItems }) {
   );
 }
 
-function PaginatedItems({ itemsPerPage }) {
+function PaginatedItems({ feedback, itemsPerPage }) {
 
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
@@ -32,10 +31,8 @@ function PaginatedItems({ itemsPerPage }) {
     setPageCount(Math.ceil(feedback.length / itemsPerPage));
   }, [itemOffset, itemsPerPage]);
 
-  // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = event.selected * itemsPerPage % feedback.length;
-    console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
     setItemOffset(newOffset);
   };
 
@@ -154,12 +151,14 @@ function PaginatedItems({ itemsPerPage }) {
 
   }
 
-  function Reviews(){
+  function Reviews(props){
     return (
       <>
       <ReviewContainer>
         <div className='title' style={{backgroundColor: '#C4C4C4'}}>Đánh giá sản phẩm</div>
-        <PaginatedItems itemsPerPage={4}/>
+        {props.feedback.length === 0 ? <h2 style={{textAlign:'center', marginTop: '200px'}}>Không có đánh giá nào cho sản phẩm này</h2> : 
+        <PaginatedItems itemsPerPage={4} feedback = {props.feedback}/>
+  }
         </ReviewContainer>
         <Rating />
         </>
