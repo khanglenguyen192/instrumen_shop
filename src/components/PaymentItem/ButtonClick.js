@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 //import styled from 'styled-components';
 function shoot() {
-  console.log('bitch')
   var temp = JSON.parse(localStorage.getItem('CustomerInfo'));
   axios.post('http://localhost:5000/payment/order',
   temp
