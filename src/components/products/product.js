@@ -16,7 +16,7 @@ export default class Product extends Component {
             <Link to={"/products/one-product/id_product/" + id}>
               <img src={img} alt="products" className="card-img-top" id={id} />
             </Link>
-            <button className="cart-btn btn btn-sm" onClick={() => AddToCart({ id: id, img: img, name: name, price: parseNumber(price) })}>
+            <button className="cart-btn btn btn-sm" onClick={() => AddToCart({ id: id, img: img, name: name, price: price })}>
               <i class="fa fa-cart-plus"></i>
             </button>
           </div>
