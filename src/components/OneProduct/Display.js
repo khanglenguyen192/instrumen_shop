@@ -16,7 +16,7 @@ function ProInfo(props) {
   const handleAddToCart = () => {
     for(let i = 0; i < quantity; i++)
     {
-      AddToCart({id: id, img: img, name: name, price: parseNumber(price)})
+      AddToCart({id: id, img: img, name: name, price: price})
     }
     setAddToCart(true);
   }
