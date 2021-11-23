@@ -105,3 +105,5 @@ ALTER TABLE `feedback` ADD CONSTRAINT `in` FOREIGN KEY (`productID`) REFERENCES 
 ALTER TABLE `order_item` ADD CONSTRAINT `has` FOREIGN KEY (`productID`) REFERENCES `product`(`id`);
 
 ALTER TABLE `order_item` ADD CONSTRAINT `orderID` FOREIGN KEY (`orderID`) REFERENCES `order`(`orderID`);
+
+ALTER TABLE `feedback` ADD COLUMN `rating` INT;
