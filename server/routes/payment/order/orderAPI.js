@@ -10,18 +10,22 @@ router.use((req, res, next) => {
 const connection = require("../../db_config");
 
 router.get("/", async (req, res) => {
-  res.send(200);
+  var query = `SELECT * FROM ${connection.db_name}.order;`
+  try {
+    connection.db.query(query, (err, results) => {
+      const order = results
+      res.status(200).send(order);
+    });
+  } catch (err) {
+    console.log("ERROR: " + err);
+  }
 });
 
 router.post("/", async (req, res) => {
-  console.log("order:");
-  console.log(req.body);
   var dia_chi = `${req.body.Duong}, ${req.body.Phuong}, ${req.body.Quan}, ${req.body.Tinh}`;
-  console.log(dia_chi);
   var query = `INSERT INTO ${connection.db_name}.order (customerName,customerPhone,customerEmail,customerAddress,detail,paymentMethod,status) 
   VALUES ("${req.body.HoTen}","${req.body.SDT}","${req.body.Email}","${dia_chi}","${req.body.GhiChu}", "Tiền mặt", "Đã nhận");`;
   try {
-    console.log(query);
     connection.db.query(query, (err, results) => {
       console.log("send order");
     });

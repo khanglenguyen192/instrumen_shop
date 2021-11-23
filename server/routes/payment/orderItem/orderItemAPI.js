@@ -11,18 +11,21 @@ router.use((req, res, next) => {
 const connection = require("../../db_config");
 
 router.get("/", async (req, res) => {
-  res.send(200);
+  var query = `SELECT * FROM ${connection.db_name}.order_item WHERE orderID = ${req.query.ID};`
+  try {
+    connection.db.query(query, (err, results) => {
+      const order_item = results;
+      res.status(200).send(order_item);
+    });
+  } catch (err) {
+    console.log("ERROR: " + err);
+  }
 });
 router.post("/", async (req, res) => {
-  console.log("orderItem:");
-  console.log(req.body.length);
-  console.log(req.body[0].props.id);
-  console.log(req.body[0].props.amount);
   for(let i = 0; i < req.body.length; i++)
   {
   var query = `INSERT INTO ${connection.db_name}.order_item (orderID,productID,quantity) VALUES ((SELECT MAX(orderID) FROM ${connection.db_name}.order), ${req.body[i].props.id}, ${req.body[i].props.amount});`;
   try {
-    console.log(query);
     connection.db.query(query, (err, results) => {
       console.log("Sent order-item");
     });
