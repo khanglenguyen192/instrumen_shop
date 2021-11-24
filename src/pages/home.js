@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { homeTrendingList } from "../data/HomePage/trending_data";
 import ProductListSlide from "../components/homeComponents/productListSlide/productListSlide";
 import HomeAdvertisements from "../components/homeComponents/homeAdvertisements";
 import axios from 'axios';
@@ -28,7 +27,7 @@ export default function Home () {
     try{
     axios.get('http://localhost:5000/home/feature').then((resFeature) => {
       setHomeTrendingList(resFeature.data)
-      
+
       axios.get('http://localhost:5000/home/guitar').then((resPiano) => {
         setHomePianoList(resPiano.data);
 
@@ -43,7 +42,6 @@ export default function Home () {
     console.log(e);
   }
 }
-
     return loading ? (<h1 style={{minHeight: '100vh', textAlign:'center', marginTop:'30vh'}}>LOADING....</h1>) : (
       <>
         <div className="container">

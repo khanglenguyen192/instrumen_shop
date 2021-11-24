@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import QuantityBox from './QuantityBox';
 import { Link } from "react-router-dom";
-import {Container, ProImg, InfoSection, NormalBtn, ColorBtn, BtnContainer} from './DisplayElement';
+import {Container, ProImg, InfoSection, NormalBtn, BtnContainer} from './DisplayElement';
 import PopUp from './PopUp';
 import { AddToCart } from '../../pages/cart';
-import parseNumber from '../products/parseNumber';
 
 function ProInfo(props) {
    //url to product 

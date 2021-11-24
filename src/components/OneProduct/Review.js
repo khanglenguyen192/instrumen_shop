@@ -6,7 +6,6 @@ import {NormalBtn} from './DisplayElement';
 import ReactPaginate from 'react-paginate';
 import './review.css'
 
-
 function Items({ currentItems }) {
   return (
     <div className="items" style={{width: '1000px'}}>

@@ -22,7 +22,6 @@ router.get("/", async (req, res) => {
     );
 });
 
-
 router.post("/", async (req, res) => {
   const productID = req.query.productID;
   const customer_name = req.query.customer_name;
