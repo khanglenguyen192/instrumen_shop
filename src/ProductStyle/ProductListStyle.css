@@ -33,8 +33,8 @@
 
 .sort-modal {
   position: absolute;
-  top: 62vh;
-  right: 10vw;
+  top: 475px;
+  right: 180px;
   width: 170px;
   height: 150px;
   align-items: center;
@@ -52,8 +52,8 @@
 
 .filter-brand-modal {
   position: absolute;
-  top: 62vh;
-  left: 26vw;
+  top: 475px;
+  left: 400px;
   width: 130px;
   height: auto;
   align-items: center;
@@ -71,8 +71,8 @@
 
 .filter-price-modal {
   position: absolute;
-  top: 62vh;
-  left: 15vw;
+  top: 475px;
+  left: 220px;
   width: 180px;
   height: auto;
   align-items: center;

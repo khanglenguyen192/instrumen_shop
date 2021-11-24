@@ -28,6 +28,18 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/category", async (req, res) => {
+  const category = req.query.category;
+  const query = `SELECT * FROM ${connection.db_name}.product WHERE category = ?`;
+  try {
+    connection.db.query(query, [category], (err, results) => {
+      res.status(200).send(results);
+    });
+  } catch (err) {
+    console.log("ERROR: " + err);
+  }
+});
+
 router.post("/", async (req, res) => {
   res.send(200);
 });
