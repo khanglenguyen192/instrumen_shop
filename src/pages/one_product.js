@@ -12,14 +12,16 @@ const ProductInfo = (props) => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const [feedback, setFeedBack] = useState([]);
+  const [similarList, setSimilarList] = useState([]);
 
-  useEffect( () => {
-     fetchFeedBack();
-     fetchData();
-  }, [])
+  useEffect(async () => {
+     await fetchFeedBack();
+     await fetchData();  
+     await fetchSimilarProduct(); 
+  }, [product])
  
   
-  const fetchFeedBack = () => {
+  const fetchFeedBack = async () => {
     axios.get('http://localhost:5000/products/details/feedback', {
       params: {
         id: id}
@@ -30,16 +32,35 @@ const ProductInfo = (props) => {
     });
   }
 
-  const fetchData = () => {
+  const fetchData = async () => {
     axios.get('http://localhost:5000/products/details', {
       params: {
         id: id}
       }).then((response) => {
       setProduct(response.data[0]);
+    }).catch(e => {
+      console.log(e);
+    });
+  }
+
+  const fetchSimilarProduct = async () => {
+
+    axios.get('http://localhost:5000/products/details/similar', {
+      params: {
+        category: product.category,
+        style: product.style,
+        material: product.material
+      }
+      }).then((response) => {
+        setSimilarList(response.data);
+        console.log(response.data);
+        console.log(product);
+        console.log(product.category);
     }).then(() => setLoading(false)).catch(e => {
       console.log(e);
     });
   }
+
 
 
   return (
@@ -48,7 +69,7 @@ const ProductInfo = (props) => {
       />
       <Description description= {product} />   
       <ReviewContainer feedback={feedback}/>
-      <SimilarProducts />
+      <SimilarProducts dataList={similarList}/>
     </div>)
   );
 };
