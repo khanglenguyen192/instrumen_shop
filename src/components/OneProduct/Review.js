@@ -112,22 +112,22 @@ function PaginatedItems({ feedback, itemsPerPage }) {
       setHoverValue(0);
     }
     //add value here
-    const handleSubmitClick = () => {
-      axios.post('http://localhost:5000/products/details/feedback', { 
-      params: {
-        productID: id,
-        customer_name: customer_name,
-        customer_email: customer_email,
-        detail: detail,
-        time: time
+    // const handleSubmitClick = () => {
+    //   axios.post('http://localhost:5000/products/details/feedback', { 
+    //   params: {
+    //     productID: id,
+    //     customer_name: customer_name,
+    //     customer_email: customer_email,
+    //     detail: detail,
+    //     time: time
 
-      }
-      }).then((response) => {
-      console.log(response.data);
-    }).catch(e => {
-      console.log(e);
-    });
-    }
+    //   }
+    //   }).then((response) => {
+    //   console.log(response.data);
+    // }).catch(e => {
+    //   console.log(e);
+    // });
+    // }
 
     return <>
     <RatingContainer>
@@ -161,7 +161,7 @@ function PaginatedItems({ feedback, itemsPerPage }) {
       />
     </RatingItem>
     <RatingItem>
-    <NormalBtn onClick={handleSubmitClick}> Submit </NormalBtn>
+    <NormalBtn> Submit </NormalBtn>
     </RatingItem>
     </RatingContainer>
     </>

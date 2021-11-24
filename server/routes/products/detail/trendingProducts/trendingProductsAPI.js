@@ -19,17 +19,19 @@ const fetchData = (query, res) => {
 }
 
 router.get("/piano", async (req, res) => {
-  const query =  `SELECT * FROM ${connection.db_name}.product WHERE category = 1 LIMIT 15;`
+  const query =  `SELECT * FROM ${connection.db_name}.product WHERE category = 1 LIMIT 10;`
   fetchData(query, res);
 });
 
 router.get("/guitar", async (req, res) => {
-  const query =  `SELECT * FROM ${connection.db_name}.product WHERE category = 3 LIMIT 15;`
+  const query =  `SELECT * FROM ${connection.db_name}.product WHERE category = 3 LIMIT 10;`
   fetchData(query,res);
 });
 
-router.post("/", async (req, res) => {
-  res.send(200);
+// send 10 random product
+router.get("/feature", async (req, res) => {
+  const query = `SELECT * FROM ${connection.db_name}.product ORDER BY RAND() LIMIT 10;`
+  fetchData(query,res);
 });
 
 router.put("/", async (req, res) => {

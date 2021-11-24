@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { homeTrendingList } from "../data/HomePage/trending_data";
+// import { homeTrendingList } from "../data/HomePage/trending_data";
 import ProductListSlide from "../components/homeComponents/productListSlide/productListSlide";
 import HomeAdvertisements from "../components/homeComponents/homeAdvertisements";
 import axios from 'axios';
@@ -16,6 +16,7 @@ const ad4 =
 export default function Home () {
   const [homePianoList, setHomePianoList] = useState([]);
   const [homeGuitarList, setHomeGuitarList] = useState([]);
+  const [homeTrendingList, setHomeTrendingList] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -30,9 +31,15 @@ export default function Home () {
 
       axios.get('http://localhost:5000/home/guitar').then((resGuitar) => {
           setHomeGuitarList(resGuitar.data);
-      });
-    });
-  }
+
+          axios.get('http://localhost:5000/home/feature').then((resFeature) => {
+          setHomeTrendingList(resFeature.data);
+
+      });     
+    })
+  })
+}
+
   catch (e) {
     console.log(e);
   }
