@@ -100,16 +100,33 @@ function PaginatedItems({ feedback, itemsPerPage }) {
     const [curValue, setCurValue] = useState(0);
     const stars = Array(5).fill(0);
 
-    const handleClick = (value) => {
+    const handleStarClick = (value) => {
       setCurValue(value);
     }
 
-    const handleMouseOver = (value) => {
+    const handleStarMouseOver = (value) => {
       setHoverValue(value);
     }
 
-    const handleMouseLeave = () => {
+    const handleStarMouseLeave = () => {
       setHoverValue(0);
+    }
+    //add value here
+    const handleSubmitClick = () => {
+      axios.post('http://localhost:5000/products/details/feedback', { 
+      params: {
+        productID: id,
+        customer_name: customer_name,
+        customer_email: customer_email,
+        detail: detail,
+        time: time
+
+      }
+      }).then((response) => {
+      console.log(response.data);
+    }).catch(e => {
+      console.log(e);
+    });
     }
 
     return <>
@@ -124,9 +141,9 @@ function PaginatedItems({ feedback, itemsPerPage }) {
           <FaStar key={index} 
           size = {40}
           color={(hoverValue || curValue) > index ? 'orange' : 'grey'} 
-          onMouseOver={() => handleMouseOver(index + 1)} 
-          onMouseLeave = {handleMouseLeave}
-          onClick = {() => handleClick(index + 1)}/>
+          onMouseOver={() => handleStarMouseOver(index + 1)} 
+          onMouseLeave = {handleStarMouseLeave}
+          onClick = {() => handleStarClick(index + 1)}/>
         )
       })}
     </RatingItem>
@@ -144,7 +161,7 @@ function PaginatedItems({ feedback, itemsPerPage }) {
       />
     </RatingItem>
     <RatingItem>
-    <NormalBtn> Submit </NormalBtn>
+    <NormalBtn onClick={handleSubmitClick}> Submit </NormalBtn>
     </RatingItem>
     </RatingContainer>
     </>
