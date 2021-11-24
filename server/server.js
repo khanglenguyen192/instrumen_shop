@@ -9,6 +9,7 @@ const paymentRoute = require("./routes/payment/paymentAPI");
 const productsRoute = require("./routes/products/productsAPI");
 const feedbackRoute = require("./routes/products/feedback/feedbackAPI");
 const productDetail = require("./routes/products/detail/detailAPI");
+const homeRoute = require("./routes/products/detail/trendingProducts/trendingProductsAPI.js");
 const adminRoute = require("./routes/admin/adminAPI");
 
 const DEFAULT_PORT = process.env.port || 5000;
@@ -33,6 +34,7 @@ app.get("/", (req, res) => {
   res.send(200);
 });
 
+app.use("/home", homeRoute);
 app.use("/category", categoryRoute);
 app.use("/payment", paymentRoute);
 app.use("/products", productsRoute);

@@ -1,7 +1,7 @@
 import {Container, DesContainer, Des, Title} from "./DescriptionElement";
 
   function Description(props) {
-    const {origin, brand, style, type, material, size,
+    const {origin, brand, style, material, size,
             weight, accessories, insurance} = props.description;
     return (
       <Container>

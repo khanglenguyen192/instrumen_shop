@@ -1,9 +1,8 @@
-import React, { Component } from "react";
-import { homePianoList } from "../data/HomePage/piano_data";
-import { homeGuitarList } from "../data/HomePage/guitar_data";
+import React, { useState, useEffect } from "react";
 import { homeTrendingList } from "../data/HomePage/trending_data";
 import ProductListSlide from "../components/homeComponents/productListSlide/productListSlide";
 import HomeAdvertisements from "../components/homeComponents/homeAdvertisements";
+import axios from 'axios';
 
 const ad1 =
   "https://carpentersmusic.com/wp-content/uploads/2021/06/Carpenters-Promo-June-2021.jpg";
@@ -14,9 +13,32 @@ const ad3 =
 const ad4 =
   "https://carpentersmusic.com/wp-content/uploads/2019/07/services.png?resize=1024%2C550&ssl=1";
 
-export default class Home extends Component {
-  render() {
-    return (
+export default function Home () {
+  const [homePianoList, setHomePianoList] = useState([]);
+  const [homeGuitarList, setHomeGuitarList] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchData();
+    setLoading(false);
+  }, [])
+
+  const fetchData = () => {
+    try{
+    axios.get('http://localhost:5000/home/piano').then((resPiano) => {
+      setHomePianoList(resPiano.data);
+
+      axios.get('http://localhost:5000/home/guitar').then((resGuitar) => {
+          setHomeGuitarList(resGuitar.data);
+      });
+    });
+  }
+  catch (e) {
+    console.log(e);
+  }
+}
+
+    return loading ? (<h1 style={{minHeight: '100vh', textAlign:'center', marginTop:'30vh'}}>LOADING....</h1>) : (
       <>
         <div className="container">
           <HomeAdvertisements
@@ -34,5 +56,4 @@ export default class Home extends Component {
         </div>
       </>
     );
-  }
 }
