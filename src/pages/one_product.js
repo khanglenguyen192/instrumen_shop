@@ -53,9 +53,6 @@ const ProductInfo = (props) => {
       }
       }).then((response) => {
         setSimilarList(response.data);
-        console.log(response.data);
-        console.log(product);
-        console.log(product.category);
     }).then(() => setLoading(false)).catch(e => {
       console.log(e);
     });

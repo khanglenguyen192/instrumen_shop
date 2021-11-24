@@ -26,20 +26,19 @@ export default function Home () {
 
   const fetchData = () => {
     try{
-    axios.get('http://localhost:5000/home/piano').then((resPiano) => {
-      setHomePianoList(resPiano.data);
+    axios.get('http://localhost:5000/home/feature').then((resFeature) => {
+      setHomeTrendingList(resFeature.data)
+      
+      axios.get('http://localhost:5000/home/guitar').then((resPiano) => {
+        setHomePianoList(resPiano.data);
 
-      axios.get('http://localhost:5000/home/guitar').then((resGuitar) => {
-          setHomeGuitarList(resGuitar.data);
-
-          axios.get('http://localhost:5000/home/feature').then((resFeature) => {
-          setHomeTrendingList(resFeature.data);
+        axios.get('http://localhost:5000/home/feature').then((resGuitar) => {  
+            setHomeGuitarList(resGuitar.data);
 
       });     
     })
   })
 }
-
   catch (e) {
     console.log(e);
   }

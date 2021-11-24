@@ -18,7 +18,6 @@ router.get("/", async (req, res) => {
         res.send("FAILED");
       } else {
         res.status(200).send(results);
-        console.log('send data');
       }
     }
     );
