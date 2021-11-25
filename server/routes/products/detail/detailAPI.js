@@ -32,6 +32,18 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/max_id", async (req, res) => {
+  const query = `SELECT MAX(id) as maxId FROM ${connection.db_name}.product`;
+  try {
+    connection.db.query(query, (err, results) => {
+      res.status(200).send(results[0]);
+    });
+  } catch (err) {
+    console.log("ERROR: " + err);
+    res.send("FAILED");
+  }
+});
+
 router.post("/", async (req, res) => {
   var query = `INSERT INTO ${connection.db_name}.product (id, name, img, origin, brand, price, style, category, material, size, weight, accessories, insurance) VALUES 
     ("${req.body.id}", "${req.body.name}", "${req.body.img}", "${req.body.origin}", "${req.body.brand}", "${req.body.price}", "${req.body.style}", ${req.body.category}, "${req.body.material}", "${req.body.size}", ${req.body.weight}, "${req.body.accessories}", "${req.body.insurance}");`;
