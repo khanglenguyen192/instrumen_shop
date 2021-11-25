@@ -45,7 +45,33 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/", async (req, res) => {
-  res.send(200);
+  const id = req.body.id;
+  const name = req.body.name;
+  const img = req.body.img;
+  const origin = req.body.origin;
+  const brand = req.body.brand;
+  const price = req.body.price;
+  const style = req.body.style;
+  const category = req.body.category;
+  const material = req.body.material;
+  const size = req.body.size;
+  const weight = req.body.weight;
+  const accessories = req.body.accessories;
+  const insurance = req.body.insurance;
+
+  db.query(
+    `UPDATE employees
+    SET name = ?, img = ?, origin = ?, brand = ?, price = ?, style = ?, category = ?, material = ?, size = ?, weight = ?, accessories = ?, insurance = ?
+    WHERE id = ?;`,
+    [name, img, origin, brand, price, style, category, material, size, weight, accessories, insurance, id],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send('Updated products');
+      }
+    }
+  );
 });
 
 router.delete("/", async (req, res) => {
