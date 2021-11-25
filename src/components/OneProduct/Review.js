@@ -4,7 +4,8 @@ import { FaStar } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import {NormalBtn} from './DisplayElement';
 import ReactPaginate from 'react-paginate';
-import './review.css'
+import './review.css';
+import axios from 'axios';
 
 function Items({ currentItems }) {
   return (
@@ -121,12 +122,12 @@ function PaginatedItems({ feedback, itemsPerPage }) {
       setName(e.target.value);
     }
 
-    const emailOncChange = () =>{
+    const emailOncChange = (e) =>{
       setEmail(e.target.value);
 
     }
 
-    const detailOnChange = () => {
+    const detailOnChange = (e) => {
       setDetail(e.target.value);
     }
 
@@ -144,8 +145,8 @@ function PaginatedItems({ feedback, itemsPerPage }) {
         return;
       }
 
+
       axios.post('http://localhost:5000/products/details/feedback', { 
-      params: {
         productID: props.id,
         customer_name: name,
         customer_email: email,
@@ -153,7 +154,6 @@ function PaginatedItems({ feedback, itemsPerPage }) {
         rating: rating,
         time: getCurrentTime(),
 
-      }
       }).then((response) => {
       console.log(response.data);
     }).catch(e => {

@@ -8,7 +8,7 @@ const db_password = "1a1822f0";
 // const host_name = "localhost";
 // const db_name = "db_bkis";
 // const db_user = "root";
-// const db_password = "123456";
+// const db_password = "password";
 
 module.exports = {
   host_name: host_name,
