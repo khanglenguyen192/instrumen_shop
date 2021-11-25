@@ -93,7 +93,12 @@ function PaginatedItems({ feedback, itemsPerPage }) {
     );
   }
 
-  function Rating(){
+  function Rating(props){
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [rating, setRating] = useState(0);
+    const [detail, setDetail] = useState('');
 
     const [hoverValue, setHoverValue] = useState(0);
     const [curValue, setCurValue] = useState(0);
@@ -101,6 +106,7 @@ function PaginatedItems({ feedback, itemsPerPage }) {
 
     const handleStarClick = (value) => {
       setCurValue(value);
+      setRating(value);
     }
 
     const handleStarMouseOver = (value) => {
@@ -110,23 +116,50 @@ function PaginatedItems({ feedback, itemsPerPage }) {
     const handleStarMouseLeave = () => {
       setHoverValue(0);
     }
-    //add value here
-    // const handleSubmitClick = () => {
-    //   axios.post('http://localhost:5000/products/details/feedback', { 
-    //   params: {
-    //     productID: id,
-    //     customer_name: customer_name,
-    //     customer_email: customer_email,
-    //     detail: detail,
-    //     time: time
 
-    //   }
-    //   }).then((response) => {
-    //   console.log(response.data);
-    // }).catch(e => {
-    //   console.log(e);
-    // });
-    // }
+    const nameOnChange = (e) =>{
+      setName(e.target.value);
+    }
+
+    const emailOncChange = () =>{
+      setEmail(e.target.value);
+
+    }
+
+    const detailOnChange = () => {
+      setDetail(e.target.value);
+    }
+
+    const getCurrentTime = () => {
+      var today = new Date();
+      var cur_date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+      var cur_time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      return (cur_date + ' ' + cur_time);
+    }
+
+    // add value here
+    const handleSubmitClick = () => {
+
+      if (name === '' || email === '' || rating === ''){
+        return;
+      }
+
+      axios.post('http://localhost:5000/products/details/feedback', { 
+      params: {
+        productID: props.id,
+        customer_name: name,
+        customer_email: email,
+        detail: detail,
+        rating: rating,
+        time: getCurrentTime(),
+
+      }
+      }).then((response) => {
+      console.log(response.data);
+    }).catch(e => {
+      console.log(e);
+    });
+    }
 
     return <>
     <RatingContainer>
@@ -149,22 +182,22 @@ function PaginatedItems({ feedback, itemsPerPage }) {
 
     <RatingItem>
     <lable style={{marginLeft: '10px'}}> Họ Tên </lable>
-    <input style={{width: '300px', marginLeft: '10px'}}/>
+    <input style={{width: '300px', marginLeft: '10px'}} onChange={nameOnChange}/>
     <lable style={{marginLeft: '30px'}}> Email </lable>
-    <input style={{width: '300px', marginLeft: '10px'}}/>
+    <input style={{width: '300px', marginLeft: '10px'}} onChange={emailOncChange}/>
     </RatingItem>
     <RatingItem>
     <textarea
         placeholder="Nhận xét sản phẩm"
         style={{width: '800px', height: '150px'}}
+        onChange={detailOnChange}
       />
     </RatingItem>
     <RatingItem>
-    <NormalBtn> Submit </NormalBtn>
+    <NormalBtn onClick={handleSubmitClick}> Submit </NormalBtn>
     </RatingItem>
     </RatingContainer>
     </>
-
   }
 
   function Reviews(props){
@@ -176,7 +209,7 @@ function PaginatedItems({ feedback, itemsPerPage }) {
         <PaginatedItems itemsPerPage={4} feedback = {props.feedback}/>
   }
         </ReviewContainer>
-        <Rating />
+        <Rating id= {props.id}/>
         </>
   );
   }

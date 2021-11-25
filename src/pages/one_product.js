@@ -65,7 +65,7 @@ const ProductInfo = (props) => {
       <Display display= {product}
       />
       <Description description= {product} />   
-      <ReviewContainer feedback={feedback}/>
+      <ReviewContainer feedback={feedback} id = {id}/>
       <SimilarProducts dataList={similarList}/>
     </div>)
   );
