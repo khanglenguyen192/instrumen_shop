@@ -71,16 +71,17 @@ router.put("/", async (req, res) => {
   const accessories = req.body.accessories;
   const insurance = req.body.insurance;
 
-  db.query(
-    `UPDATE employees
-    SET name = ?, img = ?, origin = ?, brand = ?, price = ?, style = ?, category = ?, material = ?, size = ?, weight = ?, accessories = ?, insurance = ?
-    WHERE id = ?;`,
+  const query = `UPDATE ${connection.db_name}.product
+  SET name = ?, img = ?, origin = ?, brand = ?, price = ?, style = ?, category = ?, material = ?, size = ?, weight = ?, accessories = ?, insurance = ?
+  WHERE id = ?;`
+
+  connection.db.query(query,
     [name, img, origin, brand, price, style, category, material, size, weight, accessories, insurance, id],
     (err, result) => {
       if (err) {
         console.log(err);
       } else {
-        res.send('Updated products');
+        res.status(200).send('Updated products');
       }
     }
   );
