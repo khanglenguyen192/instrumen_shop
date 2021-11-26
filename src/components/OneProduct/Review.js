@@ -4,9 +4,8 @@ import { FaStar } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import {NormalBtn} from './DisplayElement';
 import ReactPaginate from 'react-paginate';
-import { feedback } from '../../data/ProductData/feedback';
-import './review.css'
-
+import './review.css';
+import axios from 'axios';
 
 function Items({ currentItems }) {
   return (
@@ -20,7 +19,7 @@ function Items({ currentItems }) {
   );
 }
 
-function PaginatedItems({ itemsPerPage }) {
+function PaginatedItems({ feedback, itemsPerPage }) {
 
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
@@ -32,10 +31,8 @@ function PaginatedItems({ itemsPerPage }) {
     setPageCount(Math.ceil(feedback.length / itemsPerPage));
   }, [itemOffset, itemsPerPage]);
 
-  // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = event.selected * itemsPerPage % feedback.length;
-    console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
     setItemOffset(newOffset);
   };
 
@@ -97,22 +94,71 @@ function PaginatedItems({ itemsPerPage }) {
     );
   }
 
-  function Rating(){
+  function Rating(props){
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [rating, setRating] = useState(0);
+    const [detail, setDetail] = useState('');
 
     const [hoverValue, setHoverValue] = useState(0);
     const [curValue, setCurValue] = useState(0);
     const stars = Array(5).fill(0);
 
-    const handleClick = (value) => {
+    const handleStarClick = (value) => {
       setCurValue(value);
+      setRating(value);
     }
 
-    const handleMouseOver = (value) => {
+    const handleStarMouseOver = (value) => {
       setHoverValue(value);
     }
 
-    const handleMouseLeave = () => {
+    const handleStarMouseLeave = () => {
       setHoverValue(0);
+    }
+
+    const nameOnChange = (e) =>{
+      setName(e.target.value);
+    }
+
+    const emailOncChange = (e) =>{
+      setEmail(e.target.value);
+
+    }
+
+    const detailOnChange = (e) => {
+      setDetail(e.target.value);
+    }
+
+    const getCurrentTime = () => {
+      var today = new Date();
+      var cur_date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+      var cur_time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      return (cur_date + ' ' + cur_time);
+    }
+
+    // add value here
+    const handleSubmitClick = () => {
+
+      if (name === '' || email === '' || rating === ''){
+        return;
+      }
+
+
+      axios.post('http://localhost:5000/products/details/feedback', { 
+        productID: props.id,
+        customer_name: name,
+        customer_email: email,
+        detail: detail,
+        rating: rating,
+        time: getCurrentTime(),
+
+      }).then((response) => {
+      console.log(response.data);
+    }).catch(e => {
+      console.log(e);
+    });
     }
 
     return <>
@@ -127,41 +173,43 @@ function PaginatedItems({ itemsPerPage }) {
           <FaStar key={index} 
           size = {40}
           color={(hoverValue || curValue) > index ? 'orange' : 'grey'} 
-          onMouseOver={() => handleMouseOver(index + 1)} 
-          onMouseLeave = {handleMouseLeave}
-          onClick = {() => handleClick(index + 1)}/>
+          onMouseOver={() => handleStarMouseOver(index + 1)} 
+          onMouseLeave = {handleStarMouseLeave}
+          onClick = {() => handleStarClick(index + 1)}/>
         )
       })}
     </RatingItem>
 
     <RatingItem>
     <lable style={{marginLeft: '10px'}}> Họ Tên </lable>
-    <input style={{width: '300px', marginLeft: '10px'}}/>
+    <input style={{width: '300px', marginLeft: '10px'}} onChange={nameOnChange}/>
     <lable style={{marginLeft: '30px'}}> Email </lable>
-    <input style={{width: '300px', marginLeft: '10px'}}/>
+    <input style={{width: '300px', marginLeft: '10px'}} onChange={emailOncChange}/>
     </RatingItem>
     <RatingItem>
     <textarea
         placeholder="Nhận xét sản phẩm"
         style={{width: '800px', height: '150px'}}
+        onChange={detailOnChange}
       />
     </RatingItem>
     <RatingItem>
-    <NormalBtn> Submit </NormalBtn>
+    <NormalBtn onClick={handleSubmitClick}> Submit </NormalBtn>
     </RatingItem>
     </RatingContainer>
     </>
-
   }
 
-  function Reviews(){
+  function Reviews(props){
     return (
       <>
       <ReviewContainer>
         <div className='title' style={{backgroundColor: '#C4C4C4'}}>Đánh giá sản phẩm</div>
-        <PaginatedItems itemsPerPage={4}/>
+        {props.feedback.length === 0 ? <h2 style={{textAlign:'center', marginTop: '200px'}}>Không có đánh giá nào cho sản phẩm này</h2> : 
+        <PaginatedItems itemsPerPage={4} feedback = {props.feedback}/>
+  }
         </ReviewContainer>
-        <Rating />
+        <Rating id= {props.id}/>
         </>
   );
   }

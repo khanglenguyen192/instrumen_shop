@@ -1,5 +1,5 @@
--- CREATE DATABASE IF NOT EXISTS DB_BKIS;
-
+CREATE DATABASE IF NOT EXISTS DB_BKIS;
+use DB_BKIS;
 SET @@auto_increment_increment = 1;
 
 SET SQL_MODE= "NO_AUTO_VALUE_ON_ZERO";
@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS `feedback`(
     `customer_email` text not null,
     `detail` text not null,
     `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+    `rating` int,
     constraint primary key (`feedbackID`, `productID`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -105,5 +106,3 @@ ALTER TABLE `feedback` ADD CONSTRAINT `in` FOREIGN KEY (`productID`) REFERENCES 
 ALTER TABLE `order_item` ADD CONSTRAINT `has` FOREIGN KEY (`productID`) REFERENCES `product`(`id`);
 
 ALTER TABLE `order_item` ADD CONSTRAINT `orderID` FOREIGN KEY (`orderID`) REFERENCES `order`(`orderID`);
-
-ALTER TABLE `feedback` ADD COLUMN `rating` INT;

@@ -2,18 +2,18 @@ const { Router } = require("express");
 const express = require("express");
 
 const router = Router();
-router.use(express.json()) // for parsing application/json
-router.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+router.use(express.json()); // for parsing application/json
+router.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 router.use((req, res, next) => {
   next();
 });
 const connection = require("../../db_config");
 
 router.get("/", async (req, res) => {
-  var query = `SELECT * FROM ${connection.db_name}.order;`
+  var query = `SELECT * FROM ${connection.db_name}.order;`;
   try {
     connection.db.query(query, (err, results) => {
-      const order = results
+      const order = results;
       res.status(200).send(order);
     });
   } catch (err) {

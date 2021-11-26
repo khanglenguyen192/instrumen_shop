@@ -22,16 +22,16 @@ router.get("/", async (req, res) => {
     );
 });
 
-
 router.post("/", async (req, res) => {
-  const productID = req.query.productID;
-  const customer_name = req.query.customer_name;
-  const customer_email = req.query.customer_email;
-  const detail = req.query.detail;
-  const time = req.query.time;
-  const query = `INSERT INTO feedback (productID, customer_name, customer_email, detail, time) VALUES (?,?,?,?,?);`;
+  const productID = req.body.productID;
+  const customer_name = req.body.customer_name;
+  const customer_email = req.body.customer_email;
+  const detail = req.body.detail;
+  const time = req.body.time;
+  const rating = req.body.rating;
+  const query = `INSERT INTO feedback (productID, customer_name, customer_email, detail, time, rating) VALUES (?,?,?,?,?,?);`;
 
-  connection.db.query(query, [productID, customer_name, customer_email, detail, time], (err, result) => {
+  connection.db.query(query, [productID, customer_name, customer_email, detail, time, rating], (err, result) => {
       if (err) {
         console.log(err);
       } else {

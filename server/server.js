@@ -7,8 +7,10 @@ const app = express();
 const categoryRoute = require("./routes/category/categoryAPI");
 const paymentRoute = require("./routes/payment/paymentAPI");
 const productsRoute = require("./routes/products/productsAPI");
+const productDetailRoute = require("./routes/products/detail/detailAPI");
 const feedbackRoute = require("./routes/products/feedback/feedbackAPI");
-const productDetail = require("./routes/products/detail/detailAPI");
+const similarProductsRoute = require("./routes/products/detail/similarProducts/similarProductsAPI");
+const homeRoute = require("./routes/products/detail/trendingProducts/trendingProductsAPI");
 const adminRoute = require("./routes/admin/adminAPI");
 
 const DEFAULT_PORT = process.env.port || 5000;
@@ -33,11 +35,13 @@ app.get("/", (req, res) => {
   res.send(200);
 });
 
+app.use("/home", homeRoute);
 app.use("/category", categoryRoute);
 app.use("/payment", paymentRoute);
 app.use("/products", productsRoute);
+app.use("/products/details", productDetailRoute);
 app.use("/products/details/feedback", feedbackRoute);
-app.use("/products/details", productDetail);
+app.use("/products/details/similar", similarProductsRoute);
 app.use("/admin", adminRoute);
 
 app.listen(DEFAULT_PORT, () => {
