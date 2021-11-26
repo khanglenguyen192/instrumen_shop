@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS `feedback`(
     `customer_email` text not null,
     `detail` text not null,
     `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+    `rating` int,
     constraint primary key (`feedbackID`, `productID`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

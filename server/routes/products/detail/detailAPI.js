@@ -73,15 +73,30 @@ router.put("/", async (req, res) => {
 
   const query = `UPDATE ${connection.db_name}.product
   SET name = ?, img = ?, origin = ?, brand = ?, price = ?, style = ?, category = ?, material = ?, size = ?, weight = ?, accessories = ?, insurance = ?
-  WHERE id = ?;`
+  WHERE id = ?;`;
 
-  connection.db.query(query,
-    [name, img, origin, brand, price, style, category, material, size, weight, accessories, insurance, id],
+  connection.db.query(
+    query,
+    [
+      name,
+      img,
+      origin,
+      brand,
+      price,
+      style,
+      category,
+      material,
+      size,
+      weight,
+      accessories,
+      insurance,
+      id,
+    ],
     (err, result) => {
       if (err) {
         console.log(err);
       } else {
-        res.status(200).send('Updated products');
+        res.status(200).send("Updated products");
       }
     }
   );

@@ -40,7 +40,7 @@ INSERT INTO product (
     insurance
 ) VALUES (
     'Organ Yamaha PSR-E363',
-    'https://nhaccuphutho.vn/wp-content/uploads/2020/02/Yamahan-Psr-E363-3.jpg',
+    'https://vn.yamaha.com/vi/files/psr-e363_1080x1080_1080x1080_3b979be49d32729e96049a7488c7cc10.jpg',
     'Japan',
     'Yamaha',
     4410000,
