@@ -26,7 +26,6 @@ router.post("/", async (req, res) => {
     var query = `INSERT INTO ${connection.db_name}.order_item (orderID,productID,quantity) VALUES ((SELECT MAX(orderID) FROM ${connection.db_name}.order), ${req.body[i].props.id}, ${req.body[i].props.amount});`;
     try {
       connection.db.query(query, (err, results) => {
-        console.log("Sent order-item");
       });
     } catch (err) {
       console.log("ERROR: " + err);

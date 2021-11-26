@@ -14,6 +14,9 @@ router.get("/", async (req, res) => {
   try {
     connection.db.query(query, (err, results) => {
       const order = results;
+      for(let i = 0; i < results.length; i++){
+        results[i].status = results[i].status.toString();
+      }
       res.status(200).send(order);
     });
   } catch (err) {
@@ -24,10 +27,9 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   var dia_chi = `${req.body.Duong}, ${req.body.Phuong}, ${req.body.Quan}, ${req.body.Tinh}`;
   var query = `INSERT INTO ${connection.db_name}.order (customerName,customerPhone,customerEmail,customerAddress,detail,paymentMethod,status) 
-  VALUES ("${req.body.HoTen}","${req.body.SDT}","${req.body.Email}","${dia_chi}","${req.body.GhiChu}", "Tiền mặt", "Đã nhận");`;
+  VALUES ("${req.body.HoTen}","${req.body.SDT}","${req.body.Email}","${dia_chi}","${req.body.GhiChu}", "Tiền mặt", current_date());`;
   try {
     connection.db.query(query, (err, results) => {
-      console.log("send order");
     });
   } catch (err) {
     console.log("ERROR: " + err);
