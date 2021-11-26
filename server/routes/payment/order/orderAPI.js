@@ -14,6 +14,9 @@ router.get("/", async (req, res) => {
   try {
     connection.db.query(query, (err, results) => {
       const order = results;
+      for(let i = 0; i < results.length; i++){
+        results[i].status = results[i].status.toString();
+      }
       res.status(200).send(order);
     });
   } catch (err) {
