@@ -4,7 +4,6 @@ import { ProductWrapper } from "../../container/ProductWrapper";
 import { StarRating } from "../starRating/StarRating";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { AddToCart } from "../../pages/cart";
-import parseNumber from "./parseNumber.js";
 import priceWithDots from "./priceWithDots";
 export default class Product extends Component {
   render() {

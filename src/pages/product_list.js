@@ -76,7 +76,7 @@ export default class ProductList extends Component {
           <div className="row">
             <FilterBar />
           </div>
-          <div className="row">
+          <div className="row product-menu">
             <PaginationProvider>
               <Consumer>
                 {value => {
