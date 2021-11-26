@@ -33,8 +33,10 @@
 
 .sort-modal {
   position: absolute;
-  top: 475px;
-  right: 180px;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  margin: -825px 0 0 420px !important;
   width: 170px;
   height: 150px;
   align-items: center;
@@ -52,8 +54,10 @@
 
 .filter-brand-modal {
   position: absolute;
-  top: 475px;
-  left: 400px;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  margin: -825px 0 0 -350px !important;
   width: 130px;
   height: auto;
   align-items: center;
@@ -71,8 +75,10 @@
 
 .filter-price-modal {
   position: absolute;
-  top: 475px;
-  left: 220px;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  margin: -825px 0 0 -550px !important;
   width: 180px;
   height: auto;
   align-items: center;

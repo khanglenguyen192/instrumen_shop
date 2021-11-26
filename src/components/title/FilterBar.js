@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Consumer } from "../products/content";
 import { useLocation } from 'react-router-dom';
+import SortModal from "./sortModal";
+import FilterByBrandModal from "./filterByBrandModal";
+import FilterByPriceModal from "./filterByPriceModal";
 
 const Filterbar = styled.div`
     .container {
@@ -12,6 +15,7 @@ const Filterbar = styled.div`
     .container .sort-btn {
         border: none;
         background-color: #333333 !important;
+        height: 35px;
     }
     .container .sort-btn:hover {
         color: #ffdd00;
@@ -36,7 +40,8 @@ export default function FilterBar() {
                                                 if (value.filterPriceModal || (currentRoutes.pathname !== '/product' && currentRoutes.pathname !== '/product_list')) {
                                                     value.closeModal("price");
                                                 } else {
-                                                    value.openModal("price")
+                                                    value.openModal("price");
+                                                    return (<FilterByPriceModal />);
                                                 }
                                             }}>
                                             Giá <i className="fas fa-angle-down" />
@@ -50,6 +55,7 @@ export default function FilterBar() {
                                                 } else {
                                                     value.setBrand();
                                                     value.openModal("brand");
+                                                    return (<FilterByBrandModal />);
                                                 }
                                             }}>
                                             Thương hiệu <i className="fas fa-angle-down" />
@@ -63,7 +69,7 @@ export default function FilterBar() {
                                         if (value.modalOpen || (currentRoutes.pathname !== '/product' && currentRoutes.pathname !== '/product_list')) {
                                             value.closeModal("sort");
                                         } else {
-                                            value.openModal("sort")
+                                            value.openModal("sort");
                                         }
                                     }}>
                                     Sắp xếp theo <i className="fas fa-angle-down" />

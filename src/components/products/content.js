@@ -10,7 +10,7 @@ class Provider extends Component {
     super(props);
     this.state = {
       products: [],
-      productsByCategory: JSON.parse(localStorage.getItem('productsByCategory')) || [],
+      productsByCategory: [],
       productsFilterByPrice: [],
       modalOpen: false,
       filterBrandModal: false,
@@ -22,6 +22,7 @@ class Provider extends Component {
       category: JSON.parse(localStorage.getItem('category')) || "",
       titleImg: JSON.parse(localStorage.getItem('titleImg')) || "",
       brands: JSON.parse(localStorage.getItem('brands')) || [],
+      categoryID: JSON.parse(localStorage.getItem('categoryID')) || null,
       productsFilterByBrand: []
     };
   }
@@ -38,24 +39,32 @@ class Provider extends Component {
       .catch(e => {
         console.log(e);
       });
-    if (localStorage.getItem('productsByCategory') === null) {
+    if (localStorage.getItem('categoryID') === null) {
       this.setIsProduct();
       this.setBrand();
     }
     this.closeModal();
     this.setBrand();
-    console.log(this.state.brands);
-    console.log(this.state.isProduct);
+    this.setProducts(this.state.categoryID);
   }
 
+  setCategoryID = (categoryID) => {
+    this.setState({
+      categoryID: categoryID
+    }, () => { localStorage.setItem('categoryID', JSON.stringify(this.state.categoryID)) })
+  }
 
   setProducts = (category) => {
-    let tempProducts = this.state.products;
-    let productsByCategory = tempProducts.filter(product => product.category === category);
-    this.setState(
-      { productsByCategory: productsByCategory },
-      () => { localStorage.setItem('productsByCategory', JSON.stringify(this.state.productsByCategory)) }
-    )
+    axios.get(`http://localhost:5000/products/category?category=${category}`)
+      .then((response) => {
+        const productsList = response.data;
+        this.setState(() => ({
+          productsByCategory: productsList
+        }))
+      })
+      .catch(e => {
+        console.log(e);
+      });
   };
 
   openModal = (type) => {
@@ -130,7 +139,7 @@ class Provider extends Component {
 
   destructLocalStorage = () => {
     this.setState(
-      () => localStorage.removeItem('productsByCategory'),
+      () => localStorage.removeItem('categoryID'),
       () => localStorage.removeItem('category'),
       () => localStorage.removeItem('titleImg')
     )
@@ -227,12 +236,12 @@ class Provider extends Component {
 
   filterByPrice = async (priceIndex) => {
     let tempProducts = [];
-    if (this.state.isProduct && localStorage.getItem('productsByCategory') === null) {
+    if (this.state.isProduct && localStorage.getItem('categoryID') === null) {
       tempProducts = this.state.products.filter((item) => {
         return (item.price >= priceTag[priceIndex].value[0] && item.price < priceTag[priceIndex].value[1]);
       });
     }
-    else if (localStorage.getItem('productsByCategory') !== null && !this.state.filterBrand) {
+    else if (localStorage.getItem('categoryID') !== null && !this.state.filterBrand) {
       tempProducts = this.state.productsByCategory.filter((item) => {
         return (item.price >= priceTag[priceIndex].value[0] && item.price < priceTag[priceIndex].value[1]);
       });
@@ -282,6 +291,7 @@ class Provider extends Component {
           unSetIsProduct: this.unSetIsProduct,
           destructLocalStorage: this.destructLocalStorage,
           setBrand: this.setBrand,
+          setCategoryID: this.setCategoryID,
         }}
       >
         {this.props.children}

@@ -3,16 +3,12 @@ import {
   ProductList,
   Nav,
   NavLink,
-  Bars,
   NavIcon,
   NavMenu,
-  NavBtn,
-  NavBtnLink,
   NavBarContainer,
 } from "./NavbarElements";
 import { Consumer } from "../products/content";
 import ProductDropdown from "../dropdown/product-dropdown";
-import { featureProd } from "../../data/ProductData/feature_products";
 const Navbar = () => {
   return (
     <NavBarContainer>

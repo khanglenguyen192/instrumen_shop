@@ -80,10 +80,12 @@ export default class ProductList extends Component {
             <PaginationProvider>
               <Consumer>
                 {value => {
-                  if (!value.filterPrice) {
+                  if (!value.filterPrice && !value.filterBrand) {
                     return <Page data={value.productsByCategory} />;
                   }
-                  else {
+                  else if (!value.filterPrice) {
+                    return <Page data={value.productsFilterByBrand} />;
+                  } else {
                     return <Page data={value.productsFilterByPrice} />;
                   }
                 }}
