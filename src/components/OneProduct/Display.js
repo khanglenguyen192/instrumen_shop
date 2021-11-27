@@ -45,7 +45,7 @@ function ProInfo(props) {
     <QuantityBox qty={quantity} onDecrement={onDecrement} onIncrement={onIncrement}/>
 
     <BtnContainer>
-    <NormalBtn > 
+    <NormalBtn onClick={handleAddToCart}> 
     <Link to='/payment' style={{ textDecoration: 'none', color: 'black' }}> Mua ngay </Link>
     </NormalBtn>
     <NormalBtn onClick={handleAddToCart}>Thêm vào giỏ hàng</NormalBtn>
