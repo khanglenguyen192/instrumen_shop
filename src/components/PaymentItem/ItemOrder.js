@@ -1,15 +1,14 @@
-import React, {Component, useEffect} from "react";
+import React, {useEffect} from "react";
 import ButtonClick from "../PaymentItem/ButtonClick";
-import { AddToCart } from '../../pages/cart';
 import { useState } from 'react';
 
 
 
-function ItemOrder() {
+function ItemOrder(props) {
 
     const [ItemList,setItemList] = useState([]);
-    const [Sum,SetSum] = useState(TinhTong());
-    const [Name_product,SetName] = useState(Show_Product());
+    const [Sum,SetSum] = useState(TinhTong());    
+
     useEffect(() => {
     const StoredItemList = localStorage.getItem('cart');
     if(StoredItemList) {
@@ -33,26 +32,14 @@ function ItemOrder() {
     return sum;
   }
 
-    useEffect(() => {
-      localStorage.setItem('cart',JSON.stringify(ItemList));
-      updateName();
-    }, [ItemList] );
-  
-  function updateName() {
-    SetName(Show_Product());
-    localStorage.setItem('cart',JSON.stringify(ItemList));
-  }
-  function Show_Product() {
-    var name_product = '';
-    for(let i = 0; i < ItemList.length; i++)
-    {
-      if(i == 0){
-        name_product = name_product.concat(ItemList[i].props.name);
-      }
-      else name_product = name_product.concat('/ ', ItemList[i].props.name);
-    }
-    return name_product;
-  }
+  const renderListProduct = ItemList.map((props, idx) => {//render list product
+    return (
+      <tr key={idx}>
+        <td>{ItemList[idx].props.name}  (x{ItemList[idx].props.amount})</td>
+        <td>{ItemList[idx].props.price * ItemList[idx].props.amount}</td>
+      </tr>
+    );
+  });
 
     return (
         <div class="card bg-light text-dark">
@@ -62,26 +49,22 @@ function ItemOrder() {
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Sản phẩm</th>
+                    <th>Sản phẩm  (SL)</th>
                     <th>Thành tiền</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>
-                        {Name_product}
-                    </td>
-                    <td>{Sum}đ</td>
-                </tr>
-                
-                <tr bgcolor="#edd5e0">
+
+                  {renderListProduct}
+
+                  <tr bgcolor="#edd5e0">
                     <td>Mã giảm giá</td>
                     <td></td>
-                </tr>
-                <tr>
+                  </tr>
+                  <tr>
                     <td>Tổng</td>
                     <td>{Sum }đ</td>
-                </tr>
+                  </tr>
                 </tbody>
             </table>
 

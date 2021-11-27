@@ -13,7 +13,7 @@ const Payment = () => {
             </div>
           </div>
           <div class="col-sm-7">
-            <div style={{"padding": "100px"}}>
+            <div style={{"padding": "50px"}}>
                 <ItemOrder/>
             </div>
           </div>
