@@ -39,7 +39,7 @@
   left: 50%;
   margin-left: 420px;
   width: 170px;
-  height: 150px;
+  height: auto;
   align-items: center;
   justify-content: center;
   background-color: #fff;
