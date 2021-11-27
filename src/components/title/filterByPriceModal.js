@@ -16,7 +16,7 @@ export default function FilterByPriceModal() {
                             <div className="row">
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12">
                                     {priceTag.map((item) => {
-                                        return (<button className="btn btn-outline-secondary" onClick={() => { value.filterByPrice(item.index); value.setFilterByPrice(); }}>{item.name}</button>)
+                                        return (<button className="btn btn-outline-secondary" onClick={() => { value.filterByPrice(item.index); value.setFilterByPrice(); value.closeModal("price") }}>{item.name}</button>)
                                     })}
                                 </div>
                             </div>

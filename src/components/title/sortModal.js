@@ -15,22 +15,22 @@ export default function SortModal() {
                         <div className="container sort-modal">
                             <div className="row">
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12">
-                                    <button className="btn btn-outline-secondary" onClick={() => value.sortProducts("a-z")}>Tên a-z</button>
+                                    <button className="btn btn-outline-secondary" onClick={() => { value.sortProducts("a-z"); value.closeModal("sort") }}>Tên a-z</button>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col-lg-12">
-                                    <button className="btn btn-outline-secondary" onClick={() => value.sortProducts("z-a")}>Tên z-a</button>
+                                    <button className="btn btn-outline-secondary" onClick={() => { value.sortProducts("z-a"); value.closeModal("sort") }}>Tên z-a</button>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col-lg-12">
-                                    <button className="btn btn-outline-secondary" onClick={() => value.sortProducts("ascen")}>Giá thấp tới cao</button>
+                                    <button className="btn btn-outline-secondary" onClick={() => { value.sortProducts("ascen"); value.closeModal("sort") }}>Giá thấp tới cao</button>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col-lg-12">
-                                    <button className="btn btn-outline-secondary" onClick={() => value.sortProducts("descen")}>Giá cao tới thấp</button>
+                                    <button className="btn btn-outline-secondary" onClick={() => { value.sortProducts("descen"); value.closeModal("sort") }}>Giá cao tới thấp</button>
                                 </div>
                             </div>
                         </div>
