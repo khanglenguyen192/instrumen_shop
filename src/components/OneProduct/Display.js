@@ -20,6 +20,13 @@ function ProInfo(props) {
     setAddToCart(true);
   }
 
+  const handleAddToCartForBuy = () => {
+    for(let i = 0; i < quantity; i++)
+    {
+      AddToCart({id: id, img: img, name: name, price: price})
+    }
+  }
+
   const closePopUp = () => {
     setAddToCart(false);
   }
@@ -45,7 +52,7 @@ function ProInfo(props) {
     <QuantityBox qty={quantity} onDecrement={onDecrement} onIncrement={onIncrement}/>
 
     <BtnContainer>
-    <NormalBtn onClick={handleAddToCart}> 
+    <NormalBtn onClick={handleAddToCartForBuy}> 
     <Link to='/payment' style={{ textDecoration: 'none', color: 'black' }}> Mua ngay </Link>
     </NormalBtn>
     <NormalBtn onClick={handleAddToCart}>Thêm vào giỏ hàng</NormalBtn>
